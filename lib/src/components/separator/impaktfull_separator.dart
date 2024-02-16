@@ -9,7 +9,7 @@ enum ImpaktfullSeparatorType {
 
 class ImpaktfullSeparator extends StatelessWidget {
   final ImpaktfullSeparatorType type;
-  
+
   const ImpaktfullSeparator({
     required this.type,
     super.key,

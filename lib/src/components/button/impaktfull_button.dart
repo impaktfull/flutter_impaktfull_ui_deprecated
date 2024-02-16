@@ -44,7 +44,8 @@ class ImpaktfullButton extends StatelessWidget {
             child: Container(
               decoration: BoxDecoration(
                 color: _getBackground(theme),
-                borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
+                borderRadius:
+                    BorderRadius.circular(theme.dimens.generalBorderRadius),
               ),
               padding: const EdgeInsets.symmetric(
                 horizontal: 12,

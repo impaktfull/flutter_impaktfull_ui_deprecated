@@ -17,17 +17,20 @@ class ComponentsScreen extends StatelessWidget {
         children: [
           ImpaktfullButton.primary(
             label: 'Buttons',
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ButtonsScreen())),
+            onTap: () => Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const ButtonsScreen())),
           ),
           const SizedBox(height: 8),
           ImpaktfullButton.primary(
             label: 'ListViews',
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListViewScreen())),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const ListViewScreen())),
           ),
           const SizedBox(height: 8),
           ImpaktfullButton.primary(
             label: 'LoadingIndicator',
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LoadingIndicatorScreen())),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const LoadingIndicatorScreen())),
           ),
         ],
       ),

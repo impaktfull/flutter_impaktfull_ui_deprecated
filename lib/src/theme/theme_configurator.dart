@@ -4,7 +4,8 @@ ImpaktfullTheme? _theme;
 
 ImpaktfullTheme get theme {
   if (_theme == null) {
-    throw Exception('Impaktfull theme is not set, make sure you call setImpaktfullTheme() before using theme.');
+    throw Exception(
+        'Impaktfull theme is not set, make sure you call setImpaktfullTheme() before using theme.');
   }
   return _theme!;
 }

@@ -47,8 +47,12 @@ class ImpaktfullAutoLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final width = orientation == ImpaktfullAutoLayoutOrientation.horizontal ? spacing.toDouble() : 0.0;
-    final height = orientation == ImpaktfullAutoLayoutOrientation.vertical ? spacing.toDouble() : 0.0;
+    final width = orientation == ImpaktfullAutoLayoutOrientation.horizontal
+        ? spacing.toDouble()
+        : 0.0;
+    final height = orientation == ImpaktfullAutoLayoutOrientation.vertical
+        ? spacing.toDouble()
+        : 0.0;
     final childerenWithSpacing = <Widget>[];
     for (var i = 0; i < children.length; i++) {
       childerenWithSpacing.add(children[i]);

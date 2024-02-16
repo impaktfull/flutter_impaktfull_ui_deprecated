@@ -10,5 +10,6 @@ class ImpaktfullThemeLocalizer extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) => builder(context, ImpaktfullTheme.of(context));
+  Widget build(BuildContext context) =>
+      builder(context, ImpaktfullTheme.of(context));
 }

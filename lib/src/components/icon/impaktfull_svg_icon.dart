@@ -25,7 +25,6 @@ class SvgIcon extends StatelessWidget {
               color!,
               BlendMode.srcIn,
             ),
-            
     );
   }
 }

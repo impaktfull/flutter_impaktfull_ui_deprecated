@@ -17,17 +17,20 @@ class ListViewScreen extends StatelessWidget {
         children: [
           ImpaktfullButton.primary(
             label: 'Children',
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListViewChildren())),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const ListViewChildren())),
           ),
           const SizedBox(height: 8),
           ImpaktfullButton.primary(
             label: 'Item Builder',
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListViewItemBuilder())),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const ListViewItemBuilder())),
           ),
           const SizedBox(height: 8),
           ImpaktfullButton.primary(
             label: 'Item Separated Builder',
-            onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListViewItemSeparatedBuilder())),
+            onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => const ListViewItemSeparatedBuilder())),
           ),
         ],
       ),
