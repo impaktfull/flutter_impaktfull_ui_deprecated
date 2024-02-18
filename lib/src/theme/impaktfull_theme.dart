@@ -63,10 +63,11 @@ class ImpaktfullTheme {
         durations: durations ?? ImpaktfullDurations.getDefaults(),
       );
 
-  static ImpaktfullTheme fromAccent({
+  static ImpaktfullTheme fromColors({
+    required Color primary,
     required Color accent1,
     required Color accent2,
-    required Color accent3,
+    Color? accent3,
     ImpaktfullShadowTheme? shadows,
     ImpaktfullAssets? assets,
     ImpaktfullDimens? dimens,
@@ -74,10 +75,10 @@ class ImpaktfullTheme {
   }) =>
       ImpaktfullTheme(
         colors: ImpaktfullColorTheme(
-          primary: ImpaktfullBranding.primary,
+          primary: primary,
           accent1: accent1,
           accent2: accent2,
-          accent3: accent3,
+          accent3: accent3 ?? ImpaktfullBranding.accent3,
           onPrimary: ImpaktfullBranding.textOnPrimary,
           onAccent1: ImpaktfullBranding.textOnAccent1,
           onAccent2: ImpaktfullBranding.textOnAccent2,

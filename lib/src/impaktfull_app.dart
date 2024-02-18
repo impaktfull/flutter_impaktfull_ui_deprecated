@@ -5,8 +5,10 @@ import 'package:snacky/snacky.dart';
 
 class ImpaktfullApp extends StatelessWidget {
   final String title;
-  final Widget home;
-  final ImpaktfullTheme? currentTheme;
+  final Widget? home;
+  final ImpaktfullTheme? impaktfullTheme;
+  final ThemeData? materialLightTheme;
+  final ThemeData? materialDarkTheme;
   final Locale? locale;
   final Iterable<Locale> supportedLocales;
   final Iterable<LocalizationsDelegate<dynamic>>? localizationsDelegates;
@@ -17,8 +19,10 @@ class ImpaktfullApp extends StatelessWidget {
 
   const ImpaktfullApp({
     required this.title,
-    required this.home,
-    this.currentTheme,
+    this.home,
+    this.impaktfullTheme,
+    this.materialLightTheme,
+    this.materialDarkTheme,
     this.locale,
     this.supportedLocales = const <Locale>[Locale('en')],
     this.localizationsDelegates,
@@ -31,7 +35,7 @@ class ImpaktfullApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    setImpaktfullTheme(currentTheme);
+    setImpaktfullTheme(impaktfullTheme);
     return SnackyConfiguratorWidget(
       snackyBuilder: SimpleSnackyBuilder(
         borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
@@ -40,6 +44,8 @@ class ImpaktfullApp extends StatelessWidget {
         title: title,
         home: home,
         locale: locale,
+        theme: materialLightTheme,
+        darkTheme: materialDarkTheme,
         supportedLocales: supportedLocales,
         localizationsDelegates: localizationsDelegates,
         navigatorKey: navigatorKey,

@@ -1,3 +1,10 @@
+# 0.0.4
+
+## Fix
+
+- ImpaktfullApp fixed required home widget (now optional)
+- ImpaktfullApp fixed has now the option to override the material themeing
+
 # 0.0.3
 
 ## Feat
