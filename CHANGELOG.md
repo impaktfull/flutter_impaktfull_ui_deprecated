@@ -1,3 +1,29 @@
+# 0.0.3
+
+## Feat
+
+- Added a couple new components:
+
+```
+    ImpaktfullListItem
+    ImpaktfullListItemTitle
+    ImpaktfullSelectableListItem
+    ImpaktfullSeparatedColumn
+```
+
+- Added a couple new default icons:
+
+```
+    assets/icons/check.svg
+    assets/icons/chevron_right.svg
+```
+
+- Added support for custom durations 
+
+## Refactor
+
+- Some onCard is now onCardPrimary and we added onCardSecondary
+
 # 0.0.2
 
 ## Feat

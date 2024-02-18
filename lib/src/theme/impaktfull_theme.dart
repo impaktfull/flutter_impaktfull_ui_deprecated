@@ -10,6 +10,7 @@ class ImpaktfullTheme {
     ImpaktfullShadowTheme? shadows,
     ImpaktfullAssets? assets,
     ImpaktfullDimens? dimens,
+    ImpaktfullDurations? durations,
   }) =>
       ImpaktfullTheme(
         colors: const ImpaktfullColorTheme(
@@ -52,11 +53,74 @@ class ImpaktfullTheme {
               ImpaktfullBranding.textOnPrimary, ImpaktfullBranding.font),
           onAccent1: ImpaktfullTextStyleTheme.getTextStyleTheme(
               ImpaktfullBranding.textOnAccent1, ImpaktfullBranding.font),
-          onCard: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnCard, ImpaktfullBranding.font),
+          onCardPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
+              ImpaktfullBranding.textOnCardPrimary, ImpaktfullBranding.font),
+          onCardSecondary: ImpaktfullTextStyleTheme.getTextStyleTheme(
+              ImpaktfullBranding.textOnCardSecondary, ImpaktfullBranding.font),
         ),
         assets: assets ?? ImpaktfullAssets.getDefaults(),
         dimens: dimens ?? ImpaktfullDimens.getDefaults(),
+        durations: durations ?? ImpaktfullDurations.getDefaults(),
+      );
+
+  static ImpaktfullTheme fromAccent({
+    required Color accent1,
+    required Color accent2,
+    required Color accent3,
+    ImpaktfullShadowTheme? shadows,
+    ImpaktfullAssets? assets,
+    ImpaktfullDimens? dimens,
+    ImpaktfullDurations? durations,
+  }) =>
+      ImpaktfullTheme(
+        colors: ImpaktfullColorTheme(
+          primary: ImpaktfullBranding.primary,
+          accent1: accent1,
+          accent2: accent2,
+          accent3: accent3,
+          onPrimary: ImpaktfullBranding.textOnPrimary,
+          onAccent1: ImpaktfullBranding.textOnAccent1,
+          onAccent2: ImpaktfullBranding.textOnAccent2,
+          canvas: ImpaktfullBranding.canvas,
+          card: ImpaktfullBranding.card,
+          error: ImpaktfullBranding.error,
+          success: ImpaktfullBranding.success,
+          warning: ImpaktfullBranding.warning,
+          separator: ImpaktfullBranding.divider,
+        ),
+        shadows: shadows ??
+            const ImpaktfullShadowTheme(
+              card: BoxShadow(
+                color: Color.fromARGB(10, 0, 0, 0),
+                blurRadius: 20,
+                offset: Offset(0, 1),
+                spreadRadius: 4,
+              ),
+              selectedCard: BoxShadow(
+                color: Color.fromARGB(20, 170, 194, 63),
+                blurRadius: 20,
+                offset: Offset(0, 1),
+                spreadRadius: 4,
+              ),
+            ),
+        textStyles: ImpaktfullTextStylesTheme(
+          onCanvasPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
+              ImpaktfullBranding.textOnCanvasPrimary, ImpaktfullBranding.font),
+          onCanvasSecondary: ImpaktfullTextStyleTheme.getTextStyleTheme(
+              ImpaktfullBranding.textOnCanvasSecondary,
+              ImpaktfullBranding.font),
+          onPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
+              ImpaktfullBranding.textOnPrimary, ImpaktfullBranding.font),
+          onAccent1: ImpaktfullTextStyleTheme.getTextStyleTheme(
+              ImpaktfullBranding.textOnAccent1, ImpaktfullBranding.font),
+          onCardPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
+              ImpaktfullBranding.textOnCardPrimary, ImpaktfullBranding.font),
+          onCardSecondary: ImpaktfullTextStyleTheme.getTextStyleTheme(
+              ImpaktfullBranding.textOnCardSecondary, ImpaktfullBranding.font),
+        ),
+        assets: assets ?? ImpaktfullAssets.getDefaults(),
+        dimens: dimens ?? ImpaktfullDimens.getDefaults(),
+        durations: durations ?? ImpaktfullDurations.getDefaults(),
       );
 
   final ImpaktfullColorTheme colors;
@@ -64,6 +128,7 @@ class ImpaktfullTheme {
   final ImpaktfullTextStylesTheme textStyles;
   final ImpaktfullAssets assets;
   final ImpaktfullDimens dimens;
+  final ImpaktfullDurations durations;
 
   const ImpaktfullTheme({
     required this.colors,
@@ -71,6 +136,7 @@ class ImpaktfullTheme {
     required this.textStyles,
     required this.assets,
     required this.dimens,
+    required this.durations,
   });
 
   static ImpaktfullTheme of(BuildContext context) => theme;
@@ -123,12 +189,14 @@ class ImpaktfullTextStylesTheme {
   final ImpaktfullTextStyleTheme onCanvasSecondary;
   final ImpaktfullTextStyleTheme onPrimary;
   final ImpaktfullTextStyleTheme onAccent1;
-  final ImpaktfullTextStyleTheme onCard;
+  final ImpaktfullTextStyleTheme onCardPrimary;
+  final ImpaktfullTextStyleTheme onCardSecondary;
 
   const ImpaktfullTextStylesTheme({
     required this.onCanvasPrimary,
     required this.onCanvasSecondary,
-    required this.onCard,
+    required this.onCardPrimary,
+    required this.onCardSecondary,
     required this.onPrimary,
     required this.onAccent1,
   });
@@ -217,16 +285,22 @@ class ImpaktfullAssets {
 }
 
 class ImpaktfullAssetIcons {
-  final String iconArrowLeft;
+  final String arrowLeft;
+  final String check;
+  final String chevronRight;
 
   const ImpaktfullAssetIcons({
-    required this.iconArrowLeft,
+    required this.arrowLeft,
+    required this.check,
+    required this.chevronRight,
   });
 
   static ImpaktfullAssetIcons getDefaults() {
     const prefix = 'assets/icons/';
     return const ImpaktfullAssetIcons(
-      iconArrowLeft: '$prefix/arrow_left.svg',
+      arrowLeft: '$prefix/arrow_left.svg',
+      check: '$prefix/check.svg',
+      chevronRight: '$prefix/chevron_right.svg',
     );
   }
 }
@@ -267,5 +341,17 @@ class ImpaktfullDimens {
         listViewHorizontalPadding: 16,
         listViewVerticalPadding: 16,
         separatorHorizontalPadding: 16,
+      );
+}
+
+class ImpaktfullDurations {
+  final Duration short;
+
+  const ImpaktfullDurations({
+    required this.short,
+  });
+
+  static ImpaktfullDurations getDefaults() => const ImpaktfullDurations(
+        short: Duration(milliseconds: 250),
       );
 }

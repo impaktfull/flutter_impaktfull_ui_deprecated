@@ -47,7 +47,7 @@ class ImpaktfullScreen extends StatelessWidget {
                         const SizedBox(width: 4),
                         if (onBackTapped != null) ...[
                           ImpaktfullNavbarAction(
-                            svgIcon: theme.assets.icons.iconArrowLeft,
+                            svgIcon: theme.assets.icons.arrowLeft,
                             onTap: onBackTapped,
                           ),
                         ] else ...[

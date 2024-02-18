@@ -77,8 +77,7 @@ class ImpaktfullListView<T> extends StatelessWidget {
       return ListView.separated(
         padding: padding,
         itemBuilder: (context, index) => itemBuilder!(context, items![index]),
-        separatorBuilder: (context, index) =>
-            ImpaktfullSeparator(type: separatorType!),
+        separatorBuilder: (context, index) => ImpaktfullSeparator(type: separatorType!),
         itemCount: items!.length,
       );
     }

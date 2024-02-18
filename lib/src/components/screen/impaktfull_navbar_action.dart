@@ -17,7 +17,7 @@ class ImpaktfullNavbarAction extends StatelessWidget {
   Widget build(BuildContext context) {
     if (Platform.isAndroid) {
       return IconButton(
-        icon: SvgIcon(
+        icon: ImpaktfullSvgIcon(
           asset: svgIcon,
         ),
         onPressed: onTap,
@@ -29,7 +29,7 @@ class ImpaktfullNavbarAction extends StatelessWidget {
         color: Colors.transparent,
         child: Padding(
           padding: const EdgeInsets.all(12),
-          child: SvgIcon(
+          child: ImpaktfullSvgIcon(
             asset: svgIcon,
           ),
         ),

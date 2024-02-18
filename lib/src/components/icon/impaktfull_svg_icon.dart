@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class SvgIcon extends StatelessWidget {
+class ImpaktfullSvgIcon extends StatelessWidget {
   final String asset;
   final int? size;
   final Color? color;
 
-  const SvgIcon({
+  const ImpaktfullSvgIcon({
     required this.asset,
     this.size,
     this.color,

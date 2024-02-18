@@ -1,7 +1,7 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
 
-class LoadingIndicatorScreen extends StatelessWidget {
-  const LoadingIndicatorScreen({
+class ListItemTitleScreen extends StatelessWidget {
+  const ListItemTitleScreen({
     super.key,
   });
 
@@ -9,11 +9,11 @@ class LoadingIndicatorScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return ImpaktfullThemeLocalizer(
       builder: (context, theme) => ImpaktfullScreen(
-        title: 'Components - Loading Indicator',
+        title: 'Components - List Item Title',
         onBackTapped: () => Navigator.of(context).pop(),
         child: const ImpaktfullListView(
           children: [
-            ImpaktfullLoadingIndicator(),
+            ImpaktfullListItemTitle(title: 'Some title'),
           ],
         ),
       ),

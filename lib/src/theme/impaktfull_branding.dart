@@ -14,7 +14,8 @@ class ImpaktfullBranding {
   static const textOnCanvasPrimary = primary;
   static const textOnCanvasSecondary = Color(0xFF7A99AC);
   static const textOnPrimary = Color(0xFFFFFFFF);
-  static const textOnCard = textOnCanvasPrimary;
+  static const textOnCardPrimary = textOnCanvasPrimary;
+  static const textOnCardSecondary = textOnCanvasSecondary;
   static const textOnAccent1 = Color(0xFFFFFFFF);
   static const textOnAccent2 = Color(0xFFFFFFFF);
 

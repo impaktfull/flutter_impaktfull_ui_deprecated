@@ -29,8 +29,20 @@ Components are always prefixed with `Impaktfull` to avoid conflicts with other l
 - ImpaktfullScreen
 - ImpaktfullSeparator
 - ImpaktfullTouchFeedback
+- ImpaktfullListItem
+- ImpaktfullListItemTitle
+- ImpaktfullSelectableListItem
+- ImpaktfullSeparatedColumn
 
 Many more to come in the future, always with the focus on minimizing maintenance and maximizing a recognizable UI/brand for Impaktfull
+
+## Default Icons
+
+These icons should be added to your assets folder to use the default icons. (in your own project)
+
+- assets/icons/arrow_left.svg
+- assets/icons/check.svg
+- assets/icons/chevron_right.svg
 
 ## License
 
