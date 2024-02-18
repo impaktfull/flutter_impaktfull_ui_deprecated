@@ -3,10 +3,12 @@ import 'package:impaktfull_ui/impaktfull_ui.dart';
 class ImpaktfullInputField extends StatelessWidget {
   final ValueChanged<String> onChanged;
   final String? hintText;
+  final bool obscureText;
 
   const ImpaktfullInputField({
     required this.onChanged,
     this.hintText,
+    this.obscureText = false,
     super.key,
   });
 
@@ -21,6 +23,7 @@ class ImpaktfullInputField extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: TextField(
           cursorColor: theme.colors.accent1,
+          obscureText: obscureText,
           decoration: InputDecoration(
             border: InputBorder.none,
             errorBorder: InputBorder.none,

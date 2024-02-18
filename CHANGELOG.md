@@ -1,3 +1,10 @@
+# 0.0.9
+
+# Fix
+
+- Documentation
+- obscureText on ImpaktfullInputField
+
 # 0.0.8
 
 # Fix
