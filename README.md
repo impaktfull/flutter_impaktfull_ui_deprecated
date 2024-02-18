@@ -33,6 +33,8 @@ Components are always prefixed with `Impaktfull` to avoid conflicts with other l
 - ImpaktfullListItemTitle
 - ImpaktfullSelectableListItem
 - ImpaktfullSeparatedColumn
+- ImpaktfullBottomNavigationItem
+- ImpaktfullBottomNavigation
 
 Many more to come in the future, always with the focus on minimizing maintenance and maximizing a recognizable UI/brand for Impaktfull
 

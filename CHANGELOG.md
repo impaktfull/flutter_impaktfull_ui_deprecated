@@ -1,3 +1,9 @@
+# 0.0.5
+
+# Feat
+
+- ImpaktfullBottomNavigationItem & ImpaktfullBottomNavigation added
+
 # 0.0.4
 
 ## Fix

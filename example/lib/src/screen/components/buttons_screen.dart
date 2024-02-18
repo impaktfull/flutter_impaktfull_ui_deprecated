@@ -9,7 +9,7 @@ class ButtonsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ImpaktfullThemeLocalizer(
-      builder: (context, teme) => ImpaktfullScreen(
+      builder: (context, theme) => ImpaktfullScreen(
         title: 'Components - Buttons',
         onBackTapped: () => Navigator.of(context).pop(),
         child: ImpaktfullListView(

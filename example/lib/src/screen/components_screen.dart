@@ -1,4 +1,5 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
+import 'package:impaktfull_ui_example/src/screen/components/bottom_navigation.dart';
 import 'package:impaktfull_ui_example/src/screen/components/buttons_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/list_item_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/list_item_title_screen.dart';
@@ -20,6 +21,12 @@ class ComponentsScreen extends StatelessWidget {
         onBackTapped: () => Navigator.of(context).pop(),
         child: ImpaktfullListView(
           children: [
+            ImpaktfullButton.primary(
+              label: 'BottomNavigation',
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const BottomNavigationScreen())),
+            ),
+            const SizedBox(height: 8),
             ImpaktfullButton.primary(
               label: 'Buttons',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
