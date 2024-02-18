@@ -9,6 +9,7 @@ class ImpaktfullScreen extends StatelessWidget {
   final String? subtitle;
   final Widget child;
   final List<Widget> actions;
+  final Widget? bottomNavBarChild;
   final Widget? bottomAction;
   final VoidCallback? onBackTapped;
   final VoidCallback? onPopInvoked;
@@ -17,6 +18,7 @@ class ImpaktfullScreen extends StatelessWidget {
     required String this.title,
     required this.child,
     this.actions = const [],
+    this.bottomNavBarChild,
     this.subtitle,
     this.onBackTapped,
     this.onPopInvoked,
@@ -42,42 +44,49 @@ class ImpaktfullScreen extends StatelessWidget {
                   bottom: false,
                   child: ConstrainedBox(
                     constraints: const BoxConstraints(minHeight: 56),
-                    child: Row(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        const SizedBox(width: 4),
-                        if (onBackTapped != null) ...[
-                          ImpaktfullNavbarAction(
-                            svgIcon: theme.assets.icons.arrowLeft,
-                            onTap: onBackTapped,
-                          ),
-                        ] else ...[
-                          const SizedBox(width: 4),
-                        ],
-                        const SizedBox(width: 8),
-                        Expanded(
-                          child: ImpaktfullAutoLayout.vertical(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Text(
-                                title!,
-                                style: theme.textStyles.onPrimary.title,
+                        Row(
+                          children: [
+                            const SizedBox(width: 4),
+                            if (onBackTapped != null) ...[
+                              ImpaktfullNavbarAction(
+                                svgIcon: theme.assets.icons.arrowLeft,
+                                onTap: onBackTapped,
                               ),
-                              if (subtitle != null) ...[
-                                const SizedBox(height: 2),
-                                Opacity(
-                                  opacity: 0.5,
-                                  child: Text(
-                                    subtitle!,
-                                    style: theme.textStyles.onPrimary.smallBody,
-                                  ),
-                                ),
-                              ]
+                            ] else ...[
+                              const SizedBox(width: 4),
                             ],
-                          ),
+                            const SizedBox(width: 8),
+                            Expanded(
+                              child: ImpaktfullAutoLayout.vertical(
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Text(
+                                    title!,
+                                    style: theme.textStyles.onPrimary.title,
+                                  ),
+                                  if (subtitle != null) ...[
+                                    const SizedBox(height: 2),
+                                    Opacity(
+                                      opacity: 0.5,
+                                      child: Text(
+                                        subtitle!,
+                                        style: theme
+                                            .textStyles.onPrimary.smallBody,
+                                      ),
+                                    ),
+                                  ]
+                                ],
+                              ),
+                            ),
+                            SizedBox(width: actions.isEmpty ? 0 : 8),
+                            ...actions,
+                            const SizedBox(width: 8),
+                          ],
                         ),
-                        SizedBox(width: actions.isEmpty ? 0 : 8),
-                        ...actions,
-                        const SizedBox(width: 8),
+                        if (bottomNavBarChild != null) bottomNavBarChild!,
                       ],
                     ),
                   ),

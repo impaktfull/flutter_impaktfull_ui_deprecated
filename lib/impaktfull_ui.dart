@@ -14,6 +14,8 @@ export 'src/components/screen/impaktfull_statusbar.dart';
 export 'src/components/separated_column/impaktfull_separated_column.dart';
 export 'src/components/separator/impaktfull_separator.dart';
 export 'src/components/touch_feedback/impaktfull_touch_feedback.dart';
+export 'src/components/tab_bar/impaktfull_tab_bar_item.dart';
+export 'src/components/tab_bar/impaktfull_tab_bar.dart';
 export 'src/theme/impaktfull_theme_localizer.dart';
 export 'src/theme/impaktfull_theme.dart';
 export 'src/impaktfull_app.dart';

@@ -8,6 +8,7 @@ import 'package:impaktfull_ui_example/src/screen/components/listview_screen.dart
 import 'package:impaktfull_ui_example/src/screen/components/loading_indicator_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/selectable_list_item_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/separated_column_screen.dart';
+import 'package:impaktfull_ui_example/src/screen/components/tab_bar_screen.dart';
 
 class ComponentsScreen extends StatelessWidget {
   const ComponentsScreen({
@@ -62,6 +63,12 @@ class ComponentsScreen extends StatelessWidget {
               label: 'Selectable List Item',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const SelectableListItemScreen())),
+            ),
+            const SizedBox(height: 8),
+            ImpaktfullButton.primary(
+              label: 'Tabbar',
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const TabBarScreen())),
             ),
             const SizedBox(height: 8),
             ImpaktfullButton.primary(

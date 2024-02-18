@@ -1,3 +1,9 @@
+# 0.0.7
+
+# Feat
+
+- ImpaktfullTabBar & ImpaktfullTabBarItem added
+
 # 0.0.6
 
 # Feat
