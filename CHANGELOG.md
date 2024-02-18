@@ -1,3 +1,9 @@
+# 0.0.6
+
+# Feat
+
+- ImpaktfullInputField added
+
 # 0.0.5
 
 # Feat

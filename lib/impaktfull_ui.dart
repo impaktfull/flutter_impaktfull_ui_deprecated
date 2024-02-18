@@ -2,6 +2,7 @@ export 'src/components/auto_layout/impaktfull_auto_layout.dart';
 export 'src/components/button/impaktfull_button.dart';
 export 'src/components/bottom_navigation/impaktfull_bottom_navigation.dart';
 export 'src/components/bottom_navigation/impaktfull_bottom_navigation_item.dart';
+export 'src/components/input_field/impaktfull_input_field.dart';
 export 'src/components/icon/impaktfull_svg_icon.dart';
 export 'src/components/listview/impaktfull_listview.dart';
 export 'src/components/list_item/impaktfull_list_item_title.dart';
