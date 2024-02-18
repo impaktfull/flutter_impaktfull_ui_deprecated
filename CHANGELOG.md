@@ -1,3 +1,9 @@
+# 0.0.8
+
+# Fix
+
+- ImpaktfullNavBar height & moved to a new component
+
 # 0.0.7
 
 # Feat
