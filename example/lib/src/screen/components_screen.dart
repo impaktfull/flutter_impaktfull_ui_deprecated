@@ -24,47 +24,56 @@ class ComponentsScreen extends StatelessWidget {
           children: [
             ImpaktfullButton.primary(
               label: 'BottomNavigation',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BottomNavigationScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const BottomNavigationScreen())),
             ),
             const SizedBox(height: 8),
             ImpaktfullButton.primary(
               label: 'Buttons',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ButtonsScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ButtonsScreen())),
             ),
             const SizedBox(height: 8),
             ImpaktfullButton.primary(
               label: 'InputField',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const InputFieldScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const InputFieldScreen())),
             ),
             const SizedBox(height: 8),
             ImpaktfullButton.primary(
               label: 'ListViews',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListViewScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ListViewScreen())),
             ),
             const SizedBox(height: 8),
             ImpaktfullButton.primary(
               label: 'List Item Title',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListItemTitleScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ListItemTitleScreen())),
             ),
             const SizedBox(height: 8),
             ImpaktfullButton.primary(
               label: 'List Item',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListItemScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ListItemScreen())),
             ),
             const SizedBox(height: 8),
             ImpaktfullButton.primary(
               label: 'Selectable List Item',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SelectableListItemScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SelectableListItemScreen())),
             ),
             const SizedBox(height: 8),
             ImpaktfullButton.primary(
               label: 'SeparatedColumn',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SeparatedColumnScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SeparatedColumnScreen())),
             ),
             const SizedBox(height: 8),
             ImpaktfullButton.primary(
               label: 'LoadingIndicator',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LoadingIndicatorScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const LoadingIndicatorScreen())),
             ),
           ],
         ),
