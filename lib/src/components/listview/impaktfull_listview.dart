@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:impaktfull_ui/src/components/auto_layout/impaktfull_auto_layout.dart';
 import 'package:impaktfull_ui/src/components/loading/impaktfull_loading.dart';
 import 'package:impaktfull_ui/src/components/separator/impaktfull_separator.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_theme.dart';
@@ -17,9 +18,9 @@ class ImpaktfullListView<T> extends StatelessWidget {
   const ImpaktfullListView({
     required this.children,
     this.isLoading = false,
+    this.spacing = 0,
     super.key,
-  })  : spacing = 0,
-        itemBuilder = null,
+  })  : itemBuilder = null,
         items = null,
         separated = false,
         skipPadding = true,
@@ -62,7 +63,13 @@ class ImpaktfullListView<T> extends StatelessWidget {
     if (children != null) {
       return ListView(
         padding: padding,
-        children: children!,
+        children: [
+          ImpaktfullAutoLayout.vertical(
+            spacing: spacing,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: children!,
+          ),
+        ],
       );
     }
     if (items!.isEmpty) {

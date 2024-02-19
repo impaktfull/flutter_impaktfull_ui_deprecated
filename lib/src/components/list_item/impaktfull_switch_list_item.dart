@@ -1,19 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:impaktfull_ui/src/components/icon/impaktfull_svg_icon.dart';
 import 'package:impaktfull_ui/src/components/list_item/base_list_item.dart';
+import 'package:impaktfull_ui/src/components/switch/impaktfull_switch.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_theme_localizer.dart';
 
-class ImpaktfullSelectableListItem extends StatelessWidget {
+class ImpaktfullSwitchListItem extends StatelessWidget {
   final String title;
   final String? subTitle;
   final String? leadingAsset;
+  final bool value;
+  final ValueChanged<bool> onChanged;
   final bool isSelected;
-  final VoidCallback onTap;
 
-  const ImpaktfullSelectableListItem({
+  const ImpaktfullSwitchListItem({
     required this.title,
     required this.isSelected,
-    required this.onTap,
+    required this.value,
+    required this.onChanged,
     this.subTitle,
     this.leadingAsset,
     super.key,
@@ -25,7 +28,7 @@ class ImpaktfullSelectableListItem extends StatelessWidget {
       builder: (context, theme) => BaseListItem(
         title: title,
         subTitle: subTitle,
-        onTap: onTap,
+        onTap: () => onChanged(!value),
         leadingWidget: leadingAsset == null
             ? null
             : ImpaktfullSvgIcon(
@@ -33,14 +36,9 @@ class ImpaktfullSelectableListItem extends StatelessWidget {
                 size: 16,
                 color: theme.colors.primary,
               ),
-        trailingWidget: AnimatedOpacity(
-          opacity: isSelected ? 1 : 0,
-          duration: theme.durations.short,
-          curve: Curves.easeInOut,
-          child: ImpaktfullSvgIcon(
-            asset: theme.assets.icons.check,
-            color: theme.colors.accent1,
-          ),
+        trailingWidget: ImpaktfullSwitch(
+          value: value,
+          onChanged: onChanged,
         ),
       ),
     );

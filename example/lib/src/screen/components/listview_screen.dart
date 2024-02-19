@@ -15,19 +15,18 @@ class ListViewScreen extends StatelessWidget {
         title: 'Components - ListView',
         onBackTapped: () => Navigator.of(context).pop(),
         child: ImpaktfullListView(
+          spacing: 8,
           children: [
             ImpaktfullButton.primary(
               label: 'Children',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const ListViewChildren())),
             ),
-            const SizedBox(height: 8),
             ImpaktfullButton.primary(
               label: 'Item Builder',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const ListViewItemBuilder())),
             ),
-            const SizedBox(height: 8),
             ImpaktfullButton.primary(
               label: 'Item Separated Builder',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(

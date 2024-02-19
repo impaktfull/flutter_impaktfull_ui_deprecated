@@ -13,6 +13,7 @@ class ListItemScreen extends StatelessWidget {
         title: 'Components - List Item',
         onBackTapped: () => Navigator.of(context).pop(),
         child: ImpaktfullListView(
+          spacing: 8,
           children: [
             const ImpaktfullListItem(title: 'Some title'),
             const ImpaktfullListItem(

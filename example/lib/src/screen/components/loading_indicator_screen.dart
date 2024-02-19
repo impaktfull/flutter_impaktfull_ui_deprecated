@@ -12,6 +12,7 @@ class LoadingIndicatorScreen extends StatelessWidget {
         title: 'Components - Loading Indicator',
         onBackTapped: () => Navigator.of(context).pop(),
         child: const ImpaktfullListView(
+          spacing: 8,
           children: [
             ImpaktfullLoadingIndicator(),
           ],

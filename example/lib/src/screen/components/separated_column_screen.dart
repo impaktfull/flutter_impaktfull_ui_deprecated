@@ -12,6 +12,7 @@ class SeparatedColumnScreen extends StatelessWidget {
         title: 'Components - SeparatedColumn',
         onBackTapped: () => Navigator.of(context).pop(),
         child: const ImpaktfullListView(
+          spacing: 8,
           children: [
             ImpaktfullSeparatedColumn(
               children: [
@@ -22,7 +23,6 @@ class SeparatedColumnScreen extends StatelessWidget {
                 Text('Item 5'),
               ],
             ),
-            SizedBox(height: 8),
             ImpaktfullSeparatedColumn(
               type: ImpaktfullSeparatorType.card,
               children: [

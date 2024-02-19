@@ -330,11 +330,17 @@ class ImpaktfullDimens {
   final double listViewVerticalPadding;
   final double separatorHorizontalPadding;
 
+  /// Switch
+  final double switchBorderRadius;
+  final double switchThumbBorderRadius;
+
   const ImpaktfullDimens({
     required this.generalBorderRadius,
     required this.listViewHorizontalPadding,
     required this.listViewVerticalPadding,
     required this.separatorHorizontalPadding,
+    required this.switchBorderRadius,
+    required this.switchThumbBorderRadius,
   });
 
   static ImpaktfullDimens getDefaults() => const ImpaktfullDimens(
@@ -342,6 +348,8 @@ class ImpaktfullDimens {
         listViewHorizontalPadding: 16,
         listViewVerticalPadding: 16,
         separatorHorizontalPadding: 16,
+        switchBorderRadius: 8,
+        switchThumbBorderRadius: 4,
       );
 }
 

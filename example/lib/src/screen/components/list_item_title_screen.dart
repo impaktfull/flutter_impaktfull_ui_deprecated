@@ -12,6 +12,7 @@ class ListItemTitleScreen extends StatelessWidget {
         title: 'Components - List Item Title',
         onBackTapped: () => Navigator.of(context).pop(),
         child: const ImpaktfullListView(
+          spacing: 8,
           children: [
             ImpaktfullListItemTitle(title: 'Some title'),
           ],

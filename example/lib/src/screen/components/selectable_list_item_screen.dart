@@ -13,6 +13,7 @@ class SelectableListItemScreen extends StatelessWidget {
         title: 'Components - Selectable List Item',
         onBackTapped: () => Navigator.of(context).pop(),
         child: ImpaktfullListView(
+          spacing: 8,
           children: [
             ImpaktfullSelectableListItem(
               title: 'Some title',

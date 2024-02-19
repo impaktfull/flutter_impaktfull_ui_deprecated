@@ -12,6 +12,7 @@ class InputFieldScreen extends StatelessWidget {
         title: 'Components - InputField',
         onBackTapped: () => Navigator.of(context).pop(),
         child: ImpaktfullListView(
+          spacing: 8,
           children: [
             ImpaktfullInputField(
               onChanged: (value) {},

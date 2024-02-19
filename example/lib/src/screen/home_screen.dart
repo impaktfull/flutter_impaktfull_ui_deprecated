@@ -11,8 +11,9 @@ class HomeScreen extends StatelessWidget {
     return ImpaktfullScreen(
       title: 'Home',
       child: ImpaktfullListView(
+        spacing: 8,
         children: [
-          ImpaktfullButton.primary(
+          ImpaktfullButton.accent(
             label: 'Components',
             onTap: () => Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => const ComponentsScreen())),

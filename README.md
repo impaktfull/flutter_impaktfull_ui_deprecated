@@ -23,6 +23,7 @@ Components are always prefixed with `Impaktfull` to avoid conflicts with other l
 
 - ImpaktfullAutoLayout
 - ImpaktfullButton
+- ImpaktfullSwitch
 - ImpaktfullSvgIcon
 - ImpaktfullListView
 - ImpaktfullLoadingIndicator
@@ -31,6 +32,7 @@ Components are always prefixed with `Impaktfull` to avoid conflicts with other l
 - ImpaktfullTouchFeedback
 - ImpaktfullListItem
 - ImpaktfullListItemTitle
+- ImpaktfullSwitchListItem
 - ImpaktfullSelectableListItem
 - ImpaktfullSeparatedColumn
 - ImpaktfullBottomNavigationItem

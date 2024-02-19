@@ -8,7 +8,9 @@ import 'package:impaktfull_ui_example/src/screen/components/listview_screen.dart
 import 'package:impaktfull_ui_example/src/screen/components/loading_indicator_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/selectable_list_item_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/separated_column_screen.dart';
+import 'package:impaktfull_ui_example/src/screen/components/switch_list_item_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/tab_bar_screen.dart';
+import 'package:impaktfull_ui_example/src/screen/components/switch_screen.dart';
 
 class ComponentsScreen extends StatelessWidget {
   const ComponentsScreen({
@@ -22,65 +24,67 @@ class ComponentsScreen extends StatelessWidget {
         title: 'Components',
         onBackTapped: () => Navigator.of(context).pop(),
         child: ImpaktfullListView(
+          spacing: 8,
           children: [
-            ImpaktfullButton.primary(
+            ImpaktfullButton.accent(
               label: 'BottomNavigation',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const BottomNavigationScreen())),
             ),
-            const SizedBox(height: 8),
-            ImpaktfullButton.primary(
+            ImpaktfullButton.accent(
               label: 'Buttons',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const ButtonsScreen())),
             ),
-            const SizedBox(height: 8),
-            ImpaktfullButton.primary(
+            ImpaktfullButton.accent(
               label: 'InputField',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const InputFieldScreen())),
             ),
-            const SizedBox(height: 8),
-            ImpaktfullButton.primary(
+            ImpaktfullButton.accent(
               label: 'ListViews',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const ListViewScreen())),
             ),
-            const SizedBox(height: 8),
-            ImpaktfullButton.primary(
+            ImpaktfullButton.accent(
               label: 'List Item Title',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const ListItemTitleScreen())),
             ),
-            const SizedBox(height: 8),
-            ImpaktfullButton.primary(
+            ImpaktfullButton.accent(
               label: 'List Item',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const ListItemScreen())),
             ),
-            const SizedBox(height: 8),
-            ImpaktfullButton.primary(
+            ImpaktfullButton.accent(
               label: 'Selectable List Item',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const SelectableListItemScreen())),
             ),
-            const SizedBox(height: 8),
-            ImpaktfullButton.primary(
+            ImpaktfullButton.accent(
+              label: 'Switch List Item',
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SwitchListItemScreen())),
+            ),
+            ImpaktfullButton.accent(
               label: 'Tabbar',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const TabBarScreen())),
             ),
-            const SizedBox(height: 8),
-            ImpaktfullButton.primary(
+            ImpaktfullButton.accent(
               label: 'SeparatedColumn',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const SeparatedColumnScreen())),
             ),
-            const SizedBox(height: 8),
-            ImpaktfullButton.primary(
+            ImpaktfullButton.accent(
               label: 'LoadingIndicator',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const LoadingIndicatorScreen())),
+            ),
+            ImpaktfullButton.accent(
+              label: 'Switch',
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SwitchScreen())),
             ),
           ],
         ),

@@ -11,7 +11,7 @@ class ImpaktfullAutoLayout extends StatelessWidget {
   final CrossAxisAlignment crossAxisAlignment;
   final List<Widget> children;
   final EdgeInsets padding;
-  final int spacing;
+  final double spacing;
   final Color backgroundColor;
 
   const ImpaktfullAutoLayout({
