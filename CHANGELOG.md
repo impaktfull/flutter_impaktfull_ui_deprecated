@@ -1,3 +1,9 @@
+# 0.0.10
+
+# Fix
+
+- SvgIcon pixelated (because of flutter_svg/Impeller bug)
+
 # 0.0.9
 
 # Fix
