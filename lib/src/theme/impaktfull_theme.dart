@@ -297,7 +297,7 @@ class ImpaktfullAssetIcons {
   });
 
   static ImpaktfullAssetIcons getDefaults() {
-    const prefix = 'assets/icons/';
+    const prefix = 'assets/icons';
     return const ImpaktfullAssetIcons(
       arrowLeft: '$prefix/arrow_left.svg',
       check: '$prefix/check.svg',
@@ -314,7 +314,7 @@ class ImpaktfullAssetLotties {
   });
 
   static ImpaktfullAssetLotties getDefaults() {
-    const prefix = 'assets/lottie/';
+    const prefix = 'assets/lottie';
     return const ImpaktfullAssetLotties(
       loading: '$prefix/loading.json',
     );

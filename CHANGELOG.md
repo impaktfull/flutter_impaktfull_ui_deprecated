@@ -1,3 +1,9 @@
+# 0.0.11
+
+# Fix
+
+- Assets not loading in Android
+
 # 0.0.10
 
 # Fix
