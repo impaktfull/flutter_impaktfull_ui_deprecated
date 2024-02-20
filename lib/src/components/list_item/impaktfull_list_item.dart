@@ -42,23 +42,23 @@ class _ImpaktfullListItemState extends State<ImpaktfullListItem> {
                 size: 16,
                 color: theme.colors.primary,
               ),
-        trailingWidget: Builder(builder: (context) {
-          if (widget.onTap != null || widget.onAsyncTap != null) {
-            if (_isLoading) {
-              return SizedBox(
-                width: widget.subTitle == null ? 24 : 32,
-                height: widget.subTitle == null ? 24 : 32,
-                child: const ImpaktfullLoadingIndicator(),
-              );
-            }
-            return const SizedBox();
-          } else {
-            return ImpaktfullSvgIcon(
-              asset: theme.assets.icons.chevronRight,
-              color: theme.colors.primary,
-            );
-          }
-        }),
+        trailingWidget: widget.onTap != null || widget.onAsyncTap != null
+            ? Builder(
+                builder: (context) {
+                  if (_isLoading) {
+                    return SizedBox(
+                      width: widget.subTitle == null ? 24 : 32,
+                      height: widget.subTitle == null ? 24 : 32,
+                      child: const ImpaktfullLoadingIndicator(),
+                    );
+                  }
+                  return ImpaktfullSvgIcon(
+                    asset: theme.assets.icons.chevronRight,
+                    color: theme.colors.primary,
+                  );
+                },
+              )
+            : const SizedBox(),
       ),
     );
   }

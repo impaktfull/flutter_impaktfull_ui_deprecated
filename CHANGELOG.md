@@ -1,3 +1,9 @@
+# 0.0.13
+
+# Fix
+
+- Bug in ImpaktfullListItem where trailing widget was not shown correctly
+
 # 0.0.12
 
 # Feat
