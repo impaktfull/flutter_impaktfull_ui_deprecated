@@ -36,6 +36,7 @@ class ImpaktfullApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     setImpaktfullTheme(impaktfullTheme);
+    setImpaktfullLocale(locale);
     return SnackyConfiguratorWidget(
       snackyBuilder: SimpleSnackyBuilder(
         borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),

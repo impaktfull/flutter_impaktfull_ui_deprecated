@@ -1,18 +1,38 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
 
-class ImpaktfullInputField extends StatelessWidget {
+class ImpaktfullInputField extends StatefulWidget {
   final ValueChanged<String> onChanged;
   final String? hintText;
+  final String value;
   final bool obscureText;
   final TextInputType textInputType;
 
   const ImpaktfullInputField({
     required this.onChanged,
+    this.value = '',
     this.hintText,
     this.obscureText = false,
     this.textInputType = TextInputType.text,
     super.key,
   });
+
+  @override
+  State<ImpaktfullInputField> createState() => _ImpaktfullInputFieldState();
+}
+
+class _ImpaktfullInputFieldState extends State<ImpaktfullInputField> {
+  late TextEditingController _textEditingController;
+  @override
+  void initState() {
+    super.initState();
+    _textEditingController = TextEditingController(text: widget.value);
+  }
+
+  @override
+  void dispose() {
+    _textEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +44,10 @@ class ImpaktfullInputField extends StatelessWidget {
         ),
         padding: const EdgeInsets.symmetric(horizontal: 16),
         child: TextField(
+          controller: _textEditingController,
           cursorColor: theme.colors.accent1,
-          obscureText: obscureText,
-          keyboardType: textInputType,
+          obscureText: widget.obscureText,
+          keyboardType: widget.textInputType,
           decoration: InputDecoration(
             border: InputBorder.none,
             errorBorder: InputBorder.none,
@@ -34,10 +55,10 @@ class ImpaktfullInputField extends StatelessWidget {
             focusedBorder: InputBorder.none,
             disabledBorder: InputBorder.none,
             focusedErrorBorder: InputBorder.none,
-            hintText: hintText,
+            hintText: widget.hintText,
             hintStyle: theme.textStyles.onCardSecondary.bodyInput,
           ),
-          onChanged: onChanged,
+          onChanged: widget.onChanged,
         ),
       ),
     );

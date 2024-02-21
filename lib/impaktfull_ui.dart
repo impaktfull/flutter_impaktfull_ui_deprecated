@@ -5,6 +5,7 @@ export 'src/components/bottom_navigation/impaktfull_bottom_navigation_item.dart'
 export 'src/components/checkbox/impaktfull_checkbox.dart';
 export 'src/components/date_picker/impaktfull_date_picker.dart';
 export 'src/components/date_time_picker/impaktfull_date_time_picker.dart';
+export 'src/components/date_time_range_picker/impaktfull_date_time_range_picker.dart';
 export 'src/components/input_field/impaktfull_input_field.dart';
 export 'src/components/icon/impaktfull_svg_icon.dart';
 export 'src/components/listview/impaktfull_listview.dart';

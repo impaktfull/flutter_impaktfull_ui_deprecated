@@ -1,6 +1,14 @@
+# 0.0.15
+
+## Feat
+
+- Added ImpaktfullDateTimePickerDialog
+- Added ImpaktfullDateTimeRangePicker
+- Added ImpaktfullDialog
+
 # 0.0.14
 
-# Feat
+## Feat
 
 - Added ImpaktfullRadioButton
 - Added ImpaktfullDatePicker
@@ -9,62 +17,62 @@
 - Added ImpaktfullDateTimePicker
 - Added borderWidth to ImpaktfullTheme.ImpaktfullDimens
 
-# Fix
+## Fix
 
 - ImpaktfullSwitchListItem removed isSelected
 
 # 0.0.13
 
-# Fix
+## Fix
 
 - Bug in ImpaktfullListItem where trailing widget was not shown correctly
 
 # 0.0.12
 
-# Feat
+## Feat
 
 - ImpaktfullSwitch & ImpaktfullSwitchListItem added
 
 # 0.0.11
 
-# Fix
+## Fix
 
 - Assets not loading in Android
 
 # 0.0.10
 
-# Fix
+## Fix
 
 - SvgIcon pixelated (because of flutter_svg/Impeller bug)
 
 # 0.0.9
 
-# Fix
+## Fix
 
 - Documentation
 - obscureText on ImpaktfullInputField
 
 # 0.0.8
 
-# Fix
+## Fix
 
 - ImpaktfullNavBar height & moved to a new component
 
 # 0.0.7
 
-# Feat
+## Feat
 
 - ImpaktfullTabBar & ImpaktfullTabBarItem added
 
 # 0.0.6
 
-# Feat
+## Feat
 
 - ImpaktfullInputField added
 
 # 0.0.5
 
-# Feat
+## Feat
 
 - ImpaktfullBottomNavigationItem & ImpaktfullBottomNavigation added
 

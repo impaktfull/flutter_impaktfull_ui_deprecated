@@ -9,6 +9,17 @@ class ImpaktfullDateTimePicker extends StatelessWidget {
   final DateTime? initialDate;
   final bool vertical;
 
+  const ImpaktfullDateTimePicker({
+    required this.selectedDateTime,
+    required this.vertical,
+    required this.onChanged,
+    this.dateTitle,
+    this.dateTimeTitle,
+    this.timeTitle,
+    this.initialDate,
+    super.key,
+  });
+
   const ImpaktfullDateTimePicker.vertical({
     required this.selectedDateTime,
     required this.onChanged,
@@ -34,6 +45,7 @@ class ImpaktfullDateTimePicker extends StatelessWidget {
     return ImpaktfullThemeLocalizer(
       builder: (context, theme) {
         final datePicker = Container(
+          padding: EdgeInsets.only(right: vertical ? 0 : 8),
           decoration: BoxDecoration(
             border: vertical
                 ? null
@@ -58,9 +70,7 @@ class ImpaktfullDateTimePicker extends StatelessWidget {
               ),
             ],
             ImpaktfullAutoLayout(
-              orientation: vertical
-                  ? ImpaktfullAutoLayoutOrientation.vertical
-                  : ImpaktfullAutoLayoutOrientation.horizontal,
+              orientation: vertical ? ImpaktfullAutoLayoutOrientation.vertical : ImpaktfullAutoLayoutOrientation.horizontal,
               spacing: 8,
               children: [
                 if (vertical) ...[
@@ -81,9 +91,7 @@ class ImpaktfullDateTimePicker extends StatelessWidget {
                   ),
                 ],
                 ImpaktfullTimePicker(
-                  selectedTime: selectedDateTime != null
-                      ? TimeOfDay.fromDateTime(selectedDateTime!)
-                      : TimeOfDay.now(),
+                  selectedTime: selectedDateTime != null ? TimeOfDay.fromDateTime(selectedDateTime!) : TimeOfDay.now(),
                   onChanged: _onTimeOfDayChanged,
                 ),
               ],
@@ -95,9 +103,7 @@ class ImpaktfullDateTimePicker extends StatelessWidget {
   }
 
   void _onDateChanged(DateTime date) {
-    final time = selectedDateTime != null
-        ? TimeOfDay.fromDateTime(selectedDateTime!)
-        : TimeOfDay.now();
+    final time = selectedDateTime != null ? TimeOfDay.fromDateTime(selectedDateTime!) : TimeOfDay.now();
     onChanged(
       DateTime(
         date.year,
