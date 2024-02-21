@@ -43,13 +43,17 @@ class ImpaktfullApp extends StatelessWidget {
         colorBuilder: (snacky) {
           switch (snacky.type) {
             case SnackyType.error:
-              return theme.colors.error;
+              return Color.lerp(theme.colors.error, Colors.white, 0.8) ??
+                  theme.colors.error;
             case SnackyType.info:
-              return theme.colors.info;
+              return Color.lerp(theme.colors.info, Colors.white, 0.8) ??
+                  theme.colors.info;
             case SnackyType.success:
-              return theme.colors.success;
+              return Color.lerp(theme.colors.success, Colors.white, 0.8) ??
+                  theme.colors.success;
             case SnackyType.warning:
-              return theme.colors.warning;
+              return Color.lerp(theme.colors.warning, Colors.white, 0.8) ??
+                  theme.colors.warning;
           }
         },
         borderBuilder: (snacky) {
