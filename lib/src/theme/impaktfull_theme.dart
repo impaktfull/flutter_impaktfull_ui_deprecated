@@ -25,6 +25,7 @@ class ImpaktfullTheme {
           canvas: ImpaktfullBranding.canvas,
           card: ImpaktfullBranding.card,
           error: ImpaktfullBranding.error,
+          info: ImpaktfullBranding.info,
           success: ImpaktfullBranding.success,
           warning: ImpaktfullBranding.warning,
           separator: ImpaktfullBranding.divider,
@@ -88,6 +89,7 @@ class ImpaktfullTheme {
           canvas: ImpaktfullBranding.canvas,
           card: ImpaktfullBranding.card,
           error: ImpaktfullBranding.error,
+          info: ImpaktfullBranding.info,
           success: ImpaktfullBranding.success,
           warning: ImpaktfullBranding.warning,
           separator: ImpaktfullBranding.divider,
@@ -160,6 +162,7 @@ class ImpaktfullColorTheme {
   final Color onAccent1;
   final Color onAccent2;
   final Color error;
+  final Color info;
   final Color success;
   final Color warning;
   final Color separator;
@@ -175,6 +178,7 @@ class ImpaktfullColorTheme {
     required this.canvas,
     required this.card,
     required this.error,
+    required this.info,
     required this.success,
     required this.warning,
     required this.separator,

@@ -1,3 +1,9 @@
+# 0.0.18
+
+## Fix
+
+- Snacky config to use the correct colors
+
 # 0.0.17
 
 ## Feat

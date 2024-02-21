@@ -40,6 +40,43 @@ class ImpaktfullApp extends StatelessWidget {
     return SnackyConfiguratorWidget(
       snackyBuilder: SimpleSnackyBuilder(
         borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
+        colorBuilder: (snacky) {
+          switch (snacky.type) {
+            case SnackyType.error:
+              return theme.colors.error;
+            case SnackyType.info:
+              return theme.colors.info;
+            case SnackyType.success:
+              return theme.colors.success;
+            case SnackyType.warning:
+              return theme.colors.warning;
+          }
+        },
+        borderBuilder: (snacky) {
+          final width = theme.dimens.borderWidth;
+          switch (snacky.type) {
+            case SnackyType.error:
+              return Border.all(
+                color: theme.colors.error,
+                width: width,
+              );
+            case SnackyType.info:
+              return Border.all(
+                color: theme.colors.info,
+                width: width,
+              );
+            case SnackyType.success:
+              return Border.all(
+                color: theme.colors.success,
+                width: width,
+              );
+            case SnackyType.warning:
+              return Border.all(
+                color: theme.colors.warning,
+                width: width,
+              );
+          }
+        },
       ),
       app: MaterialApp(
         title: title,

@@ -21,6 +21,7 @@ class ImpaktfullBranding {
 
   static const error = Color(0xFFC23F3F);
   static const success = Color(0xFFA9C23F);
+  static const info = Color(0xFF7D64F2);
   static const warning = Color(0xFFC28E3F);
   static const divider = Color(0x26425563);
 
