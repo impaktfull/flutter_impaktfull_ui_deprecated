@@ -59,10 +59,12 @@ class DatePickerItem extends StatelessWidget {
 
   TextStyle _getTextStyle(ImpaktfullTheme theme) {
     if (_isSelected()) return theme.textStyles.onPrimary.body;
-    if (type == ImpaktfullDatePickerType.months)
+    if (type == ImpaktfullDatePickerType.months) {
       return theme.textStyles.onCanvasPrimary.body;
-    if (type == ImpaktfullDatePickerType.years)
+    }
+    if (type == ImpaktfullDatePickerType.years) {
       return theme.textStyles.onCanvasPrimary.body;
+    }
     return dateTime.isSameMonth(pageDate)
         ? theme.textStyles.onCanvasPrimary.body
         : theme.textStyles.onCanvasSecondary.body;

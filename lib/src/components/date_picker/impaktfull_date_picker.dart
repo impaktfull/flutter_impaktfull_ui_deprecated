@@ -47,10 +47,12 @@ class _ImpaktfullDatePickerState extends State<ImpaktfullDatePicker> {
   }
 
   Iterable<DateTime> _datesForRow(int i) {
-    if (_type == ImpaktfullDatePickerType.years)
+    if (_type == ImpaktfullDatePickerType.years) {
       return _dates.getRange(2 * i, 2 * (i + 1));
-    if (_type == ImpaktfullDatePickerType.months)
+    }
+    if (_type == ImpaktfullDatePickerType.months) {
       return _dates.getRange(3 * i, 3 * (i + 1));
+    }
     return _dates.getRange(7 * i, 7 * (i + 1));
   }
 
