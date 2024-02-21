@@ -58,7 +58,9 @@ class ImpaktfullDateTimePicker extends StatelessWidget {
               ),
             ],
             ImpaktfullAutoLayout(
-              orientation: vertical ? ImpaktfullAutoLayoutOrientation.vertical : ImpaktfullAutoLayoutOrientation.horizontal,
+              orientation: vertical
+                  ? ImpaktfullAutoLayoutOrientation.vertical
+                  : ImpaktfullAutoLayoutOrientation.horizontal,
               spacing: 8,
               children: [
                 if (vertical) ...[
@@ -79,7 +81,9 @@ class ImpaktfullDateTimePicker extends StatelessWidget {
                   ),
                 ],
                 ImpaktfullTimePicker(
-                  selectedTime: selectedDateTime != null ? TimeOfDay.fromDateTime(selectedDateTime!) : TimeOfDay.now(),
+                  selectedTime: selectedDateTime != null
+                      ? TimeOfDay.fromDateTime(selectedDateTime!)
+                      : TimeOfDay.now(),
                   onChanged: _onTimeOfDayChanged,
                 ),
               ],
@@ -91,7 +95,9 @@ class ImpaktfullDateTimePicker extends StatelessWidget {
   }
 
   void _onDateChanged(DateTime date) {
-    final time = selectedDateTime != null ? TimeOfDay.fromDateTime(selectedDateTime!) : TimeOfDay.now();
+    final time = selectedDateTime != null
+        ? TimeOfDay.fromDateTime(selectedDateTime!)
+        : TimeOfDay.now();
     onChanged(
       DateTime(
         date.year,

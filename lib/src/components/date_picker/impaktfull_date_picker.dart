@@ -47,8 +47,10 @@ class _ImpaktfullDatePickerState extends State<ImpaktfullDatePicker> {
   }
 
   Iterable<DateTime> _datesForRow(int i) {
-    if (_type == ImpaktfullDatePickerType.years) return _dates.getRange(2 * i, 2 * (i + 1));
-    if (_type == ImpaktfullDatePickerType.months) return _dates.getRange(3 * i, 3 * (i + 1));
+    if (_type == ImpaktfullDatePickerType.years)
+      return _dates.getRange(2 * i, 2 * (i + 1));
+    if (_type == ImpaktfullDatePickerType.months)
+      return _dates.getRange(3 * i, 3 * (i + 1));
     return _dates.getRange(7 * i, 7 * (i + 1));
   }
 
@@ -78,19 +80,25 @@ class _ImpaktfullDatePickerState extends State<ImpaktfullDatePicker> {
     final dates = <DateTime>[];
     if (_type == ImpaktfullDatePickerType.days) {
       final daysPageDateMonth = pageDate.getDaysInMonth();
-      final days = List.generate(daysPageDateMonth, (index) => pageDate.copyWith(day: index + 1));
+      final days = List.generate(
+          daysPageDateMonth, (index) => pageDate.copyWith(day: index + 1));
       final firstWeekday = days.first.weekday;
       if (firstWeekday != 0) {
         final previousMonth = pageDate.getPreviousMonth();
         final daysPreviousMonth = previousMonth.getDaysInMonth();
-        final daysBeforeMonth = List.generate(firstWeekday - 1, (index) => previousMonth.copyWith(day: daysPreviousMonth - index)).reversed;
+        final daysBeforeMonth = List.generate(
+                firstWeekday - 1,
+                (index) =>
+                    previousMonth.copyWith(day: daysPreviousMonth - index))
+            .reversed;
         dates.addAll(daysBeforeMonth);
       }
       dates.addAll(days);
       final lastWeekday = days.last.weekday;
       if (lastWeekday != 7) {
         final nextMonth = pageDate.getNextMonth();
-        final daysAfterMonth = List.generate(7 - lastWeekday, (index) => nextMonth.copyWith(day: index + 1));
+        final daysAfterMonth = List.generate(
+            7 - lastWeekday, (index) => nextMonth.copyWith(day: index + 1));
         dates.addAll(daysAfterMonth);
       }
     } else if (_type == ImpaktfullDatePickerType.months) {
@@ -205,7 +213,8 @@ class _ImpaktfullDatePickerState extends State<ImpaktfullDatePicker> {
   }
 
   void _onPreviousTapped() {
-    if (_type == ImpaktfullDatePickerType.months || _type == ImpaktfullDatePickerType.years) {
+    if (_type == ImpaktfullDatePickerType.months ||
+        _type == ImpaktfullDatePickerType.years) {
       _pageDate = DateTime(_pageDate.year - 10, _pageDate.month, _pageDate.day);
     } else if (_type == ImpaktfullDatePickerType.days) {
       _pageDate = DateTime(_pageDate.year, _pageDate.month - 1, _pageDate.day);
@@ -214,7 +223,8 @@ class _ImpaktfullDatePickerState extends State<ImpaktfullDatePicker> {
   }
 
   void _onNextTapped() {
-    if (_type == ImpaktfullDatePickerType.months || _type == ImpaktfullDatePickerType.years) {
+    if (_type == ImpaktfullDatePickerType.months ||
+        _type == ImpaktfullDatePickerType.years) {
       _pageDate = DateTime(_pageDate.year + 10, _pageDate.month, _pageDate.day);
     } else if (_type == ImpaktfullDatePickerType.days) {
       _pageDate = DateTime(_pageDate.year, _pageDate.month + 1, _pageDate.day);
@@ -268,7 +278,8 @@ class _ImpaktfullDatePickerState extends State<ImpaktfullDatePicker> {
 }
 
 class ImpaktfullDatePickerLocalizations {
-  static const ImpaktfullDatePickerLocalizations defaults = ImpaktfullDatePickerLocalizations(
+  static const ImpaktfullDatePickerLocalizations defaults =
+      ImpaktfullDatePickerLocalizations(
     months: ImpaktfullDatePickerMonthLocalizations(
       january: 'January',
       february: 'February',

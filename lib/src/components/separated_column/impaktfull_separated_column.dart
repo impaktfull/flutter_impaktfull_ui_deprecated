@@ -26,8 +26,11 @@ class ImpaktfullSeparatedColumn extends StatelessWidget {
           ],
           Container(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
-              color: type == ImpaktfullSeparatorType.canvas ? Colors.transparent : theme.colors.card,
+              borderRadius:
+                  BorderRadius.circular(theme.dimens.generalBorderRadius),
+              color: type == ImpaktfullSeparatorType.canvas
+                  ? Colors.transparent
+                  : theme.colors.card,
             ),
             child: Column(
               children: children.isEmpty

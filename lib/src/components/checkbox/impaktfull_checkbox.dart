@@ -24,7 +24,8 @@ class ImpaktfullCheckBox extends StatelessWidget {
                 Positioned.fill(
                   child: Container(
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(theme.dimens.switchThumbBorderRadius),
+                      borderRadius: BorderRadius.circular(
+                          theme.dimens.switchThumbBorderRadius),
                       border: Border.all(
                         color: theme.colors.accent2,
                         width: theme.dimens.borderWidth,
@@ -40,7 +41,8 @@ class ImpaktfullCheckBox extends StatelessWidget {
                     opacity: value ? 1 : 0,
                     child: Container(
                       decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(theme.dimens.switchThumbBorderRadius),
+                        borderRadius: BorderRadius.circular(
+                            theme.dimens.switchThumbBorderRadius),
                         color: theme.colors.accent1,
                         border: Border.all(
                           color: theme.colors.accent1,
@@ -58,7 +60,7 @@ class ImpaktfullCheckBox extends StatelessWidget {
                     child: Center(
                       child: ImpaktfullSvgIcon(
                         asset: theme.assets.icons.check,
-                          color: theme.colors.onAccent1,
+                        color: theme.colors.onAccent1,
                         size: 20,
                       ),
                     ),

@@ -29,9 +29,11 @@ class DatePickerItem extends StatelessWidget {
         onTap: onTap,
         child: Container(
           decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
+            borderRadius:
+                BorderRadius.circular(theme.dimens.generalBorderRadius),
             border: Border.all(
-              color: _isHighlighted() ? theme.colors.accent1 : Colors.transparent,
+              color:
+                  _isHighlighted() ? theme.colors.accent1 : Colors.transparent,
               width: theme.dimens.borderWidth,
             ),
             color: _isSelected()
@@ -57,9 +59,13 @@ class DatePickerItem extends StatelessWidget {
 
   TextStyle _getTextStyle(ImpaktfullTheme theme) {
     if (_isSelected()) return theme.textStyles.onPrimary.body;
-    if (type == ImpaktfullDatePickerType.months) return theme.textStyles.onCanvasPrimary.body;
-    if (type == ImpaktfullDatePickerType.years) return theme.textStyles.onCanvasPrimary.body;
-    return dateTime.isSameMonth(pageDate) ? theme.textStyles.onCanvasPrimary.body : theme.textStyles.onCanvasSecondary.body;
+    if (type == ImpaktfullDatePickerType.months)
+      return theme.textStyles.onCanvasPrimary.body;
+    if (type == ImpaktfullDatePickerType.years)
+      return theme.textStyles.onCanvasPrimary.body;
+    return dateTime.isSameMonth(pageDate)
+        ? theme.textStyles.onCanvasPrimary.body
+        : theme.textStyles.onCanvasSecondary.body;
   }
 
   String _getText() {

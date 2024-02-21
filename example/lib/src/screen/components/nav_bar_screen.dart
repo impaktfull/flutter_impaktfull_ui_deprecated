@@ -37,7 +37,8 @@ class NavBarScreen extends StatelessWidget {
               ],
             ),
             ImpaktfullNavBar(
-              title: 'Title very long title with extra text that does not fit on 1 or 2 lines',
+              title:
+                  'Title very long title with extra text that does not fit on 1 or 2 lines',
               subtitle: 'Subtitle',
               onBackTapped: () => SnackyUtil.show('Back tapped'),
               actions: [

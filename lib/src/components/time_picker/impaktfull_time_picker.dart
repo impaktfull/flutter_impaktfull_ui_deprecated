@@ -25,12 +25,14 @@ class ImpaktfullTimePicker extends StatelessWidget {
                 children: [
                   Expanded(
                     child: ListWheelScrollView.useDelegate(
-                      itemExtent: theme.textStyles.onCanvasPrimary.body.fontSize! * 2,
+                      itemExtent:
+                          theme.textStyles.onCanvasPrimary.body.fontSize! * 2,
                       perspective: 0.0005,
                       overAndUnderCenterOpacity: 0.6,
                       magnification: 1.25,
                       useMagnifier: true,
-                      controller: FixedExtentScrollController(initialItem: selectedTime.hour),
+                      controller: FixedExtentScrollController(
+                          initialItem: selectedTime.hour),
                       physics: const FixedExtentScrollPhysics(),
                       onSelectedItemChanged: (value) => onChanged(
                         TimeOfDay(
@@ -59,12 +61,14 @@ class ImpaktfullTimePicker extends StatelessWidget {
                   ),
                   Expanded(
                     child: ListWheelScrollView.useDelegate(
-                      itemExtent: theme.textStyles.onCanvasPrimary.body.fontSize! * 2,
+                      itemExtent:
+                          theme.textStyles.onCanvasPrimary.body.fontSize! * 2,
                       perspective: 0.0005,
                       overAndUnderCenterOpacity: 0.6,
                       magnification: 1.25,
                       useMagnifier: true,
-                      controller: FixedExtentScrollController(initialItem: selectedTime.minute),
+                      controller: FixedExtentScrollController(
+                          initialItem: selectedTime.minute),
                       physics: const FixedExtentScrollPhysics(),
                       onSelectedItemChanged: (value) => onChanged(
                         TimeOfDay(
@@ -90,14 +94,16 @@ class ImpaktfullTimePicker extends StatelessWidget {
               Center(
                 child: IgnorePointer(
                   child: Container(
-                    height: theme.textStyles.onCanvasPrimary.body.fontSize! * 2.5,
+                    height:
+                        theme.textStyles.onCanvasPrimary.body.fontSize! * 2.5,
                     width: double.infinity,
                     decoration: BoxDecoration(
                       border: Border.all(
                         color: theme.colors.accent1,
                         width: theme.dimens.borderWidth,
                       ),
-                      borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
+                      borderRadius: BorderRadius.circular(
+                          theme.dimens.generalBorderRadius),
                       color: theme.colors.accent1.withOpacity(0.05),
                     ),
                   ),
