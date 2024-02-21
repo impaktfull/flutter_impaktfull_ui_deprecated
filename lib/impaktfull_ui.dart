@@ -11,6 +11,7 @@ export 'src/components/icon/impaktfull_svg_icon.dart';
 export 'src/components/listview/impaktfull_listview.dart';
 export 'src/components/list_item/impaktfull_list_item_title.dart';
 export 'src/components/list_item/impaktfull_list_item.dart';
+export 'src/components/list_item/impaktfull_radio_button_list_item.dart';
 export 'src/components/list_item/impaktfull_selectable_list_item.dart';
 export 'src/components/list_item/impaktfull_switch_list_item.dart';
 export 'src/components/loading/impaktfull_loading.dart';
