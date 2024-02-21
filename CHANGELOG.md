@@ -1,3 +1,9 @@
+# 0.0.16
+
+## Fix
+
+- Version bump intl
+
 # 0.0.15
 
 ## Feat
