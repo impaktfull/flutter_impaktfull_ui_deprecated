@@ -3,8 +3,7 @@ import 'package:impaktfull_ui/src/theme/impaktfull_branding.dart';
 import 'package:impaktfull_ui/src/theme/theme_configurator.dart';
 
 class ImpaktfullTheme {
-  bool get useDarkStatusBar =>
-      (theme.colors.primary.computeLuminance() > 0.179) ? true : false;
+  bool get useDarkStatusBar => (theme.colors.primary.computeLuminance() > 0.179) ? true : false;
 
   static ImpaktfullTheme impaktfullBranding({
     ImpaktfullShadowTheme? shadows,
@@ -44,19 +43,12 @@ class ImpaktfullTheme {
               ),
             ),
         textStyles: ImpaktfullTextStylesTheme(
-          onCanvasPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnCanvasPrimary, ImpaktfullBranding.font),
-          onCanvasSecondary: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnCanvasSecondary,
-              ImpaktfullBranding.font),
-          onPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnPrimary, ImpaktfullBranding.font),
-          onAccent1: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnAccent1, ImpaktfullBranding.font),
-          onCardPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnCardPrimary, ImpaktfullBranding.font),
-          onCardSecondary: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnCardSecondary, ImpaktfullBranding.font),
+          onCanvasPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnCanvasPrimary, ImpaktfullBranding.font),
+          onCanvasSecondary: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnCanvasSecondary, ImpaktfullBranding.font),
+          onPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnPrimary, ImpaktfullBranding.font),
+          onAccent1: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnAccent1, ImpaktfullBranding.font),
+          onCardPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnCardPrimary, ImpaktfullBranding.font),
+          onCardSecondary: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnCardSecondary, ImpaktfullBranding.font),
         ),
         assets: assets ?? ImpaktfullAssets.getDefaults(),
         dimens: dimens ?? ImpaktfullDimens.getDefaults(),
@@ -105,19 +97,12 @@ class ImpaktfullTheme {
               ),
             ),
         textStyles: ImpaktfullTextStylesTheme(
-          onCanvasPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnCanvasPrimary, ImpaktfullBranding.font),
-          onCanvasSecondary: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnCanvasSecondary,
-              ImpaktfullBranding.font),
-          onPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnPrimary, ImpaktfullBranding.font),
-          onAccent1: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnAccent1, ImpaktfullBranding.font),
-          onCardPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnCardPrimary, ImpaktfullBranding.font),
-          onCardSecondary: ImpaktfullTextStyleTheme.getTextStyleTheme(
-              ImpaktfullBranding.textOnCardSecondary, ImpaktfullBranding.font),
+          onCanvasPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnCanvasPrimary, ImpaktfullBranding.font),
+          onCanvasSecondary: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnCanvasSecondary, ImpaktfullBranding.font),
+          onPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnPrimary, ImpaktfullBranding.font),
+          onAccent1: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnAccent1, ImpaktfullBranding.font),
+          onCardPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnCardPrimary, ImpaktfullBranding.font),
+          onCardSecondary: ImpaktfullTextStyleTheme.getTextStyleTheme(ImpaktfullBranding.textOnCardSecondary, ImpaktfullBranding.font),
         ),
         assets: assets ?? ImpaktfullAssets.getDefaults(),
         dimens: dimens ?? ImpaktfullDimens.getDefaults(),
@@ -222,51 +207,14 @@ class ImpaktfullTextStyleTheme {
     required this.bodyInput,
   });
 
-  static ImpaktfullTextStyleTheme getTextStyleTheme(
-          Color color, String fontFamily) =>
-      ImpaktfullTextStyleTheme(
-        title: TextStyle(
-            fontSize: 16,
-            height: 1.2,
-            fontWeight: FontWeight.bold,
-            fontFamily: fontFamily,
-            color: color),
-        button: TextStyle(
-            fontSize: 16,
-            height: 1.2,
-            fontWeight: FontWeight.bold,
-            fontFamily: fontFamily,
-            color: color),
-        titleSmall: TextStyle(
-            fontSize: 14,
-            height: 1.2,
-            fontWeight: FontWeight.bold,
-            fontFamily: fontFamily,
-            color: color),
-        listItemTitle: TextStyle(
-            fontSize: 16,
-            height: 1.2,
-            fontWeight: FontWeight.w600,
-            fontFamily: fontFamily,
-            color: color),
-        bodyInput: TextStyle(
-            fontSize: 16,
-            height: 1.2,
-            fontWeight: FontWeight.normal,
-            fontFamily: fontFamily,
-            color: color),
-        body: TextStyle(
-            fontSize: 13,
-            height: 1.2,
-            fontWeight: FontWeight.normal,
-            fontFamily: fontFamily,
-            color: color),
-        smallBody: TextStyle(
-            fontSize: 11,
-            height: 1.2,
-            fontWeight: FontWeight.normal,
-            fontFamily: fontFamily,
-            color: color),
+  static ImpaktfullTextStyleTheme getTextStyleTheme(Color color, String fontFamily) => ImpaktfullTextStyleTheme(
+        title: TextStyle(fontSize: 16, height: 1.2, fontWeight: FontWeight.bold, fontFamily: fontFamily, color: color),
+        button: TextStyle(fontSize: 16, height: 1.2, fontWeight: FontWeight.bold, fontFamily: fontFamily, color: color),
+        titleSmall: TextStyle(fontSize: 14, height: 1.2, fontWeight: FontWeight.bold, fontFamily: fontFamily, color: color),
+        listItemTitle: TextStyle(fontSize: 16, height: 1.2, fontWeight: FontWeight.w600, fontFamily: fontFamily, color: color),
+        bodyInput: TextStyle(fontSize: 16, height: 1.2, fontWeight: FontWeight.normal, fontFamily: fontFamily, color: color),
+        body: TextStyle(fontSize: 13, height: 1.2, fontWeight: FontWeight.normal, fontFamily: fontFamily, color: color),
+        smallBody: TextStyle(fontSize: 11, height: 1.2, fontWeight: FontWeight.normal, fontFamily: fontFamily, color: color),
       );
 }
 
@@ -334,6 +282,9 @@ class ImpaktfullDimens {
   final double switchBorderRadius;
   final double switchThumbBorderRadius;
 
+  /// Borders
+  final double borderWidth;
+
   const ImpaktfullDimens({
     required this.generalBorderRadius,
     required this.listViewHorizontalPadding,
@@ -341,6 +292,7 @@ class ImpaktfullDimens {
     required this.separatorHorizontalPadding,
     required this.switchBorderRadius,
     required this.switchThumbBorderRadius,
+    required this.borderWidth,
   });
 
   static ImpaktfullDimens getDefaults() => const ImpaktfullDimens(
@@ -350,6 +302,7 @@ class ImpaktfullDimens {
         separatorHorizontalPadding: 16,
         switchBorderRadius: 8,
         switchThumbBorderRadius: 4,
+        borderWidth: 2,
       );
 }
 

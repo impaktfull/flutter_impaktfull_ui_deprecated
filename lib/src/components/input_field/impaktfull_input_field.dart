@@ -4,11 +4,13 @@ class ImpaktfullInputField extends StatelessWidget {
   final ValueChanged<String> onChanged;
   final String? hintText;
   final bool obscureText;
+  final TextInputType textInputType;
 
   const ImpaktfullInputField({
     required this.onChanged,
     this.hintText,
     this.obscureText = false,
+    this.textInputType = TextInputType.text,
     super.key,
   });
 
@@ -24,6 +26,7 @@ class ImpaktfullInputField extends StatelessWidget {
         child: TextField(
           cursorColor: theme.colors.accent1,
           obscureText: obscureText,
+          keyboardType: textInputType,
           decoration: InputDecoration(
             border: InputBorder.none,
             errorBorder: InputBorder.none,

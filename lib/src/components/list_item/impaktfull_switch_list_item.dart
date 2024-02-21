@@ -10,11 +10,9 @@ class ImpaktfullSwitchListItem extends StatelessWidget {
   final String? leadingAsset;
   final bool value;
   final ValueChanged<bool> onChanged;
-  final bool isSelected;
 
   const ImpaktfullSwitchListItem({
     required this.title,
-    required this.isSelected,
     required this.value,
     required this.onChanged,
     this.subTitle,

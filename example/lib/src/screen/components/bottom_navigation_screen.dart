@@ -1,9 +1,16 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
 
-class BottomNavigationScreen extends StatelessWidget {
+class BottomNavigationScreen extends StatefulWidget {
   const BottomNavigationScreen({
     super.key,
   });
+
+  @override
+  State<BottomNavigationScreen> createState() => _BottomNavigationScreenState();
+}
+
+class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
+  var _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -18,20 +25,20 @@ class BottomNavigationScreen extends StatelessWidget {
                 ImpaktfullBottomNavigationItem(
                   label: 'Label 1',
                   svgIcon: theme.assets.icons.chevronRight,
-                  isSelected: false,
-                  onTap: () {},
+                  isSelected: _selectedIndex == 0,
+                  onTap: () => setState(() => _selectedIndex = 0),
                 ),
                 ImpaktfullBottomNavigationItem(
                   label: 'Label 2',
                   svgIcon: theme.assets.icons.chevronRight,
-                  isSelected: true,
-                  onTap: () {},
+                  isSelected: _selectedIndex == 1,
+                  onTap: () => setState(() => _selectedIndex = 1),
                 ),
                 ImpaktfullBottomNavigationItem(
                   label: 'Label 3',
                   svgIcon: theme.assets.icons.chevronRight,
-                  isSelected: false,
-                  onTap: () {},
+                  isSelected: _selectedIndex == 2,
+                  onTap: () => setState(() => _selectedIndex = 2),
                 ),
               ],
             ),

@@ -1,5 +1,7 @@
-import 'package:impaktfull_ui/impaktfull_ui.dart';
+import 'package:flutter/material.dart';
+import 'package:impaktfull_ui/src/components/auto_layout/impaktfull_auto_layout.dart';
 import 'package:impaktfull_ui/src/components/screen/impaktfull_navbar_action.dart';
+import 'package:impaktfull_ui/src/theme/impaktfull_theme_localizer.dart';
 
 class ImpaktfullNavBar extends StatelessWidget {
   final String? title;
@@ -43,24 +45,27 @@ class ImpaktfullNavBar extends StatelessWidget {
                     ],
                     const SizedBox(width: 8),
                     Expanded(
-                      child: ImpaktfullAutoLayout.vertical(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Text(
-                            title!,
-                            style: theme.textStyles.onPrimary.title,
-                          ),
-                          if (subtitle != null) ...[
-                            const SizedBox(height: 2),
-                            Opacity(
-                              opacity: 0.5,
-                              child: Text(
-                                subtitle!,
-                                style: theme.textStyles.onPrimary.smallBody,
-                              ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 8),
+                        child: ImpaktfullAutoLayout.vertical(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              title!,
+                              style: theme.textStyles.onPrimary.title,
                             ),
-                          ]
-                        ],
+                            if (subtitle != null) ...[
+                              const SizedBox(height: 2),
+                              Opacity(
+                                opacity: 0.5,
+                                child: Text(
+                                  subtitle!,
+                                  style: theme.textStyles.onPrimary.smallBody,
+                                ),
+                              ),
+                            ]
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(width: actions.isEmpty ? 0 : 8),

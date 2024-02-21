@@ -1,30 +1,30 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
 
-class SwitchScreen extends StatefulWidget {
-  const SwitchScreen({
+class CheckboxScreen extends StatefulWidget {
+  const CheckboxScreen({
     super.key,
   });
 
   @override
-  State<SwitchScreen> createState() => _SwitchScreenState();
+  State<CheckboxScreen> createState() => _CheckboxScreenState();
 }
 
-class _SwitchScreenState extends State<SwitchScreen> {
-  var value = false;
+class _CheckboxScreenState extends State<CheckboxScreen> {
+  var _value = true;
 
   @override
   Widget build(BuildContext context) {
     return ImpaktfullThemeLocalizer(
       builder: (context, theme) => ImpaktfullScreen(
-        title: 'Components - Switch',
+        title: 'Components - Checkbox',
         onBackTapped: () => Navigator.of(context).pop(),
         child: ImpaktfullListView(
           spacing: 8,
           children: [
-            ImpaktfullSwitch(
-              value: value,
+            ImpaktfullCheckBox(
+              value: _value,
               onChanged: (value) {
-                setState(() => this.value = value);
+                setState(() => _value = value);
               },
             ),
           ],

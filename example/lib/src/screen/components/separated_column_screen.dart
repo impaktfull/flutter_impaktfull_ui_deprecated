@@ -33,6 +33,28 @@ class SeparatedColumnScreen extends StatelessWidget {
                 Text('Item 5'),
               ],
             ),
+            ImpaktfullSeparatedColumn(
+              title: 'Some title',
+              type: ImpaktfullSeparatorType.canvas,
+              children: [
+                Text('Item 1'),
+                Text('Item 2'),
+                Text('Item 3'),
+                Text('Item 4'),
+                Text('Item 5'),
+              ],
+            ),
+            ImpaktfullSeparatedColumn(
+              title: 'Some title',
+              type: ImpaktfullSeparatorType.card,
+              children: [
+                Text('Item 1'),
+                Text('Item 2'),
+                Text('Item 3'),
+                Text('Item 4'),
+                Text('Item 5'),
+              ],
+            ),
           ],
         ),
       ),
