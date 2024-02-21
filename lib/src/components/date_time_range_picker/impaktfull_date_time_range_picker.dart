@@ -27,10 +27,12 @@ class ImpaktfullDateTimeRangePicker extends StatefulWidget {
   });
 
   @override
-  State<ImpaktfullDateTimeRangePicker> createState() => _ImpaktfullDateTimeRangePickerState();
+  State<ImpaktfullDateTimeRangePicker> createState() =>
+      _ImpaktfullDateTimeRangePickerState();
 }
 
-class _ImpaktfullDateTimeRangePickerState extends State<ImpaktfullDateTimeRangePicker> {
+class _ImpaktfullDateTimeRangePickerState
+    extends State<ImpaktfullDateTimeRangePicker> {
   @override
   Widget build(BuildContext context) {
     return ImpaktfullThemeLocalizer(
@@ -46,11 +48,16 @@ class _ImpaktfullDateTimeRangePickerState extends State<ImpaktfullDateTimeRangeP
                 onTap: _onTapStartDate,
                 child: Container(
                   color: Colors.transparent,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   child: Text(
-                    widget.startDate?.format(widget.dateFormat) ?? widget.startDateHint ?? '',
+                    widget.startDate?.format(widget.dateFormat) ??
+                        widget.startDateHint ??
+                        '',
                     textAlign: TextAlign.center,
-                    style: widget.endDate == null ? theme.textStyles.onCardSecondary.body : theme.textStyles.onCardPrimary.body,
+                    style: widget.endDate == null
+                        ? theme.textStyles.onCardSecondary.body
+                        : theme.textStyles.onCardPrimary.body,
                   ),
                 ),
               ),
@@ -60,11 +67,16 @@ class _ImpaktfullDateTimeRangePickerState extends State<ImpaktfullDateTimeRangeP
                 onTap: _onTapEndDate,
                 child: Container(
                   color: Colors.transparent,
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   child: Text(
-                    widget.endDate?.format(widget.dateFormat) ?? widget.endDateHint ?? '',
+                    widget.endDate?.format(widget.dateFormat) ??
+                        widget.endDateHint ??
+                        '',
                     textAlign: TextAlign.center,
-                    style: widget.endDate == null ? theme.textStyles.onCardSecondary.body : theme.textStyles.onCardPrimary.body,
+                    style: widget.endDate == null
+                        ? theme.textStyles.onCardSecondary.body
+                        : theme.textStyles.onCardPrimary.body,
                   ),
                 ),
               ),

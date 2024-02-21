@@ -35,79 +35,98 @@ class ComponentsScreen extends StatelessWidget {
           children: [
             ImpaktfullButton.accent(
               label: 'BottomNavigation',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const BottomNavigationScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const BottomNavigationScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'Buttons',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ButtonsScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ButtonsScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'Checkbox',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const CheckboxScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const CheckboxScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'DatePicker',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DatePickerScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const DatePickerScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'DateTimePicker',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DateTimePickerScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const DateTimePickerScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'DateTimeRangePicker',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const DateTimeRangePickerScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const DateTimeRangePickerScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'InputField',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const InputFieldScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const InputFieldScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'List Item Title',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListItemTitleScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ListItemTitleScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'List Item',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListItemScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ListItemScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'ListViews',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const ListViewScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ListViewScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'LoadingIndicator',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const LoadingIndicatorScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const LoadingIndicatorScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'NavBar',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const NavBarScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const NavBarScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'RadioButton',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const RadioButtonScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const RadioButtonScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'Selectable List Item',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SelectableListItemScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SelectableListItemScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'SeparatedColumn',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SeparatedColumnScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SeparatedColumnScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'Switch',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SwitchScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SwitchScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'Switch List Item',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SwitchListItemScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const SwitchListItemScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'Tabbar',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TabBarScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const TabBarScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'Time Picker',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const TimePickerScreen())),
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const TimePickerScreen())),
             ),
           ],
         ),

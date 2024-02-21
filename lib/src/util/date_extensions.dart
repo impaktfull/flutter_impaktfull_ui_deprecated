@@ -4,7 +4,8 @@ import 'package:intl/intl.dart';
 extension DateExtension on DateTime {
   String format(String format) => DateFormat(format).format(this);
 
-  String getLocalizedMonth(ImpaktfullDatePickerMonthLocalizations localizations) {
+  String getLocalizedMonth(
+      ImpaktfullDatePickerMonthLocalizations localizations) {
     switch (month) {
       case 1:
         return localizations.january;
@@ -47,9 +48,11 @@ extension DateExtension on DateTime {
 
   bool isSameMonth(DateTime date) => year == date.year && month == date.month;
 
-  bool isSameDay(DateTime date) => year == date.year && month == date.month && day == date.day;
+  bool isSameDay(DateTime date) =>
+      year == date.year && month == date.month && day == date.day;
 
-  DateTime dateOnly() => copyWith(hour: 0, minute: 0, second: 0, millisecond: 0, microsecond: 0);
+  DateTime dateOnly() =>
+      copyWith(hour: 0, minute: 0, second: 0, millisecond: 0, microsecond: 0);
 
   DateTime copyWith({
     int? year,
@@ -98,7 +101,20 @@ int _getDaysInMonth({
   required int month,
 }) {
   // Map to hold the number of days in each month for non-leap years.
-  Map<int, int> monthDays = {1: 31, 2: 28, 3: 31, 4: 30, 5: 31, 6: 30, 7: 31, 8: 31, 9: 30, 10: 31, 11: 30, 12: 31};
+  Map<int, int> monthDays = {
+    1: 31,
+    2: 28,
+    3: 31,
+    4: 30,
+    5: 31,
+    6: 30,
+    7: 31,
+    8: 31,
+    9: 30,
+    10: 31,
+    11: 30,
+    12: 31
+  };
 
   // Check for leap year and adjust February's days if necessary.
   if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {

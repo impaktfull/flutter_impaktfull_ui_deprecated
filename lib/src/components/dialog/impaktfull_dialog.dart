@@ -26,7 +26,8 @@ class ImpaktfullDialog extends StatelessWidget {
           padding: const EdgeInsets.all(16),
           decoration: BoxDecoration(
             color: theme.colors.card,
-            borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
+            borderRadius:
+                BorderRadius.circular(theme.dimens.generalBorderRadius),
           ),
           child: Column(
             mainAxisSize: MainAxisSize.min,
@@ -40,7 +41,8 @@ class ImpaktfullDialog extends StatelessWidget {
                     if (onSecondaryTapped != null) ...[
                       Expanded(
                         child: ImpaktfullButton.secondary(
-                          label: secondaryLabel ?? theme.localizations.current.generalLabelCancel,
+                          label: secondaryLabel ??
+                              theme.localizations.current.generalLabelCancel,
                           onTap: onSecondaryTapped,
                         ),
                       ),
@@ -48,7 +50,8 @@ class ImpaktfullDialog extends StatelessWidget {
                     if (onPrimaryTapped != null) ...[
                       Expanded(
                         child: ImpaktfullButton.primary(
-                          label: primaryLabel ?? theme.localizations.current.generalLabelAccept,
+                          label: primaryLabel ??
+                              theme.localizations.current.generalLabelAccept,
                           onTap: onPrimaryTapped,
                         ),
                       ),

@@ -6,7 +6,8 @@ class DateTimeRangePickerScreen extends StatefulWidget {
   });
 
   @override
-  State<DateTimeRangePickerScreen> createState() => _DateTimeRangePickerScreenState();
+  State<DateTimeRangePickerScreen> createState() =>
+      _DateTimeRangePickerScreenState();
 }
 
 class _DateTimeRangePickerScreenState extends State<DateTimeRangePickerScreen> {

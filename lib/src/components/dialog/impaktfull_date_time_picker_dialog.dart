@@ -32,10 +32,12 @@ class ImpaktfullDateTimePickerDialog extends StatefulWidget {
       );
 
   @override
-  State<ImpaktfullDateTimePickerDialog> createState() => _ImpaktfullDateTimePickerDialogState();
+  State<ImpaktfullDateTimePickerDialog> createState() =>
+      _ImpaktfullDateTimePickerDialogState();
 }
 
-class _ImpaktfullDateTimePickerDialogState extends State<ImpaktfullDateTimePickerDialog> {
+class _ImpaktfullDateTimePickerDialogState
+    extends State<ImpaktfullDateTimePickerDialog> {
   DateTime? _initialDateTime;
   DateTime? _selectedDateTime;
   @override
@@ -49,7 +51,8 @@ class _ImpaktfullDateTimePickerDialogState extends State<ImpaktfullDateTimePicke
   Widget build(BuildContext context) {
     return ImpaktfullThemeLocalizer(
       builder: (context, theme) => ImpaktfullDialog(
-        onSecondaryTapped: () => Navigator.of(context, rootNavigator: true).pop(),
+        onSecondaryTapped: () =>
+            Navigator.of(context, rootNavigator: true).pop(),
         onPrimaryTapped: () => Navigator.of(context).pop(_selectedDateTime),
         child: ImpaktfullDateTimePicker(
           vertical: MediaQuery.of(context).size.width < 600,
