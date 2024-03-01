@@ -11,6 +11,7 @@ class ImpaktfullListView<T> extends StatefulWidget {
   final List<Widget>? children;
   final List<T>? items;
   final Widget Function(BuildContext, T)? itemBuilder;
+  final EdgeInsetsGeometry extraPadding;
   final double spacing;
   final bool separated;
   final bool? skipPadding;
@@ -25,6 +26,7 @@ class ImpaktfullListView<T> extends StatefulWidget {
     this.isLoading = false,
     this.spacing = 0,
     this.onRefresh,
+    this.extraPadding = EdgeInsets.zero,
     super.key,
   })  : itemBuilder = null,
         items = null,
@@ -42,6 +44,7 @@ class ImpaktfullListView<T> extends StatefulWidget {
     this.isLoading = false,
     this.refreshBtnLabel,
     this.onRefresh,
+    this.extraPadding = EdgeInsets.zero,
     super.key,
   })  : separated = false,
         children = null,
@@ -56,6 +59,7 @@ class ImpaktfullListView<T> extends StatefulWidget {
     required ImpaktfullSeparatorType this.separatorType,
     this.refreshBtnLabel,
     this.onRefresh,
+    this.extraPadding = EdgeInsets.zero,
     super.key,
     required,
   })  : spacing = 0,
@@ -79,7 +83,7 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
     final padding = EdgeInsets.symmetric(
       horizontal: theme.dimens.listViewHorizontalPadding,
       vertical: theme.dimens.listViewVerticalPadding,
-    ).add(MediaQuery.of(context).padding);
+    ).add(MediaQuery.of(context).padding).add(widget.extraPadding);
     if (widget.children != null) {
       return ImpaktfullRefreshIndicator(
         onRefresh: widget.onRefresh,
@@ -100,9 +104,7 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
         onRefresh: widget.onRefresh,
         child: LayoutBuilder(
           builder: (context, constraints) => SingleChildScrollView(
-            physics: widget.onRefresh == null
-                ? null
-                : const AlwaysScrollableScrollPhysics(),
+            physics: widget.onRefresh == null ? null : const AlwaysScrollableScrollPhysics(),
             child: Container(
               padding: const EdgeInsets.all(16),
               height: constraints.maxHeight,
@@ -115,8 +117,7 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
                     widget.noDataLabel!,
                     style: theme.textStyles.onCanvasPrimary.title,
                   ),
-                  if (widget.refreshBtnLabel != null &&
-                      widget.onRefresh != null) ...[
+                  if (widget.refreshBtnLabel != null && widget.onRefresh != null) ...[
                     const SizedBox(height: 16),
                     if (_isLoading) ...[
                       const ImpaktfullLoadingIndicator(),
@@ -139,10 +140,8 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
         onRefresh: widget.onRefresh,
         child: ListView.separated(
           padding: padding,
-          itemBuilder: (context, index) =>
-              widget.itemBuilder!(context, widget.items![index]),
-          separatorBuilder: (context, index) =>
-              ImpaktfullSeparator(type: widget.separatorType!),
+          itemBuilder: (context, index) => widget.itemBuilder!(context, widget.items![index]),
+          separatorBuilder: (context, index) => ImpaktfullSeparator(type: widget.separatorType!),
           itemCount: widget.items!.length,
         ),
       );
@@ -151,8 +150,7 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
       onRefresh: widget.onRefresh,
       child: ListView.separated(
         padding: padding,
-        itemBuilder: (context, index) =>
-            widget.itemBuilder!(context, widget.items![index]),
+        itemBuilder: (context, index) => widget.itemBuilder!(context, widget.items![index]),
         separatorBuilder: (context, index) => SizedBox(height: widget.spacing),
         itemCount: widget.items!.length,
       ),
