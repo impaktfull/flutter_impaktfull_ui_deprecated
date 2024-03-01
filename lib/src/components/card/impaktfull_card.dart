@@ -4,12 +4,16 @@ import 'package:impaktfull_ui/src/theme/impaktfull_theme_localizer.dart';
 
 class ImpaktfullCard extends StatelessWidget {
   final Widget child;
+  final EdgeInsetsGeometry? padding;
+  final EdgeInsetsGeometry? margin;
   final bool isSelected;
   final VoidCallback? onTap;
 
   const ImpaktfullCard({
     required this.child,
     this.isSelected = false,
+    this.padding,
+    this.margin,
     this.onTap,
     super.key,
   });
@@ -32,12 +36,13 @@ class ImpaktfullCard extends StatelessWidget {
               if (shadow != null) shadow,
             ],
           ),
+          margin: margin,
           padding: EdgeInsets.only(
             top: 16 - (border?.top.width ?? 0),
             right: 16 - (border?.right.width ?? 0),
             bottom: 16 - (border?.bottom.width ?? 0),
             left: 16 - (border?.left.width ?? 0),
-          ),
+          ).add(padding ?? EdgeInsets.zero),
           child: ImpaktfullTouchFeedback(
             onTap: onTap,
             child: child,

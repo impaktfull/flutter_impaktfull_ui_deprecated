@@ -1,3 +1,9 @@
+# 0.0.28
+
+## Feat
+
+- Added margin & padding to the ImpaktfullCard
+
 # 0.0.27
 
 ## Fix

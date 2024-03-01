@@ -315,13 +315,13 @@ class ImpaktfullTextStyleTheme {
         listItemTitle: TextStyle(
             fontSize: 16,
             height: 1.2,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w500,
             fontFamily: fontFamily,
             color: color),
         bodyInput: TextStyle(
             fontSize: 16,
             height: 1.2,
-            fontWeight: FontWeight.normal,
+            fontWeight: FontWeight.w500,
             fontFamily: fontFamily,
             color: color),
         body: TextStyle(
