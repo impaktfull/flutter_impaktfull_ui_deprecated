@@ -30,7 +30,7 @@ class ImpaktfullCheckBox extends StatelessWidget {
                       borderRadius: BorderRadius.circular(
                           theme.dimens.switchThumbBorderRadius),
                       border: Border.all(
-                        color: theme.colors.accent2,
+                        color: theme.colors.accent1TurnedOffState,
                         width: theme.dimens.borderWidth,
                       ),
                     ),

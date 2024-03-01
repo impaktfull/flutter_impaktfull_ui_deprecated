@@ -1,3 +1,9 @@
+# 0.0.27
+
+## Fix
+
+- ImpaktfullSwitch & ImpaktfullCheckbox with the turned off state (accent1TurnedOffState)
+
 # 0.0.26
 
 ## Feat

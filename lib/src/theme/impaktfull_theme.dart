@@ -29,6 +29,7 @@ class ImpaktfullTheme {
           accent1: ImpaktfullBranding.accent1,
           accent2: ImpaktfullBranding.accent2,
           accent3: ImpaktfullBranding.accent3,
+          accent1TurnedOffState: ImpaktfullBranding.accent1TurnedOffState,
           onPrimary: ImpaktfullBranding.textOnPrimary,
           onAccent1: ImpaktfullBranding.textOnAccent1,
           onAccent2: ImpaktfullBranding.textOnAccent2,
@@ -87,6 +88,7 @@ class ImpaktfullTheme {
           onPrimary: ImpaktfullBranding.textOnPrimary,
           onAccent1: ImpaktfullBranding.textOnAccent1,
           onAccent2: ImpaktfullBranding.textOnAccent2,
+          accent1TurnedOffState: ImpaktfullBranding.accent1TurnedOffState,
           canvas: ImpaktfullBranding.canvas,
           card: ImpaktfullBranding.card,
           error: ImpaktfullBranding.error,
@@ -150,6 +152,7 @@ class ImpaktfullColorTheme {
   final Color accent1;
   final Color accent2;
   final Color accent3;
+  final Color accent1TurnedOffState;
   final Color canvas;
   final Color card;
   final Color onPrimary;
@@ -166,6 +169,7 @@ class ImpaktfullColorTheme {
     required this.accent1,
     required this.accent2,
     required this.accent3,
+    required this.accent1TurnedOffState,
     required this.onPrimary,
     required this.onAccent1,
     required this.onAccent2,

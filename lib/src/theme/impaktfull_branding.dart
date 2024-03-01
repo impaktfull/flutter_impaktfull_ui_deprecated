@@ -8,6 +8,7 @@ class ImpaktfullBranding {
   static const accent1 = Color(0xFF7D64F2);
   static const accent2 = Color(0xFF585858);
   static const accent3 = Color(0xFFC3D7EE);
+  static const accent1TurnedOffState = Color(0xFF585858);
   static const canvas = Color(0xFFF4F4F4);
   static const card = Color(0xFFFFFFFF);
 

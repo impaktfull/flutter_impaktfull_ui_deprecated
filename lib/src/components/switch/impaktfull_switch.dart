@@ -25,7 +25,9 @@ class ImpaktfullSwitch extends StatelessWidget {
               borderRadius:
                   BorderRadius.circular(theme.dimens.switchBorderRadius),
               border: Border.all(
-                color: value ? theme.colors.accent1 : theme.colors.accent2,
+                color: value
+                    ? theme.colors.accent1
+                    : theme.colors.accent1TurnedOffState,
                 width: theme.dimens.borderWidth,
               ),
             ),
@@ -44,7 +46,9 @@ class ImpaktfullSwitch extends StatelessWidget {
                 height: 16,
                 width: 16,
                 decoration: BoxDecoration(
-                  color: value ? theme.colors.accent1 : theme.colors.accent2,
+                  color: value
+                      ? theme.colors.accent1
+                      : theme.colors.accent1TurnedOffState,
                   borderRadius: BorderRadius.circular(
                     theme.dimens.switchThumbBorderRadius,
                   ),
