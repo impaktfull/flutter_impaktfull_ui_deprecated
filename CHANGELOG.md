@@ -1,3 +1,9 @@
+# 0.0.23
+
+## Feat
+
+- RTL & LTR support for ImpaktfullApp (detection by the locale param)
+
 # 0.0.22
 
 ## Feat
