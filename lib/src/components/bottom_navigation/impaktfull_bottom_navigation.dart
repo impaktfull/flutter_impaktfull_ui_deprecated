@@ -17,7 +17,8 @@ class ImpaktfullBottomNavigation extends StatelessWidget {
         decoration: BoxDecoration(
           color: theme.colors.card,
           boxShadow: [
-            theme.shadows.card,
+            if (theme.shadows.bottomNavigation != null)
+              theme.shadows.bottomNavigation!,
           ],
         ),
         child: SafeArea(

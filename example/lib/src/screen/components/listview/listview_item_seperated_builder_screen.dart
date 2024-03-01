@@ -1,7 +1,7 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
 
-class ListViewItemSeparatedBuilder extends StatelessWidget {
-  const ListViewItemSeparatedBuilder({
+class ListViewItemSeparatedBuilderScreen extends StatelessWidget {
+  const ListViewItemSeparatedBuilderScreen({
     super.key,
   });
 
@@ -11,6 +11,7 @@ class ListViewItemSeparatedBuilder extends StatelessWidget {
       title: 'ListView - Item Separated Builder',
       onBackTapped: () => Navigator.of(context).pop(),
       child: ImpaktfullListView.separated(
+        onRefresh: () async => Future.delayed(const Duration(seconds: 2)),
         separatorType: ImpaktfullSeparatorType.canvas,
         items: List.generate(100, (index) => 'Child ${index + 1}'),
         itemBuilder: (context, item) => Text(item),

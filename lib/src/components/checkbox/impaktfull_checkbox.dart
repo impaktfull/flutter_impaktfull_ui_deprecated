@@ -16,6 +16,9 @@ class ImpaktfullCheckBox extends StatelessWidget {
       builder: (context, theme) => Center(
         child: ImpaktfullTouchFeedback(
           onTap: () => onChanged(!value),
+          borderRadius:
+              BorderRadius.circular(theme.dimens.switchThumbBorderRadius),
+          color: theme.colors.card,
           child: SizedBox(
             width: 24,
             height: 24,
@@ -30,7 +33,6 @@ class ImpaktfullCheckBox extends StatelessWidget {
                         color: theme.colors.accent2,
                         width: theme.dimens.borderWidth,
                       ),
-                      color: theme.colors.card,
                     ),
                   ),
                 ),

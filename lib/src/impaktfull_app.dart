@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_theme.dart';
 import 'package:impaktfull_ui/src/theme/theme_configurator.dart';
@@ -16,6 +17,8 @@ class ImpaktfullApp extends StatelessWidget {
   final GlobalKey<NavigatorState>? navigatorKey;
   final String? initialRoute;
   final RouteFactory? onGenerateRoute;
+  final Widget Function(BuildContext context, Widget app)? builder;
+  final bool showDebugFlag;
 
   const ImpaktfullApp({
     required this.title,
@@ -30,6 +33,8 @@ class ImpaktfullApp extends StatelessWidget {
     this.initialRoute,
     this.onGenerateRoute,
     this.navigatorObservers = const <NavigatorObserver>[],
+    this.builder,
+    this.showDebugFlag = kDebugMode,
     super.key,
   });
 
@@ -82,21 +87,30 @@ class ImpaktfullApp extends StatelessWidget {
           }
         },
       ),
-      app: MaterialApp(
-        title: title,
-        home: home,
-        locale: locale,
-        theme: materialLightTheme,
-        darkTheme: materialDarkTheme,
-        supportedLocales: supportedLocales,
-        localizationsDelegates: localizationsDelegates,
-        navigatorKey: navigatorKey,
-        initialRoute: initialRoute,
-        onGenerateRoute: onGenerateRoute,
-        navigatorObservers: [
-          SnackyNavigationObserver(),
-          ...navigatorObservers,
-        ],
+      app: Builder(
+        builder: (context) {
+          final app = MaterialApp(
+            title: title,
+            home: home,
+            debugShowCheckedModeBanner: showDebugFlag,
+            locale: locale,
+            theme: materialLightTheme,
+            darkTheme: materialDarkTheme,
+            supportedLocales: supportedLocales,
+            localizationsDelegates: localizationsDelegates,
+            navigatorKey: navigatorKey,
+            initialRoute: initialRoute,
+            onGenerateRoute: onGenerateRoute,
+            navigatorObservers: [
+              SnackyNavigationObserver(),
+              ...navigatorObservers,
+            ],
+          );
+          if (builder == null) {
+            return app;
+          }
+          return builder!(context, app);
+        },
       ),
     );
   }

@@ -11,6 +11,8 @@ This UI library was built to have a simple way to build UIs for Impaktfull. This
 
 # Usage
 
+[![pub package](https://img.shields.io/pub/v/impaktfull_ui.svg)](https://pub.dartlang.org/packages/impaktfull_ui)
+
 ## Setup
 
 - Setup your theme (colors, textStyles, shadows, dimens, assets)

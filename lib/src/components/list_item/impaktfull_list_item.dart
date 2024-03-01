@@ -68,9 +68,11 @@ class _ImpaktfullListItemState extends State<ImpaktfullListItem> {
     setState(() {});
     try {
       await widget.onAsyncTap!();
+      if (!mounted) return;
       _isLoading = false;
       setState(() {});
     } catch (error) {
+      if (!mounted) return;
       _isLoading = false;
       setState(() {});
       rethrow;

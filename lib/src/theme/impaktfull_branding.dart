@@ -24,6 +24,7 @@ class ImpaktfullBranding {
   static const info = Color(0xFF7D64F2);
   static const warning = Color(0xFFC28E3F);
   static const divider = Color(0x26425563);
+  static const shadow = Color.fromARGB(10, 0, 0, 0);
 
   //Fonts
   static const font = 'Ubuntu';

@@ -139,9 +139,11 @@ class _ImpaktfullDatePickerState extends State<ImpaktfullDatePicker> {
                   onTap: _onPreviousTapped,
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: _onTitleTapped,
-                    onLongPress: _onTitleLongTapped,
+                  child: PlatfomTouchFeedback(
+                    onTap: _type == ImpaktfullDatePickerType.years
+                        ? null
+                        : _onTitleTapped,
+                    onLongTap: _onTitleLongTapped,
                     child: ColoredBox(
                       color: Colors.transparent,
                       child: Text(

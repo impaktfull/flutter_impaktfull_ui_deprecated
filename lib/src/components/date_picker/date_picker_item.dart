@@ -27,6 +27,12 @@ class DatePickerItem extends StatelessWidget {
     return ImpaktfullThemeLocalizer(
       builder: (context, theme) => ImpaktfullTouchFeedback(
         onTap: onTap,
+        borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
+        color: _isSelected()
+            ? theme.colors.primary
+            : _isHighlighted()
+                ? theme.colors.accent1.withOpacity(0.05)
+                : null,
         child: Container(
           decoration: BoxDecoration(
             borderRadius:
@@ -36,11 +42,6 @@ class DatePickerItem extends StatelessWidget {
                   _isHighlighted() ? theme.colors.accent1 : Colors.transparent,
               width: theme.dimens.borderWidth,
             ),
-            color: _isSelected()
-                ? theme.colors.primary
-                : _isHighlighted()
-                    ? theme.colors.accent1.withOpacity(0.05)
-                    : null,
           ),
           constraints: const BoxConstraints(
             minWidth: 40,

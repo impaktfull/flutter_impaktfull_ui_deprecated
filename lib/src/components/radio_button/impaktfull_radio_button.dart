@@ -19,6 +19,8 @@ class ImpaktfullRadioButton<T> extends StatelessWidget {
       builder: (context, theme) => Center(
         child: ImpaktfullTouchFeedback(
           onTap: () => onSelected(value),
+          color: theme.colors.card,
+          borderRadius: BorderRadius.circular(9999),
           child: SizedBox(
             width: 24,
             height: 24,
@@ -32,7 +34,6 @@ class ImpaktfullRadioButton<T> extends StatelessWidget {
                         color: theme.colors.accent2,
                         width: theme.dimens.borderWidth,
                       ),
-                      color: theme.colors.card,
                     ),
                   ),
                 ),

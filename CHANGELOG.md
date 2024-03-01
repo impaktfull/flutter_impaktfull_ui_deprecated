@@ -1,3 +1,28 @@
+# 0.0.20
+
+## Feat
+
+- Readme added pub.dev badge
+- Example better icons & assets
+- Added ImpaktfullCard
+- Added ImpaktfullDialog
+- Added ImpaktfullFab
+- Added ImpaktfullPagination
+- Added ImpaktfullScreen
+- ImpaktfullBottomNavigationItem supports selected icon assets
+- ImpaktfullListView refresh action & loading state
+- ImpaktfullListView pull to refresh
+- ImpaktfullRefreshIndicator
+- ImpaktfullApp now supports showing or hiding the debugFlag
+- ImpaktfullButton can have a loading state with `onAsyncTap`
+- ImpaktfullTouchFeedback now has actual feedback based on the platform
+- ImpaktfullTheme now has more shadow options (`card`, `selectedCard`, `bottomNavigation`, `button`)
+- ImpaktfullTheme now has border options (`card`, `selectedCard`)
+
+## Fix
+- ImpaktfullDatePicker now uses the borderRadius from the theme
+- Small disposed errors in ImpaktfullListItem
+
 # 0.0.18 - 0.0.19
 
 ## Fix

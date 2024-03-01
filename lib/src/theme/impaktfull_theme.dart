@@ -1,17 +1,25 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_branding.dart';
 import 'package:impaktfull_ui/src/theme/theme_configurator.dart';
+import 'package:impaktfull_ui/src/util/test_util.dart';
 
 class ImpaktfullTheme {
+  static InteractiveInkFeatureFactory get _defaultSplashFactory =>
+      TestUtil.isInTest
+          ? InkSparkle.constantTurbulenceSeedSplashFactory
+          : InkSparkle.splashFactory;
+
   bool get useDarkStatusBar =>
       (theme.colors.primary.computeLuminance() > 0.179) ? true : false;
 
   static ImpaktfullTheme impaktfullBranding({
     ImpaktfullShadowTheme? shadows,
+    ImpaktfullBorderTheme? borders,
     ImpaktfullAssets? assets,
     ImpaktfullDimens? dimens,
     ImpaktfullDurations? durations,
     ImpaktfullLocalizations? localizations,
+    InteractiveInkFeatureFactory? splashFactory,
   }) =>
       ImpaktfullTheme(
         colors: const ImpaktfullColorTheme(
@@ -30,21 +38,8 @@ class ImpaktfullTheme {
           warning: ImpaktfullBranding.warning,
           separator: ImpaktfullBranding.divider,
         ),
-        shadows: shadows ??
-            const ImpaktfullShadowTheme(
-              card: BoxShadow(
-                color: Color.fromARGB(10, 0, 0, 0),
-                blurRadius: 20,
-                offset: Offset(0, 1),
-                spreadRadius: 4,
-              ),
-              selectedCard: BoxShadow(
-                color: Color.fromARGB(20, 170, 194, 63),
-                blurRadius: 20,
-                offset: Offset(0, 1),
-                spreadRadius: 4,
-              ),
-            ),
+        shadows: shadows ?? ImpaktfullShadowTheme.getDefaults(),
+        borders: borders ?? ImpaktfullBorderTheme.getDefaults(),
         textStyles: ImpaktfullTextStylesTheme(
           onCanvasPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
               ImpaktfullBranding.textOnCanvasPrimary, ImpaktfullBranding.font),
@@ -64,6 +59,7 @@ class ImpaktfullTheme {
         dimens: dimens ?? ImpaktfullDimens.getDefaults(),
         durations: durations ?? ImpaktfullDurations.getDefaults(),
         localizations: localizations ?? ImpaktfullLocalizations.getDefaults(),
+        splashFactory: splashFactory ?? _defaultSplashFactory,
       );
 
   static ImpaktfullTheme fromColors({
@@ -72,10 +68,12 @@ class ImpaktfullTheme {
     required Color accent2,
     Color? accent3,
     ImpaktfullShadowTheme? shadows,
+    ImpaktfullBorderTheme? borders,
     ImpaktfullAssets? assets,
     ImpaktfullDimens? dimens,
     ImpaktfullDurations? durations,
     ImpaktfullLocalizations? localizations,
+    InteractiveInkFeatureFactory? splashFactory,
   }) =>
       ImpaktfullTheme(
         colors: ImpaktfullColorTheme(
@@ -94,21 +92,8 @@ class ImpaktfullTheme {
           warning: ImpaktfullBranding.warning,
           separator: ImpaktfullBranding.divider,
         ),
-        shadows: shadows ??
-            const ImpaktfullShadowTheme(
-              card: BoxShadow(
-                color: Color.fromARGB(10, 0, 0, 0),
-                blurRadius: 20,
-                offset: Offset(0, 1),
-                spreadRadius: 4,
-              ),
-              selectedCard: BoxShadow(
-                color: Color.fromARGB(20, 170, 194, 63),
-                blurRadius: 20,
-                offset: Offset(0, 1),
-                spreadRadius: 4,
-              ),
-            ),
+        shadows: shadows ?? ImpaktfullShadowTheme.getDefaults(),
+        borders: borders ?? ImpaktfullBorderTheme.getDefaults(),
         textStyles: ImpaktfullTextStylesTheme(
           onCanvasPrimary: ImpaktfullTextStyleTheme.getTextStyleTheme(
               ImpaktfullBranding.textOnCanvasPrimary, ImpaktfullBranding.font),
@@ -128,24 +113,29 @@ class ImpaktfullTheme {
         dimens: dimens ?? ImpaktfullDimens.getDefaults(),
         durations: durations ?? ImpaktfullDurations.getDefaults(),
         localizations: localizations ?? ImpaktfullLocalizations.getDefaults(),
+        splashFactory: splashFactory ?? _defaultSplashFactory,
       );
 
   final ImpaktfullColorTheme colors;
   final ImpaktfullShadowTheme shadows;
+  final ImpaktfullBorderTheme borders;
   final ImpaktfullTextStylesTheme textStyles;
   final ImpaktfullAssets assets;
   final ImpaktfullDimens dimens;
   final ImpaktfullDurations durations;
   final ImpaktfullLocalizations localizations;
+  final InteractiveInkFeatureFactory splashFactory;
 
   const ImpaktfullTheme({
     required this.colors,
     required this.shadows,
+    required this.borders,
     required this.textStyles,
     required this.assets,
     required this.dimens,
     required this.durations,
     required this.localizations,
+    this.splashFactory = InkSparkle.constantTurbulenceSeedSplashFactory,
   });
 
   static ImpaktfullTheme of(BuildContext context) => theme;
@@ -186,13 +176,74 @@ class ImpaktfullColorTheme {
 }
 
 class ImpaktfullShadowTheme {
-  final BoxShadow card;
-  final BoxShadow selectedCard;
+  final BoxShadow? card;
+  final BoxShadow? selectedCard;
+  final BoxShadow? bottomNavigation;
+  final BoxShadow? button;
 
   const ImpaktfullShadowTheme({
     required this.card,
     required this.selectedCard,
+    required this.bottomNavigation,
+    required this.button,
   });
+
+  static ImpaktfullShadowTheme getDefaults({
+    Color? accent1,
+    Color? selectedColor,
+  }) =>
+      ImpaktfullShadowTheme(
+        card: const BoxShadow(
+          color: ImpaktfullBranding.shadow,
+          blurRadius: 20,
+          offset: Offset(0, 1),
+          spreadRadius: 4,
+        ),
+        selectedCard: BoxShadow(
+          color: selectedColor ??
+              accent1?.withOpacity(0.4) ??
+              ImpaktfullBranding.accent1.withOpacity(0.4),
+          blurRadius: 20,
+          offset: const Offset(0, 1),
+          spreadRadius: 4,
+        ),
+        bottomNavigation: const BoxShadow(
+          color: ImpaktfullBranding.shadow,
+          blurRadius: 20,
+          offset: Offset(0, 1),
+          spreadRadius: 4,
+        ),
+        button: const BoxShadow(
+          color: ImpaktfullBranding.shadow,
+          blurRadius: 20,
+          offset: Offset(0, 1),
+          spreadRadius: 4,
+        ),
+      );
+}
+
+class ImpaktfullBorderTheme {
+  final Border? card;
+  final Border? selectedCard;
+
+  const ImpaktfullBorderTheme({
+    required this.card,
+    required this.selectedCard,
+  });
+
+  static ImpaktfullBorderTheme getDefaults({
+    Color? accent1,
+  }) =>
+      ImpaktfullBorderTheme(
+        card: Border.all(
+          color: Colors.transparent,
+          width: 2,
+        ),
+        selectedCard: Border.all(
+          color: accent1 ?? ImpaktfullBranding.accent1,
+          width: 2,
+        ),
+      );
 }
 
 class ImpaktfullTextStylesTheme {

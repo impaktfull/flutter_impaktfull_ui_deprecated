@@ -1,17 +1,22 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
 import 'package:impaktfull_ui_example/src/screen/components/bottom_navigation_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/buttons_screen.dart';
+import 'package:impaktfull_ui_example/src/screen/components/card_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/checkbox_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/date_picker_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/date_time_picker_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/date_time_range_picker_screen.dart';
+import 'package:impaktfull_ui_example/src/screen/components/dialog_screen.dart';
+import 'package:impaktfull_ui_example/src/screen/components/fab_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/input_field_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/list_item_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/list_item_title_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/listview_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/loading_indicator_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/nav_bar_screen.dart';
+import 'package:impaktfull_ui_example/src/screen/components/pagination_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/radiobutton_screen.dart';
+import 'package:impaktfull_ui_example/src/screen/components/screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/selectable_list_item_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/separated_column_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/switch_list_item_screen.dart';
@@ -44,6 +49,11 @@ class ComponentsScreen extends StatelessWidget {
                   builder: (context) => const ButtonsScreen())),
             ),
             ImpaktfullButton.accent(
+              label: 'Card',
+              onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const CardScreen())),
+            ),
+            ImpaktfullButton.accent(
               label: 'Checkbox',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const CheckboxScreen())),
@@ -52,6 +62,16 @@ class ComponentsScreen extends StatelessWidget {
               label: 'DatePicker',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const DatePickerScreen())),
+            ),
+            ImpaktfullButton.accent(
+              label: 'Dialog',
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const DialogScreen())),
+            ),
+            ImpaktfullButton.accent(
+              label: 'Fab',
+              onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const FabScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'DateTimePicker',
@@ -94,9 +114,19 @@ class ComponentsScreen extends StatelessWidget {
                   builder: (context) => const NavBarScreen())),
             ),
             ImpaktfullButton.accent(
+              label: 'Pagination',
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const PaginationScreen())),
+            ),
+            ImpaktfullButton.accent(
               label: 'RadioButton',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const RadioButtonScreen())),
+            ),
+            ImpaktfullButton.accent(
+              label: 'Screen',
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const ImpaktfullExampleScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'Selectable List Item',

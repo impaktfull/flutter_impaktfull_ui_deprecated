@@ -3,6 +3,7 @@ import 'package:impaktfull_ui/impaktfull_ui.dart';
 class ImpaktfullBottomNavigationItem extends StatelessWidget {
   final String label;
   final String svgIcon;
+  final String? svgIconSelected;
   final bool isSelected;
   final VoidCallback onTap;
 
@@ -11,6 +12,7 @@ class ImpaktfullBottomNavigationItem extends StatelessWidget {
     required this.svgIcon,
     required this.isSelected,
     required this.onTap,
+    this.svgIconSelected,
     super.key,
   });
 
@@ -26,7 +28,7 @@ class ImpaktfullBottomNavigationItem extends StatelessWidget {
               children: [
                 const SizedBox(height: 8),
                 ImpaktfullSvgIcon(
-                  asset: svgIcon,
+                  asset: isSelected ? svgIconSelected ?? svgIcon : svgIcon,
                   color:
                       isSelected ? theme.colors.accent1 : theme.colors.primary,
                 ),

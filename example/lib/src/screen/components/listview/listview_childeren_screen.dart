@@ -1,7 +1,7 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
 
-class ListViewChildren extends StatelessWidget {
-  const ListViewChildren({
+class ListViewChildrenScreen extends StatelessWidget {
+  const ListViewChildrenScreen({
     super.key,
   });
 
@@ -10,8 +10,9 @@ class ListViewChildren extends StatelessWidget {
     return ImpaktfullScreen(
       title: 'ListView - Children',
       onBackTapped: () => Navigator.of(context).pop(),
-      child: const ImpaktfullListView(
-        children: [
+      child: ImpaktfullListView(
+        onRefresh: () async => Future.delayed(const Duration(seconds: 2)),
+        children: const [
           Text('Child 1'),
           Text('Child 2'),
           Text('Child 3'),

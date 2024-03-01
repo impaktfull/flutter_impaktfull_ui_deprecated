@@ -16,14 +16,14 @@ class ImpaktfullSwitch extends StatelessWidget {
       builder: (context, theme) => Center(
         child: ImpaktfullTouchFeedback(
           onTap: () => onChanged(!value),
+          color: theme.colors.card,
+          borderRadius: BorderRadius.circular(theme.dimens.switchBorderRadius),
           child: AnimatedContainer(
             duration: theme.durations.short,
             curve: Curves.easeInOut,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(
-                theme.dimens.switchBorderRadius,
-              ),
-              color: theme.colors.card,
+              borderRadius:
+                  BorderRadius.circular(theme.dimens.switchBorderRadius),
               border: Border.all(
                 color: value ? theme.colors.accent1 : theme.colors.accent2,
                 width: theme.dimens.borderWidth,

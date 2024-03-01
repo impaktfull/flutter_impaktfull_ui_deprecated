@@ -10,6 +10,8 @@ class ImpaktfullScreen extends StatelessWidget {
   final List<Widget> actions;
   final Widget? bottomNavBarChild;
   final Widget? bottomAction;
+  final Alignment fabAlignment;
+  final Widget? fab;
   final VoidCallback? onBackTapped;
   final VoidCallback? onPopInvoked;
 
@@ -22,6 +24,8 @@ class ImpaktfullScreen extends StatelessWidget {
     this.onBackTapped,
     this.onPopInvoked,
     this.bottomAction,
+    this.fabAlignment = Alignment.bottomRight,
+    this.fab,
     super.key,
   });
 
@@ -47,7 +51,24 @@ class ImpaktfullScreen extends StatelessWidget {
                 child: MediaQuery.removePadding(
                   context: context,
                   removeTop: true,
-                  child: child,
+                  child: Column(
+                    children: [
+                      Expanded(
+                        child: Stack(
+                          alignment: fabAlignment,
+                          children: [
+                            child,
+                            if (fab != null)
+                              Padding(
+                                padding: const EdgeInsets.all(16),
+                                child: fab!,
+                              ),
+                          ],
+                        ),
+                      ),
+                      if (bottomAction != null) bottomAction!,
+                    ],
+                  ),
                 ),
               ),
             ],

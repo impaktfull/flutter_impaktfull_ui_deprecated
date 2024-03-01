@@ -24,9 +24,9 @@ class BaseListItem extends StatelessWidget {
     return ImpaktfullThemeLocalizer(
       builder: (context, theme) => ImpaktfullTouchFeedback(
         onTap: onTap,
+        color: theme.colors.card,
         child: ImpaktfullAutoLayout.horizontal(
           crossAxisAlignment: CrossAxisAlignment.center,
-          backgroundColor: theme.colors.card,
           padding: const EdgeInsets.symmetric(
             horizontal: 16,
             vertical: 12,
