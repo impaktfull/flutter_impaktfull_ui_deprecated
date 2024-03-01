@@ -7,6 +7,7 @@ import 'package:snacky/snacky.dart';
 class ImpaktfullApp extends StatelessWidget {
   final String title;
   final Widget? home;
+  final SnackyController? snackyController;
   final SnackyBuilder? snackyBuilder;
   final ImpaktfullTheme? impaktfullTheme;
   final ThemeData? materialLightTheme;
@@ -24,6 +25,7 @@ class ImpaktfullApp extends StatelessWidget {
   const ImpaktfullApp({
     required this.title,
     this.home,
+    this.snackyController,
     this.snackyBuilder,
     this.impaktfullTheme,
     this.materialLightTheme,
@@ -45,6 +47,7 @@ class ImpaktfullApp extends StatelessWidget {
     setImpaktfullTheme(impaktfullTheme);
     setImpaktfullLocale(locale);
     return SnackyConfiguratorWidget(
+      snackyController: snackyController,
       snackyBuilder: snackyBuilder ??
           SimpleSnackyBuilder(
             borderRadius:

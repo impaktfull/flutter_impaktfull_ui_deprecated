@@ -1,3 +1,9 @@
+# 0.0.22
+
+## Feat
+
+- ImpaktfullApp now exposes `snackyController` to set a custom snackyController
+
 # 0.0.21
 
 ## Feat
