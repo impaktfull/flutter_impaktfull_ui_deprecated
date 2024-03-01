@@ -13,9 +13,9 @@ class ImpaktfullListItemTitle extends StatelessWidget {
     return ImpaktfullThemeLocalizer(
       builder: (context, theme) => Container(
         padding: EdgeInsets.only(
-          top: theme.dimens.listViewVerticalPadding,
-          right: theme.dimens.listViewHorizontalPadding,
-          left: theme.dimens.listViewHorizontalPadding,
+          top: theme.dimens.listViewTitleVerticalPadding,
+          right: theme.dimens.listViewTitleHorizontalPadding,
+          left: theme.dimens.listViewTitleHorizontalPadding,
         ),
         child: Text(
           title,

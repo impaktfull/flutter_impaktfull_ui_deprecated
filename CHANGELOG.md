@@ -1,3 +1,9 @@
+# 0.0.26
+
+## Feat
+
+- ImpaktfullTheme added `listViewTitleHorizontalPadding` && `listViewTitleVerticalPadding` to better control the padding of the title in the ImpaktfullListView
+
 # 0.0.25
 
 ## Feat
