@@ -104,7 +104,9 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
         onRefresh: widget.onRefresh,
         child: LayoutBuilder(
           builder: (context, constraints) => SingleChildScrollView(
-            physics: widget.onRefresh == null ? null : const AlwaysScrollableScrollPhysics(),
+            physics: widget.onRefresh == null
+                ? null
+                : const AlwaysScrollableScrollPhysics(),
             child: Container(
               padding: const EdgeInsets.all(16),
               height: constraints.maxHeight,
@@ -117,7 +119,8 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
                     widget.noDataLabel!,
                     style: theme.textStyles.onCanvasPrimary.title,
                   ),
-                  if (widget.refreshBtnLabel != null && widget.onRefresh != null) ...[
+                  if (widget.refreshBtnLabel != null &&
+                      widget.onRefresh != null) ...[
                     const SizedBox(height: 16),
                     if (_isLoading) ...[
                       const ImpaktfullLoadingIndicator(),
@@ -140,8 +143,10 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
         onRefresh: widget.onRefresh,
         child: ListView.separated(
           padding: padding,
-          itemBuilder: (context, index) => widget.itemBuilder!(context, widget.items![index]),
-          separatorBuilder: (context, index) => ImpaktfullSeparator(type: widget.separatorType!),
+          itemBuilder: (context, index) =>
+              widget.itemBuilder!(context, widget.items![index]),
+          separatorBuilder: (context, index) =>
+              ImpaktfullSeparator(type: widget.separatorType!),
           itemCount: widget.items!.length,
         ),
       );
@@ -150,7 +155,8 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
       onRefresh: widget.onRefresh,
       child: ListView.separated(
         padding: padding,
-        itemBuilder: (context, index) => widget.itemBuilder!(context, widget.items![index]),
+        itemBuilder: (context, index) =>
+            widget.itemBuilder!(context, widget.items![index]),
         separatorBuilder: (context, index) => SizedBox(height: widget.spacing),
         itemCount: widget.items!.length,
       ),
