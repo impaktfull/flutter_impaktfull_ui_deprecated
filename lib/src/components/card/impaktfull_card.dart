@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:impaktfull_ui/src/components/touch_feedback/impaktfull_touch_feedback.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_theme_localizer.dart';
 
 class ImpaktfullCard extends StatelessWidget {
   final Widget child;
   final bool isSelected;
+  final VoidCallback? onTap;
 
   const ImpaktfullCard({
     required this.child,
     this.isSelected = false,
+    this.onTap,
     super.key,
   });
 
@@ -35,7 +38,10 @@ class ImpaktfullCard extends StatelessWidget {
             bottom: 16 - (border?.bottom.width ?? 0),
             left: 16 - (border?.left.width ?? 0),
           ),
-          child: child,
+          child: ImpaktfullTouchFeedback(
+            onTap: onTap,
+            child: child,
+          ),
         );
       },
     );

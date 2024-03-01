@@ -1,3 +1,9 @@
+# 0.0.25
+
+## Feat
+
+- ImpaktfullCard has now an `onTap` parameter
+
 # 0.0.24
 
 ## Feat
