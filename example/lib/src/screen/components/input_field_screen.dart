@@ -23,6 +23,12 @@ class InputFieldScreen extends StatelessWidget {
               value: 'Some value',
               hintText: 'Some hint text',
             ),
+            ImpaktfullInputField(
+              onChanged: (value) {},
+              title: 'Some title',
+              value: 'Some value',
+              hintText: 'Some hint text',
+            ),
           ],
         ),
       ),

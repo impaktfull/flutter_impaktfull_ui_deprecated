@@ -321,7 +321,7 @@ class ImpaktfullTextStyleTheme {
         bodyInput: TextStyle(
             fontSize: 16,
             height: 1.2,
-            fontWeight: FontWeight.w500,
+            fontWeight: FontWeight.normal,
             fontFamily: fontFamily,
             color: color),
         body: TextStyle(

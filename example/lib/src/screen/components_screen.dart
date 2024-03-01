@@ -64,16 +64,6 @@ class ComponentsScreen extends StatelessWidget {
                   builder: (context) => const DatePickerScreen())),
             ),
             ImpaktfullButton.accent(
-              label: 'Dialog',
-              onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const DialogScreen())),
-            ),
-            ImpaktfullButton.accent(
-              label: 'Fab',
-              onTap: () => Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => const FabScreen())),
-            ),
-            ImpaktfullButton.accent(
               label: 'DateTimePicker',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const DateTimePickerScreen())),
@@ -82,6 +72,16 @@ class ComponentsScreen extends StatelessWidget {
               label: 'DateTimeRangePicker',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const DateTimeRangePickerScreen())),
+            ),
+            ImpaktfullButton.accent(
+              label: 'Dialog',
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const DialogScreen())),
+            ),
+            ImpaktfullButton.accent(
+              label: 'Fab',
+              onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const FabScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'InputField',

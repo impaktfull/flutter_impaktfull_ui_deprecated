@@ -24,38 +24,49 @@ This UI library was built to have a simple way to build UIs for Impaktfull. This
 Components are always prefixed with `Impaktfull` to avoid conflicts with other libraries.
 
 - ImpaktfullAutoLayout
-- ImpaktfullButton
-- ImpaktfullSwitch
-- ImpaktfullSvgIcon
-- ImpaktfullListView
-- ImpaktfullLoadingIndicator
-- ImpaktfullScreen
-- ImpaktfullSeparator
-- ImpaktfullTouchFeedback
-- ImpaktfullListItem
-- ImpaktfullListItemTitle
-- ImpaktfullSwitchListItem
-- ImpaktfullSelectableListItem
-- ImpaktfullSeparatedColumn
-- ImpaktfullBottomNavigationItem
 - ImpaktfullBottomNavigation
-- ImpaktfullInputField
-- ImpaktfullTabBar
-- ImpaktfullTabBarItem
-- ImpaktfullNavBar
-- ImpaktfullRadioButton
-- ImpaktfullDatePicker
-- ImpaktfullTimePicker
+- ImpaktfullBottomNavigationItem
+- ImpaktfullButton
+- ImpaktfullCard
 - ImpaktfullCheckbox
+- ImpaktfullDatePicker
 - ImpaktfullDateTimePicker
 - ImpaktfullDateTimePickerDialog
 - ImpaktfullDateTimeRangePicker
 - ImpaktfullDialog
+- ImpaktfullInputField
+- ImpaktfullLoadingIndicator
+- ImpaktfullTouchFeedback
+- ImpaktfullListItem
+- ImpaktfullListItemTitle
+- ImpaktfullListView
+- ImpaktfullNavBar
+- ImpaktfullPagination
+- ImpaktfullRadioButton
 - ImpaktfullRadioButtonListItem
+- ImpaktfullRefreshIndicator
+- ImpaktfullScreen
+- ImpaktfullSelectableListItem
+- ImpaktfullSeparator
+- ImpaktfullSeparatedColumn
+- ImpaktfullSvgIcon
+- ImpaktfullSwitch
+- ImpaktfullSwitchListItem
+- ImpaktfullTabBar
+- ImpaktfullTabBarItem
+- ImpaktfullTimePicker
 
 Many more to come in the future, always with the focus on minimizing maintenance and maximizing a recognizable UI/brand for Impaktfull
 
-## Default Icons
+## Assets
+
+### Lottie Animations
+
+These icons should be added to your assets folder to use the default lottie animations. (in your own project)
+
+- assets/lottie/loading.json
+
+### Default Icons
 
 These icons should be added to your assets folder to use the default icons. (in your own project)
 

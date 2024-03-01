@@ -2,6 +2,7 @@ import 'package:impaktfull_ui/impaktfull_ui.dart';
 
 class ImpaktfullInputField extends StatefulWidget {
   final ValueChanged<String> onChanged;
+  final String? title;
   final String? hintText;
   final String value;
   final bool obscureText;
@@ -11,6 +12,7 @@ class ImpaktfullInputField extends StatefulWidget {
     required this.onChanged,
     this.value = '',
     this.hintText,
+    this.title,
     this.obscureText = false,
     this.textInputType = TextInputType.text,
     super.key,
@@ -37,29 +39,46 @@ class _ImpaktfullInputFieldState extends State<ImpaktfullInputField> {
   @override
   Widget build(BuildContext context) {
     return ImpaktfullThemeLocalizer(
-      builder: (context, theme) => Container(
-        decoration: BoxDecoration(
-          color: theme.colors.card,
-          borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
-        ),
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: TextField(
-          controller: _textEditingController,
-          cursorColor: theme.colors.accent1,
-          obscureText: widget.obscureText,
-          keyboardType: widget.textInputType,
-          decoration: InputDecoration(
-            border: InputBorder.none,
-            errorBorder: InputBorder.none,
-            enabledBorder: InputBorder.none,
-            focusedBorder: InputBorder.none,
-            disabledBorder: InputBorder.none,
-            focusedErrorBorder: InputBorder.none,
-            hintText: widget.hintText,
-            hintStyle: theme.textStyles.onCardSecondary.bodyInput,
+      builder: (context, theme) => ImpaktfullAutoLayout.vertical(
+        spacing: 4,
+        children: [
+          if (widget.title != null) ...[
+            Padding(
+              padding: EdgeInsets.symmetric(
+                horizontal: theme.dimens.generalBorderRadius,
+              ),
+              child: Text(
+                widget.title!,
+                style: theme.textStyles.onCanvasPrimary.smallBody,
+              ),
+            )
+          ],
+          Container(
+            decoration: BoxDecoration(
+              color: theme.colors.card,
+              borderRadius:
+                  BorderRadius.circular(theme.dimens.generalBorderRadius),
+            ),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
+            child: TextField(
+              controller: _textEditingController,
+              cursorColor: theme.colors.accent1,
+              obscureText: widget.obscureText,
+              keyboardType: widget.textInputType,
+              decoration: InputDecoration(
+                border: InputBorder.none,
+                errorBorder: InputBorder.none,
+                enabledBorder: InputBorder.none,
+                focusedBorder: InputBorder.none,
+                disabledBorder: InputBorder.none,
+                focusedErrorBorder: InputBorder.none,
+                hintText: widget.hintText,
+                hintStyle: theme.textStyles.onCardSecondary.bodyInput,
+              ),
+              onChanged: widget.onChanged,
+            ),
           ),
-          onChanged: widget.onChanged,
-        ),
+        ],
       ),
     );
   }

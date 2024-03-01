@@ -1,3 +1,13 @@
+# 0.0.30
+
+## Feat
+
+- ImpaktfullInputField has a title
+
+## Docs
+
+- Updated readme
+
 # 0.0.29
 
 ## Feat
