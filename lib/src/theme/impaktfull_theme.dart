@@ -3,12 +3,14 @@ import 'package:impaktfull_ui/src/theme/impaktfull_branding.dart';
 import 'package:impaktfull_ui/src/theme/theme_configurator.dart';
 import 'package:impaktfull_ui/src/util/test_util.dart';
 
-class ImpaktfullTheme {
-  static InteractiveInkFeatureFactory get _defaultSplashFactory =>
+class ImpaktfullThemeConfig {
+  static InteractiveInkFeatureFactory get defaultSplashFactory =>
       TestUtil.isInTest
           ? InkSparkle.constantTurbulenceSeedSplashFactory
           : InkSparkle.splashFactory;
+}
 
+class ImpaktfullTheme {
   bool get useDarkStatusBar =>
       (theme.colors.primary.computeLuminance() > 0.179) ? true : false;
 
@@ -59,7 +61,8 @@ class ImpaktfullTheme {
         dimens: dimens ?? ImpaktfullDimens.getDefaults(),
         durations: durations ?? ImpaktfullDurations.getDefaults(),
         localizations: localizations ?? ImpaktfullLocalizations.getDefaults(),
-        splashFactory: splashFactory ?? _defaultSplashFactory,
+        splashFactory:
+            splashFactory ?? ImpaktfullThemeConfig.defaultSplashFactory,
       );
 
   static ImpaktfullTheme fromColors({
@@ -113,7 +116,8 @@ class ImpaktfullTheme {
         dimens: dimens ?? ImpaktfullDimens.getDefaults(),
         durations: durations ?? ImpaktfullDurations.getDefaults(),
         localizations: localizations ?? ImpaktfullLocalizations.getDefaults(),
-        splashFactory: splashFactory ?? _defaultSplashFactory,
+        splashFactory:
+            splashFactory ?? ImpaktfullThemeConfig.defaultSplashFactory,
       );
 
   final ImpaktfullColorTheme colors;

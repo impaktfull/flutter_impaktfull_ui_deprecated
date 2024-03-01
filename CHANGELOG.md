@@ -1,3 +1,9 @@
+# 0.0.24
+
+## Feat
+
+- ImpaktfullTheme expose the defaultSplashFactory
+
 # 0.0.23
 
 ## Feat
