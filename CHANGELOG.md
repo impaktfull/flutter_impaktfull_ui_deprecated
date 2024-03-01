@@ -1,3 +1,9 @@
+# 0.0.21
+
+## Feat
+
+- ImpaktfullApp now exposes `snackyBuilder` to set a custom snakcyBuilder
+
 # 0.0.20
 
 ## Feat
