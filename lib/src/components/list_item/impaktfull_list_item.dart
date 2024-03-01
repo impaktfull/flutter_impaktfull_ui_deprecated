@@ -4,6 +4,7 @@ import 'package:impaktfull_ui/src/components/icon/impaktfull_svg_icon.dart';
 import 'package:impaktfull_ui/src/components/list_item/base_list_item.dart';
 import 'package:impaktfull_ui/src/components/loading/impaktfull_loading.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_theme_localizer.dart';
+import 'package:impaktfull_ui/src/util/asset_util.dart';
 
 class ImpaktfullListItem extends StatefulWidget {
   final String title;
@@ -40,7 +41,9 @@ class _ImpaktfullListItemState extends State<ImpaktfullListItem> {
             : ImpaktfullSvgIcon(
                 asset: widget.leadingAsset!,
                 size: 16,
-                color: theme.colors.primary,
+                color: AssetUtil.isIcon(widget.leadingAsset!)
+                    ? theme.colors.primary
+                    : null,
               ),
         trailingWidget: widget.onTap != null || widget.onAsyncTap != null
             ? Builder(

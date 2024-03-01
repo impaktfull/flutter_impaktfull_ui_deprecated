@@ -2,24 +2,25 @@
 
 ## Feat
 
-- ImpaktfullTheme added `listViewTitleHorizontalPadding` && `listViewTitleVerticalPadding` to better control the padding of the title in the ImpaktfullListView
+- Check if leadingAsset is an icon or an image so a color should be a applied or not (on ImpaktfullListItem & ImpaktfullSelectableListItem)
 
 # 0.0.25
 
 ## Feat
 
-- ImpaktfullCard has now an `onTap` parameter
+- ImpaktfullTheme added `listViewTitleHorizontalPadding` && `listViewTitleVerticalPadding` to better control the padding of the title in the ImpaktfullListView
 
 # 0.0.24
 
 ## Feat
 
-- ImpaktfullTheme expose the defaultSplashFactory
+- ImpaktfullCard has now an `onTap` parameter
 
 # 0.0.23
 
 ## Feat
 
+- ImpaktfullTheme expose the defaultSplashFactory
 - RTL & LTR support for ImpaktfullApp (detection by the locale param)
 
 # 0.0.22

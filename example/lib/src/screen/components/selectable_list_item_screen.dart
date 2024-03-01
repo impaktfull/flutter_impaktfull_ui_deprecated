@@ -1,4 +1,5 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
+import 'package:impaktfull_ui_example/src/util/example_assets.dart';
 import 'package:impaktfull_ui_example/src/util/snacky_uitl.dart';
 
 class SelectableListItemScreen extends StatelessWidget {
@@ -29,6 +30,12 @@ class SelectableListItemScreen extends StatelessWidget {
               title: 'Some title',
               isSelected: true,
               leadingAsset: theme.assets.icons.arrowLeft,
+              onTap: () => SnackyUtil.show('On tap'),
+            ),
+            ImpaktfullSelectableListItem(
+              title: 'Some title',
+              isSelected: true,
+              leadingAsset: ExampleAssets.flagEn,
               onTap: () => SnackyUtil.show('On tap'),
             ),
           ],

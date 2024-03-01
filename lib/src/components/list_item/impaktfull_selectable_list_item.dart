@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:impaktfull_ui/src/components/icon/impaktfull_svg_icon.dart';
 import 'package:impaktfull_ui/src/components/list_item/base_list_item.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_theme_localizer.dart';
+import 'package:impaktfull_ui/src/util/asset_util.dart';
 
 class ImpaktfullSelectableListItem extends StatelessWidget {
   final String title;
@@ -31,7 +32,9 @@ class ImpaktfullSelectableListItem extends StatelessWidget {
             : ImpaktfullSvgIcon(
                 asset: leadingAsset!,
                 size: 16,
-                color: theme.colors.primary,
+                color: AssetUtil.isIcon(leadingAsset!)
+                    ? theme.colors.primary
+                    : null,
               ),
         trailingWidget: AnimatedOpacity(
           opacity: isSelected ? 1 : 0,

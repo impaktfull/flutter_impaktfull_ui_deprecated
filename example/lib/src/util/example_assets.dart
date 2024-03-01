@@ -1,6 +1,7 @@
 class ExampleAssets {
   const ExampleAssets._();
 
+  static const String flagEn = 'assets/images/flag_en.svg';
   static const String home = 'assets/icons/home.svg';
   static const String homeSelected = 'assets/icons/home_selected.svg';
   static const String search = 'assets/icons/search.svg';
