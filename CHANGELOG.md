@@ -1,3 +1,26 @@
+# 0.0.31
+
+## Feat
+
+- Added ImpaktfullBottomSheet
+- Added ImpaktfullSimpleListItem
+- Added ImpaktfullIconButton
+- ImpaktfullInputField has a title
+- Theme: Added close icon 
+- Theme: Added danger color
+- ImpaktfullScreen: tap outside to unfocus
+- ImpaktfullSwitch made onChanged optional to make it a read-only switch
+- ImpaktfullSwitchListItem made onChanged optional to make it a read-only switchListItem
+- ImpaktfullListItemTitle added option to set textAlign
+- ImpaktfullListItemTitle added danger option
+- ImpaktfullDialog primary action can be danger action
+- ImpaktfullButton added danger option
+- ImpaktfullAutoLayout added maiinAxisSize
+
+## Fix
+
+- ImpaktfullAutoLayout removed padding & backgroundColor
+
 # 0.0.30
 
 ## Feat

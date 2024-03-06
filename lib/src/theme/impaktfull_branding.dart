@@ -20,6 +20,8 @@ class ImpaktfullBranding {
   static const textOnAccent1 = Color(0xFFFFFFFF);
   static const textOnAccent2 = Color(0xFFFFFFFF);
 
+  static const danger = Color(0xFFC23F3F);
+
   static const error = Color(0xFFC23F3F);
   static const success = Color(0xFFA9C23F);
   static const info = Color(0xFF7D64F2);

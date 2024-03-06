@@ -24,6 +24,12 @@ class _ImpaktfullExampleScreenState extends State<ImpaktfullExampleScreen> {
           asset: ExampleAssets.add,
           onTap: () => SnackyUtil.show('On fab tapped!'),
         ),
+        actions: [
+          ImpaktfullNavbarAction(
+            svgIcon: theme.assets.icons.check,
+            onTap: _onActionTapped,
+          ),
+        ],
         bottomAction: ImpaktfullBottomNavigation(
           items: [
             ImpaktfullBottomNavigationItem(
@@ -47,6 +53,29 @@ class _ImpaktfullExampleScreenState extends State<ImpaktfullExampleScreen> {
           ],
         ),
         child: const Placeholder(),
+      ),
+    );
+  }
+
+  void _onActionTapped() {
+    showModalBottomSheet<void>(
+      context: context,
+      builder: (BuildContext context) => ImpaktfullBottomSheet(
+        title: 'Bottom sheet',
+        hasCloseButton: true,
+        child: ImpaktfullSeparatedColumn(
+          type: ImpaktfullSeparatorType.card,
+          children: [
+            ImpaktfullListItem(
+              title: 'Some item',
+              onTap: () => Navigator.of(context).pop(),
+            ),
+            ImpaktfullListItem(
+              title: 'Some item',
+              onTap: () => Navigator.of(context).pop(),
+            ),
+          ],
+        ),
       ),
     );
   }

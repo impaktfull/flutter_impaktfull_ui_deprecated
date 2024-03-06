@@ -32,7 +32,7 @@ class ImpaktfullSeparatedColumn extends StatelessWidget {
                   ? Colors.transparent
                   : theme.colors.card,
             ),
-            child: Column(
+            child: ImpaktfullAutoLayout.vertical(
               children: children.isEmpty
                   ? []
                   : [

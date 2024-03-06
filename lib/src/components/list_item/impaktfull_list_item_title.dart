@@ -2,9 +2,11 @@ import 'package:impaktfull_ui/impaktfull_ui.dart';
 
 class ImpaktfullListItemTitle extends StatelessWidget {
   final String title;
+  final TextAlign textAlign;
 
   const ImpaktfullListItemTitle({
     required this.title,
+    this.textAlign = TextAlign.start,
     super.key,
   });
 
@@ -20,6 +22,7 @@ class ImpaktfullListItemTitle extends StatelessWidget {
         child: Text(
           title,
           style: theme.textStyles.onCanvasPrimary.titleSmall,
+          textAlign: textAlign,
         ),
       ),
     );

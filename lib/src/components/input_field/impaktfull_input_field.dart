@@ -43,15 +43,7 @@ class _ImpaktfullInputFieldState extends State<ImpaktfullInputField> {
         spacing: 4,
         children: [
           if (widget.title != null) ...[
-            Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: theme.dimens.generalBorderRadius,
-              ),
-              child: Text(
-                widget.title!,
-                style: theme.textStyles.onCanvasPrimary.smallBody,
-              ),
-            )
+            ImpaktfullListItemTitle(title: widget.title!),
           ],
           Container(
             decoration: BoxDecoration(

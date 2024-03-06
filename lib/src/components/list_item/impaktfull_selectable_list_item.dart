@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:impaktfull_ui/src/components/icon/impaktfull_svg_icon.dart';
-import 'package:impaktfull_ui/src/components/list_item/base_list_item.dart';
+import 'package:impaktfull_ui/src/components/list_item/impaktfull_simple_list_item.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_theme_localizer.dart';
 import 'package:impaktfull_ui/src/util/asset_util.dart';
 
@@ -23,7 +23,7 @@ class ImpaktfullSelectableListItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ImpaktfullThemeLocalizer(
-      builder: (context, theme) => BaseListItem(
+      builder: (context, theme) => ImpaktfullSimpleListItem(
         title: title,
         subTitle: subTitle,
         onTap: onTap,

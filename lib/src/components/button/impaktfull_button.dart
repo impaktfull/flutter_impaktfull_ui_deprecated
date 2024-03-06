@@ -9,6 +9,7 @@ enum _ButtonType {
   primary,
   secondary,
   accent,
+  danger,
 }
 
 class ImpaktfullButton extends StatefulWidget {
@@ -37,6 +38,13 @@ class ImpaktfullButton extends StatefulWidget {
     this.onAsyncTap,
     super.key,
   }) : _type = _ButtonType.accent;
+
+  const ImpaktfullButton.danger({
+    required this.label,
+    this.onTap,
+    this.onAsyncTap,
+    super.key,
+  }) : _type = _ButtonType.danger;
 
   @override
   State<ImpaktfullButton> createState() => _ImpaktfullButtonState();
@@ -102,6 +110,8 @@ class _ImpaktfullButtonState extends State<ImpaktfullButton> {
         return Colors.transparent;
       case _ButtonType.accent:
         return theme.colors.accent1;
+      case _ButtonType.danger:
+        return theme.colors.danger;
     }
   }
 
@@ -112,6 +122,8 @@ class _ImpaktfullButtonState extends State<ImpaktfullButton> {
       case _ButtonType.secondary:
         return theme.textStyles.onCanvasPrimary;
       case _ButtonType.accent:
+        return theme.textStyles.onAccent1;
+      case _ButtonType.danger:
         return theme.textStyles.onAccent1;
     }
   }

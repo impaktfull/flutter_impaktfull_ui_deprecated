@@ -37,6 +37,11 @@ class ListItemScreen extends StatelessWidget {
               subTitle: 'Some subtitle',
               leadingAsset: theme.assets.icons.check,
             ),
+            ImpaktfullListItem.danger(
+              title: 'Some title',
+              leadingAsset: theme.assets.icons.check,
+              onTap: () {},
+            ),
           ],
         ),
       ),

@@ -35,6 +35,7 @@ class ImpaktfullTheme {
           onAccent2: ImpaktfullBranding.textOnAccent2,
           canvas: ImpaktfullBranding.canvas,
           card: ImpaktfullBranding.card,
+          danger: ImpaktfullBranding.danger,
           error: ImpaktfullBranding.error,
           info: ImpaktfullBranding.info,
           success: ImpaktfullBranding.success,
@@ -91,6 +92,7 @@ class ImpaktfullTheme {
           accent1TurnedOffState: ImpaktfullBranding.accent1TurnedOffState,
           canvas: ImpaktfullBranding.canvas,
           card: ImpaktfullBranding.card,
+          danger: ImpaktfullBranding.danger,
           error: ImpaktfullBranding.error,
           info: ImpaktfullBranding.info,
           success: ImpaktfullBranding.success,
@@ -158,6 +160,7 @@ class ImpaktfullColorTheme {
   final Color onPrimary;
   final Color onAccent1;
   final Color onAccent2;
+  final Color danger;
   final Color error;
   final Color info;
   final Color success;
@@ -175,6 +178,7 @@ class ImpaktfullColorTheme {
     required this.onAccent2,
     required this.canvas,
     required this.card,
+    required this.danger,
     required this.error,
     required this.info,
     required this.success,
@@ -325,7 +329,7 @@ class ImpaktfullTextStyleTheme {
             fontFamily: fontFamily,
             color: color),
         body: TextStyle(
-            fontSize: 13,
+            fontSize: 14,
             height: 1.2,
             fontWeight: FontWeight.normal,
             fontFamily: fontFamily,
@@ -358,11 +362,13 @@ class ImpaktfullAssetIcons {
   final String arrowLeft;
   final String check;
   final String chevronRight;
+  final String close;
 
   const ImpaktfullAssetIcons({
     required this.arrowLeft,
     required this.check,
     required this.chevronRight,
+    required this.close,
   });
 
   static ImpaktfullAssetIcons getDefaults() {
@@ -371,6 +377,7 @@ class ImpaktfullAssetIcons {
       arrowLeft: '$prefix/arrow_left.svg',
       check: '$prefix/check.svg',
       chevronRight: '$prefix/chevron_right.svg',
+      close: '$prefix/close.svg',
     );
   }
 }

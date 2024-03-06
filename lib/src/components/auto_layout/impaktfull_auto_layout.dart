@@ -8,40 +8,36 @@ enum ImpaktfullAutoLayoutOrientation {
 class ImpaktfullAutoLayout extends StatelessWidget {
   final ImpaktfullAutoLayoutOrientation orientation;
   final MainAxisAlignment mainAxisAlignment;
+  final MainAxisSize mainAxisSize;
   final CrossAxisAlignment crossAxisAlignment;
   final List<Widget> children;
-  final EdgeInsets padding;
   final double spacing;
-  final Color backgroundColor;
 
   const ImpaktfullAutoLayout({
     required this.children,
     required this.orientation,
+    this.mainAxisSize = MainAxisSize.max,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.start,
-    this.padding = EdgeInsets.zero,
     this.spacing = 0,
-    this.backgroundColor = Colors.transparent,
     super.key,
   });
 
   const ImpaktfullAutoLayout.horizontal({
     required this.children,
+    this.mainAxisSize = MainAxisSize.max,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.start,
-    this.padding = EdgeInsets.zero,
     this.spacing = 0,
-    this.backgroundColor = Colors.transparent,
     super.key,
   }) : orientation = ImpaktfullAutoLayoutOrientation.horizontal;
 
   const ImpaktfullAutoLayout.vertical({
     required this.children,
+    this.mainAxisSize = MainAxisSize.max,
     this.mainAxisAlignment = MainAxisAlignment.start,
     this.crossAxisAlignment = CrossAxisAlignment.start,
-    this.padding = EdgeInsets.zero,
     this.spacing = 0,
-    this.backgroundColor = Colors.transparent,
     super.key,
   }) : orientation = ImpaktfullAutoLayoutOrientation.vertical;
 
@@ -64,24 +60,20 @@ class ImpaktfullAutoLayout extends StatelessWidget {
       }
     }
 
-    final Widget child;
     if (orientation == ImpaktfullAutoLayoutOrientation.horizontal) {
-      child = Row(
+      return Row(
         mainAxisAlignment: mainAxisAlignment,
         crossAxisAlignment: crossAxisAlignment,
+        mainAxisSize: mainAxisSize,
         children: childerenWithSpacing,
       );
     } else {
-      child = Column(
+      return Column(
         mainAxisAlignment: mainAxisAlignment,
         crossAxisAlignment: crossAxisAlignment,
+        mainAxisSize: mainAxisSize,
         children: childerenWithSpacing,
       );
     }
-    return Container(
-      padding: padding,
-      color: backgroundColor,
-      child: child,
-    );
   }
 }

@@ -38,40 +38,43 @@ class ImpaktfullScreen extends StatelessWidget {
         onPopInvoked: (didPop) => onPopInvoked?.call(),
         child: Scaffold(
           backgroundColor: theme.colors.canvas,
-          body: Column(
-            children: [
-              ImpaktfullNavBar(
-                title: title,
-                subtitle: subtitle,
-                actions: actions,
-                bottomNavBarChild: bottomNavBarChild,
-                onBackTapped: onBackTapped,
-              ),
-              Expanded(
-                child: MediaQuery.removePadding(
-                  context: context,
-                  removeTop: true,
-                  child: Column(
-                    children: [
-                      Expanded(
-                        child: Stack(
-                          alignment: fabAlignment,
-                          children: [
-                            child,
-                            if (fab != null)
-                              Padding(
-                                padding: const EdgeInsets.all(16),
-                                child: fab!,
-                              ),
-                          ],
+          body: GestureDetector(
+            onTap: () => FocusScope.of(context).unfocus(),
+            child: Column(
+              children: [
+                ImpaktfullNavBar(
+                  title: title,
+                  subtitle: subtitle,
+                  actions: actions,
+                  bottomNavBarChild: bottomNavBarChild,
+                  onBackTapped: onBackTapped,
+                ),
+                Expanded(
+                  child: MediaQuery.removePadding(
+                    context: context,
+                    removeTop: true,
+                    child: Column(
+                      children: [
+                        Expanded(
+                          child: Stack(
+                            alignment: fabAlignment,
+                            children: [
+                              child,
+                              if (fab != null)
+                                Padding(
+                                  padding: const EdgeInsets.all(16),
+                                  child: fab!,
+                                ),
+                            ],
+                          ),
                         ),
-                      ),
-                      if (bottomAction != null) bottomAction!,
-                    ],
+                        if (bottomAction != null) bottomAction!,
+                      ],
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),

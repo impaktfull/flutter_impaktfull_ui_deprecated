@@ -10,7 +10,7 @@ dependencies:
   intl: ^0.18.1
   flutter:
     sdk: flutter
-  flutter_svg: ^2.0.9
+  flutter_svg: ^2.0.10+1
   lottie: ^3.0.0
   snacky: ^0.0.14
 dev_dependencies:

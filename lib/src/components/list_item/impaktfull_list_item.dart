@@ -1,8 +1,9 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:impaktfull_ui/src/components/icon/impaktfull_svg_icon.dart';
-import 'package:impaktfull_ui/src/components/list_item/base_list_item.dart';
+import 'package:impaktfull_ui/src/components/list_item/impaktfull_simple_list_item.dart';
 import 'package:impaktfull_ui/src/components/loading/impaktfull_loading.dart';
+import 'package:impaktfull_ui/src/theme/impaktfull_theme.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_theme_localizer.dart';
 import 'package:impaktfull_ui/src/util/asset_util.dart';
 
@@ -12,6 +13,7 @@ class ImpaktfullListItem extends StatefulWidget {
   final String? subTitle;
   final VoidCallback? onTap;
   final AsyncCallback? onAsyncTap;
+  final bool danger;
 
   const ImpaktfullListItem({
     required this.title,
@@ -20,7 +22,16 @@ class ImpaktfullListItem extends StatefulWidget {
     this.onAsyncTap,
     this.subTitle,
     super.key,
-  });
+  }) : danger = false;
+
+  const ImpaktfullListItem.danger({
+    required this.title,
+    this.leadingAsset,
+    this.onTap,
+    this.onAsyncTap,
+    this.subTitle,
+    super.key,
+  }) : danger = true;
 
   @override
   State<ImpaktfullListItem> createState() => _ImpaktfullListItemState();
@@ -32,18 +43,18 @@ class _ImpaktfullListItemState extends State<ImpaktfullListItem> {
   @override
   Widget build(BuildContext context) {
     return ImpaktfullThemeLocalizer(
-      builder: (context, theme) => BaseListItem(
+      builder: (context, theme) => ImpaktfullSimpleListItem(
         title: widget.title,
         subTitle: widget.subTitle,
-        onTap: widget.onAsyncTap != null ? _onAsyncTap : widget.onTap,
+        danger: widget.danger,
+        onTap:
+            widget.onAsyncTap == null && widget.onTap == null ? null : _onTap,
         leadingWidget: widget.leadingAsset == null
             ? null
             : ImpaktfullSvgIcon(
                 asset: widget.leadingAsset!,
                 size: 16,
-                color: AssetUtil.isIcon(widget.leadingAsset!)
-                    ? theme.colors.primary
-                    : null,
+                color: _getLeadingColor(theme),
               ),
         trailingWidget: widget.onTap != null || widget.onAsyncTap != null
             ? Builder(
@@ -66,6 +77,14 @@ class _ImpaktfullListItemState extends State<ImpaktfullListItem> {
     );
   }
 
+  void _onTap() {
+    if (widget.onTap != null) {
+      widget.onTap!();
+      return;
+    }
+    _onAsyncTap();
+  }
+
   Future<void> _onAsyncTap() async {
     _isLoading = true;
     setState(() {});
@@ -80,5 +99,13 @@ class _ImpaktfullListItemState extends State<ImpaktfullListItem> {
       setState(() {});
       rethrow;
     }
+  }
+
+  Color? _getLeadingColor(ImpaktfullTheme theme) {
+    if (!AssetUtil.isIcon(widget.leadingAsset!)) {
+      return null;
+    }
+    if (widget.danger) return theme.colors.danger;
+    return theme.colors.primary;
   }
 }

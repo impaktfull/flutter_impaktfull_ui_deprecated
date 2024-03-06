@@ -6,6 +6,7 @@ class ImpaktfullDialog extends StatelessWidget {
   final Widget? child;
   final String? secondaryLabel;
   final String? primaryLabel;
+  final bool isPrimaryDanger;
   final VoidCallback? onSecondaryTapped;
   final VoidCallback? onPrimaryTapped;
 
@@ -17,6 +18,7 @@ class ImpaktfullDialog extends StatelessWidget {
     this.onSecondaryTapped,
     this.primaryLabel,
     this.onPrimaryTapped,
+    this.isPrimaryDanger = false,
     super.key,
   }) : assert(child != null || title != null || body != null);
 
@@ -66,9 +68,18 @@ class ImpaktfullDialog extends StatelessWidget {
                           ),
                         ),
                       ],
-                      if (onPrimaryTapped != null) ...[
+                      if (onPrimaryTapped != null && !isPrimaryDanger) ...[
                         Expanded(
                           child: ImpaktfullButton.primary(
+                            label: primaryLabel ??
+                                theme.localizations.current.generalLabelAccept,
+                            onTap: onPrimaryTapped,
+                          ),
+                        ),
+                      ],
+                      if (onPrimaryTapped != null && isPrimaryDanger) ...[
+                        Expanded(
+                          child: ImpaktfullButton.danger(
                             label: primaryLabel ??
                                 theme.localizations.current.generalLabelAccept,
                             onTap: onPrimaryTapped,
