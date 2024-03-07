@@ -14,6 +14,7 @@ class ImpaktfullListItem extends StatefulWidget {
   final VoidCallback? onTap;
   final AsyncCallback? onAsyncTap;
   final bool danger;
+  final EdgeInsetsGeometry padding;
 
   const ImpaktfullListItem({
     required this.title,
@@ -21,6 +22,10 @@ class ImpaktfullListItem extends StatefulWidget {
     this.onTap,
     this.onAsyncTap,
     this.subTitle,
+    this.padding = const EdgeInsets.symmetric(
+      horizontal: 16,
+      vertical: 12,
+    ),
     super.key,
   }) : danger = false;
 
@@ -30,6 +35,10 @@ class ImpaktfullListItem extends StatefulWidget {
     this.onTap,
     this.onAsyncTap,
     this.subTitle,
+    this.padding = const EdgeInsets.symmetric(
+      horizontal: 16,
+      vertical: 12,
+    ),
     super.key,
   }) : danger = true;
 
@@ -47,6 +56,7 @@ class _ImpaktfullListItemState extends State<ImpaktfullListItem> {
         title: widget.title,
         subTitle: widget.subTitle,
         danger: widget.danger,
+        padding: widget.padding,
         onTap:
             widget.onAsyncTap == null && widget.onTap == null ? null : _onTap,
         leadingWidget: widget.leadingAsset == null

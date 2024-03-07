@@ -4,11 +4,15 @@ class ImpaktfullSeparatedColumn extends StatelessWidget {
   final String? title;
   final List<Widget> children;
   final ImpaktfullSeparatorType type;
+  final bool showFirstSeparator;
+  final bool showLastSeparator;
 
   const ImpaktfullSeparatedColumn({
     required this.children,
     this.title,
     this.type = ImpaktfullSeparatorType.canvas,
+    this.showFirstSeparator = false,
+    this.showLastSeparator = false,
     super.key,
   });
 
@@ -37,9 +41,11 @@ class ImpaktfullSeparatedColumn extends StatelessWidget {
                   ? []
                   : [
                       for (int i = 0; i < children.length; i++) ...[
-                        if (i > 0) ImpaktfullSeparator(type: type),
+                        if (i > 0 || showFirstSeparator)
+                          ImpaktfullSeparator(type: type),
                         children[i],
                       ],
+                      if (showLastSeparator) ImpaktfullSeparator(type: type),
                     ],
             ),
           ),

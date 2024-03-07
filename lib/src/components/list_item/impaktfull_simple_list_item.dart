@@ -12,6 +12,8 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
   final Widget? trailingWidget;
   final VoidCallback? onTap;
   final bool danger;
+  final EdgeInsetsGeometry padding;
+  final double spacing;
 
   const ImpaktfullSimpleListItem({
     required this.title,
@@ -20,6 +22,11 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
     this.leadingWidget,
     this.trailingWidget,
     this.danger = false,
+    this.padding = const EdgeInsets.symmetric(
+      horizontal: 16,
+      vertical: 12,
+    ),
+    this.spacing = 8,
     super.key,
   }) : centerWidget = null;
 
@@ -28,6 +35,11 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
     this.onTap,
     this.leadingWidget,
     this.trailingWidget,
+    this.padding = const EdgeInsets.symmetric(
+      horizontal: 16,
+      vertical: 12,
+    ),
+    this.spacing = 8,
     super.key,
   })  : title = '',
         subTitle = null,
@@ -40,13 +52,10 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
         onTap: onTap,
         color: theme.colors.card,
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 16,
-            vertical: 12,
-          ),
+          padding: padding,
           child: ImpaktfullAutoLayout.horizontal(
             crossAxisAlignment: CrossAxisAlignment.center,
-            spacing: 8,
+            spacing: spacing,
             children: [
               if (leadingWidget != null) ...[
                 leadingWidget!,
@@ -70,7 +79,9 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
                   ),
                 ),
               ] else ...[
-                centerWidget!,
+                Expanded(
+                  child: centerWidget!,
+                ),
               ],
               if (trailingWidget != null) ...[
                 trailingWidget!,

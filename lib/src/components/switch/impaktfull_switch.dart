@@ -3,10 +3,16 @@ import 'package:impaktfull_ui/impaktfull_ui.dart';
 class ImpaktfullSwitch extends StatelessWidget {
   final bool value;
   final ValueChanged<bool>? onChanged;
+  final Color? activeColor;
+  final Color? inactiveColor;
+  final Color? backgroundColor;
 
   const ImpaktfullSwitch({
     required this.value,
     required this.onChanged,
+    this.activeColor,
+    this.inactiveColor,
+    this.backgroundColor,
     super.key,
   });
 
@@ -18,7 +24,7 @@ class ImpaktfullSwitch extends StatelessWidget {
           opacity: onChanged == null ? 0.5 : 1,
           child: ImpaktfullTouchFeedback(
             onTap: onChanged == null ? null : () => onChanged!.call(!value),
-            color: theme.colors.card,
+            color: backgroundColor ?? theme.colors.card,
             borderRadius:
                 BorderRadius.circular(theme.dimens.switchBorderRadius),
             child: AnimatedContainer(
@@ -29,8 +35,8 @@ class ImpaktfullSwitch extends StatelessWidget {
                     BorderRadius.circular(theme.dimens.switchBorderRadius),
                 border: Border.all(
                   color: value
-                      ? theme.colors.accent1
-                      : theme.colors.accent1TurnedOffState,
+                      ? activeColor ?? theme.colors.accent1
+                      : inactiveColor ?? theme.colors.accent1TurnedOffState,
                   width: theme.dimens.borderWidth,
                 ),
               ),
@@ -50,8 +56,8 @@ class ImpaktfullSwitch extends StatelessWidget {
                   width: 16,
                   decoration: BoxDecoration(
                     color: value
-                        ? theme.colors.accent1
-                        : theme.colors.accent1TurnedOffState,
+                        ? activeColor ?? theme.colors.accent1
+                        : inactiveColor ?? theme.colors.accent1TurnedOffState,
                     borderRadius: BorderRadius.circular(
                       theme.dimens.switchThumbBorderRadius,
                     ),

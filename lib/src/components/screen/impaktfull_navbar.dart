@@ -8,14 +8,16 @@ class ImpaktfullNavBar extends StatelessWidget {
   final String? subtitle;
   final List<Widget> actions;
   final Widget? bottomNavBarChild;
+  final bool isFullScreen;
   final VoidCallback? onBackTapped;
 
   const ImpaktfullNavBar({
-    required String this.title,
-    this.actions = const [],
+    required this.title,
     this.bottomNavBarChild,
     this.subtitle,
     this.onBackTapped,
+    this.isFullScreen = false,
+    this.actions = const [],
     super.key,
   });
 
@@ -29,13 +31,14 @@ class ImpaktfullNavBar extends StatelessWidget {
           bottom: false,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
+            mainAxisSize: MainAxisSize.min,
             children: [
               ConstrainedBox(
                 constraints: const BoxConstraints(minHeight: 56),
                 child: Row(
                   children: [
                     const SizedBox(width: 4),
-                    if (onBackTapped != null) ...[
+                    if (!isFullScreen && onBackTapped != null) ...[
                       ImpaktfullNavbarAction(
                         svgIcon: theme.assets.icons.arrowLeft,
                         onTap: onBackTapped,
@@ -49,11 +52,14 @@ class ImpaktfullNavBar extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 8),
                         child: ImpaktfullAutoLayout.vertical(
                           mainAxisAlignment: MainAxisAlignment.center,
+                          mainAxisSize: MainAxisSize.min,
                           children: [
-                            Text(
-                              title!,
-                              style: theme.textStyles.onPrimary.title,
-                            ),
+                            if (title != null) ...[
+                              Text(
+                                title!,
+                                style: theme.textStyles.onPrimary.title,
+                              ),
+                            ],
                             if (subtitle != null) ...[
                               const SizedBox(height: 2),
                               Opacity(
@@ -70,6 +76,12 @@ class ImpaktfullNavBar extends StatelessWidget {
                     ),
                     SizedBox(width: actions.isEmpty ? 0 : 8),
                     ...actions,
+                    if (isFullScreen && onBackTapped != null) ...[
+                      ImpaktfullNavbarAction(
+                        svgIcon: theme.assets.icons.close,
+                        onTap: onBackTapped,
+                      ),
+                    ],
                     const SizedBox(width: 8),
                   ],
                 ),

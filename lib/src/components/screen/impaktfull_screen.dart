@@ -4,7 +4,7 @@ import 'package:impaktfull_ui/src/components/screen/impaktfull_statusbar.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_theme.dart';
 
 class ImpaktfullScreen extends StatelessWidget {
-  final String title;
+  final String? title;
   final String? subtitle;
   final Widget child;
   final List<Widget> actions;
@@ -14,10 +14,11 @@ class ImpaktfullScreen extends StatelessWidget {
   final Widget? fab;
   final VoidCallback? onBackTapped;
   final VoidCallback? onPopInvoked;
+  final bool isFullScreen;
 
   const ImpaktfullScreen({
-    required this.title,
     required this.child,
+    this.title,
     this.actions = const [],
     this.bottomNavBarChild,
     this.subtitle,
@@ -26,12 +27,18 @@ class ImpaktfullScreen extends StatelessWidget {
     this.bottomAction,
     this.fabAlignment = Alignment.bottomRight,
     this.fab,
+    this.isFullScreen = false,
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     final theme = ImpaktfullTheme.of(context);
+    final hasNavBar = title != null ||
+        subtitle != null ||
+        actions.isNotEmpty ||
+        onBackTapped != null ||
+        bottomNavBarChild != null;
     return ImpaktfullStatusBar.custom(
       isDark: theme.useDarkStatusBar,
       child: PopScope(
@@ -42,17 +49,20 @@ class ImpaktfullScreen extends StatelessWidget {
             onTap: () => FocusScope.of(context).unfocus(),
             child: Column(
               children: [
-                ImpaktfullNavBar(
-                  title: title,
-                  subtitle: subtitle,
-                  actions: actions,
-                  bottomNavBarChild: bottomNavBarChild,
-                  onBackTapped: onBackTapped,
-                ),
+                if (hasNavBar) ...[
+                  ImpaktfullNavBar(
+                    title: title,
+                    subtitle: subtitle,
+                    actions: actions,
+                    bottomNavBarChild: bottomNavBarChild,
+                    isFullScreen: isFullScreen,
+                    onBackTapped: onBackTapped,
+                  ),
+                ],
                 Expanded(
                   child: MediaQuery.removePadding(
                     context: context,
-                    removeTop: true,
+                    removeTop: hasNavBar,
                     child: Column(
                       children: [
                         Expanded(

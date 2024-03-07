@@ -8,6 +8,7 @@ import 'package:impaktfull_ui/src/components/separator/impaktfull_separator.dart
 import 'package:impaktfull_ui/src/theme/impaktfull_theme.dart';
 
 class ImpaktfullListView<T> extends StatefulWidget {
+  final Widget? child;
   final List<Widget>? children;
   final List<T>? items;
   final Widget Function(BuildContext, T)? itemBuilder;
@@ -29,6 +30,7 @@ class ImpaktfullListView<T> extends StatefulWidget {
     this.extraPadding = EdgeInsets.zero,
     super.key,
   })  : itemBuilder = null,
+        child = null,
         items = null,
         separated = false,
         skipPadding = true,
@@ -47,6 +49,7 @@ class ImpaktfullListView<T> extends StatefulWidget {
     this.extraPadding = EdgeInsets.zero,
     super.key,
   })  : separated = false,
+        child = null,
         children = null,
         skipPadding = null,
         separatorType = null;
@@ -63,6 +66,24 @@ class ImpaktfullListView<T> extends StatefulWidget {
     super.key,
     required,
   })  : spacing = 0,
+        child = null,
+        children = null,
+        separated = true,
+        skipPadding = null;
+
+  const ImpaktfullListView.child({
+    required this.child,
+    this.isLoading = false,
+    this.refreshBtnLabel,
+    this.onRefresh,
+    this.extraPadding = EdgeInsets.zero,
+    super.key,
+    required,
+  })  : spacing = 0,
+        items = null,
+        noDataLabel = null,
+        itemBuilder = null,
+        separatorType = null,
         children = null,
         separated = true,
         skipPadding = null;
@@ -95,6 +116,17 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: widget.children!,
             ),
+          ],
+        ),
+      );
+    }
+    if (widget.child != null) {
+      return ImpaktfullRefreshIndicator(
+        onRefresh: widget.onRefresh,
+        child: ListView(
+          padding: padding,
+          children: [
+            widget.child!,
           ],
         ),
       );

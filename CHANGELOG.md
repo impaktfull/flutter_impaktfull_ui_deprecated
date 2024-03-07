@@ -1,3 +1,31 @@
+# 0.0.32
+
+## Breaking
+
+- ImpaktfullDialog `isPrimaryDange` => `primaryButtonType = ImpaktfullDialogPrimaryButtonType.danger`
+
+## Feat
+
+- TextStyleExtension added `withOpacity()` method to override the color opacity
+- ImpaktfullButton now has an `onAccent` property to flag a secondary button that it is shown on an accent color
+- ImpaktfullCheckbox now has the option to override the colors
+- ImpaktfullSwitch now has the option to override the colors
+- ImpaktfullDialog added `padding` & `margin`
+- ImpaktfullListItem added `padding`
+- ImpaktfullSimpleListItem added `padding` & `spacing`
+- ImpaktfullSwitchListItem added `padding` & `spacing`
+- ImpaktfullListView.child added to have a listview with a child instead of children
+- ImpaktfullLoadingIndicator added `custom` constructor where we can pass an `asset` (lottie file asset path)
+- ImpaktfullNavBar added option to mark a navbar as `isFullScreen`
+- ImpaktfullNavBar title nullable to hide the title
+- ImpaktfullScreen added option to mark a navbar as `isFullScreen`
+- ImpaktfullScreen title nullable to hide the title
+- ImpaktfullSeparatedColumn added 2 options: `showFirstSeparator` & `showLastSeparator` to control the visibility of the separators for the first & last item
+
+## Fix
+
+- ImpaktfullNavBarAction use correct color for the icon
+
 # 0.0.31
 
 ## Feat

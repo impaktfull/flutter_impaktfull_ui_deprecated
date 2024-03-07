@@ -21,6 +21,7 @@ class ImpaktfullNavbarAction extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           child: ImpaktfullSvgIcon(
             asset: svgIcon,
+            color: theme.colors.onPrimary,
           ),
         ),
       ),

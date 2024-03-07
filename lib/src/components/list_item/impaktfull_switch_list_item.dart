@@ -10,6 +10,8 @@ class ImpaktfullSwitchListItem extends StatelessWidget {
   final String? leadingAsset;
   final bool value;
   final ValueChanged<bool>? onChanged;
+  final EdgeInsetsGeometry padding;
+  final double spacing;
 
   const ImpaktfullSwitchListItem({
     required this.title,
@@ -17,6 +19,11 @@ class ImpaktfullSwitchListItem extends StatelessWidget {
     this.onChanged,
     this.subTitle,
     this.leadingAsset,
+    this.padding = const EdgeInsets.symmetric(
+      horizontal: 16,
+      vertical: 12,
+    ),
+    this.spacing = 8,
     super.key,
   });
 
@@ -28,6 +35,8 @@ class ImpaktfullSwitchListItem extends StatelessWidget {
         child: ImpaktfullSimpleListItem(
           title: title,
           subTitle: subTitle,
+          spacing: spacing,
+          padding: padding,
           onTap: () => onChanged?.call(!value),
           leadingWidget: leadingAsset == null
               ? null

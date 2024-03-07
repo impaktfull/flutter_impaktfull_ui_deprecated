@@ -3,10 +3,18 @@ import 'package:impaktfull_ui/impaktfull_ui.dart';
 class ImpaktfullCheckBox extends StatelessWidget {
   final bool value;
   final ValueChanged<bool> onChanged;
+  final Color? activeColor;
+  final Color? inactiveColor;
+  final Color? checkMarkColor;
+  final Color? backgroundColor;
 
   const ImpaktfullCheckBox({
     required this.value,
     required this.onChanged,
+    this.activeColor,
+    this.inactiveColor,
+    this.checkMarkColor,
+    this.backgroundColor,
     super.key,
   });
 
@@ -18,7 +26,7 @@ class ImpaktfullCheckBox extends StatelessWidget {
           onTap: () => onChanged(!value),
           borderRadius:
               BorderRadius.circular(theme.dimens.switchThumbBorderRadius),
-          color: theme.colors.card,
+          color: backgroundColor ?? theme.colors.card,
           child: SizedBox(
             width: 24,
             height: 24,
@@ -30,7 +38,8 @@ class ImpaktfullCheckBox extends StatelessWidget {
                       borderRadius: BorderRadius.circular(
                           theme.dimens.switchThumbBorderRadius),
                       border: Border.all(
-                        color: theme.colors.accent1TurnedOffState,
+                        color:
+                            inactiveColor ?? theme.colors.accent1TurnedOffState,
                         width: theme.dimens.borderWidth,
                       ),
                     ),
@@ -45,9 +54,9 @@ class ImpaktfullCheckBox extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(
                             theme.dimens.switchThumbBorderRadius),
-                        color: theme.colors.accent1,
+                        color: activeColor ?? theme.colors.accent1,
                         border: Border.all(
-                          color: theme.colors.accent1,
+                          color: activeColor ?? theme.colors.accent1,
                           width: theme.dimens.borderWidth,
                         ),
                       ),
@@ -62,7 +71,7 @@ class ImpaktfullCheckBox extends StatelessWidget {
                     child: Center(
                       child: ImpaktfullSvgIcon(
                         asset: theme.assets.icons.check,
-                        color: theme.colors.onAccent1,
+                        color: checkMarkColor ?? theme.colors.onAccent1,
                         size: 20,
                       ),
                     ),

@@ -6,9 +6,11 @@ class ImpaktfullDialog extends StatelessWidget {
   final Widget? child;
   final String? secondaryLabel;
   final String? primaryLabel;
-  final bool isPrimaryDanger;
+  final ImpaktfullDialogPrimaryButtonType primaryButtonType;
   final VoidCallback? onSecondaryTapped;
   final VoidCallback? onPrimaryTapped;
+  final EdgeInsetsGeometry? margin;
+  final EdgeInsetsGeometry? padding;
 
   const ImpaktfullDialog({
     this.title,
@@ -18,7 +20,9 @@ class ImpaktfullDialog extends StatelessWidget {
     this.onSecondaryTapped,
     this.primaryLabel,
     this.onPrimaryTapped,
-    this.isPrimaryDanger = false,
+    this.primaryButtonType = ImpaktfullDialogPrimaryButtonType.primary,
+    this.margin = const EdgeInsets.all(8),
+    this.padding = const EdgeInsets.all(16),
     super.key,
   }) : assert(child != null || title != null || body != null);
 
@@ -30,8 +34,8 @@ class ImpaktfullDialog extends StatelessWidget {
           type: MaterialType.transparency,
           child: Container(
             constraints: const BoxConstraints(maxWidth: 500),
-            margin: const EdgeInsets.all(8),
-            padding: const EdgeInsets.all(16),
+            margin: margin,
+            padding: padding,
             decoration: BoxDecoration(
               color: theme.colors.card,
               borderRadius:
@@ -68,23 +72,38 @@ class ImpaktfullDialog extends StatelessWidget {
                           ),
                         ),
                       ],
-                      if (onPrimaryTapped != null && !isPrimaryDanger) ...[
-                        Expanded(
-                          child: ImpaktfullButton.primary(
-                            label: primaryLabel ??
-                                theme.localizations.current.generalLabelAccept,
-                            onTap: onPrimaryTapped,
+                      if (onPrimaryTapped != null) ...[
+                        if (primaryButtonType ==
+                            ImpaktfullDialogPrimaryButtonType.primary) ...[
+                          Expanded(
+                            child: ImpaktfullButton.primary(
+                              label: primaryLabel ??
+                                  theme
+                                      .localizations.current.generalLabelAccept,
+                              onTap: onPrimaryTapped,
+                            ),
                           ),
-                        ),
-                      ],
-                      if (onPrimaryTapped != null && isPrimaryDanger) ...[
-                        Expanded(
-                          child: ImpaktfullButton.danger(
-                            label: primaryLabel ??
-                                theme.localizations.current.generalLabelAccept,
-                            onTap: onPrimaryTapped,
+                        ] else if (primaryButtonType ==
+                            ImpaktfullDialogPrimaryButtonType.accent) ...[
+                          Expanded(
+                            child: ImpaktfullButton.accent(
+                              label: primaryLabel ??
+                                  theme
+                                      .localizations.current.generalLabelAccept,
+                              onTap: onPrimaryTapped,
+                            ),
                           ),
-                        ),
+                        ] else if (primaryButtonType ==
+                            ImpaktfullDialogPrimaryButtonType.danger) ...[
+                          Expanded(
+                            child: ImpaktfullButton.danger(
+                              label: primaryLabel ??
+                                  theme
+                                      .localizations.current.generalLabelAccept,
+                              onTap: onPrimaryTapped,
+                            ),
+                          ),
+                        ],
                       ],
                     ],
                   ),
@@ -96,4 +115,10 @@ class ImpaktfullDialog extends StatelessWidget {
       ),
     );
   }
+}
+
+enum ImpaktfullDialogPrimaryButtonType {
+  primary,
+  accent,
+  danger,
 }

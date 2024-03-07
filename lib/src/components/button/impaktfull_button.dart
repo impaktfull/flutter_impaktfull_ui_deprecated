@@ -17,18 +17,21 @@ class ImpaktfullButton extends StatefulWidget {
   final VoidCallback? onTap;
   final AsyncCallback? onAsyncTap;
   final _ButtonType _type;
+  final bool onAccent;
 
   const ImpaktfullButton.primary({
     required this.label,
     this.onTap,
     this.onAsyncTap,
     super.key,
-  }) : _type = _ButtonType.primary;
+  })  : _type = _ButtonType.primary,
+        onAccent = false;
 
   const ImpaktfullButton.secondary({
     required this.label,
     this.onTap,
     this.onAsyncTap,
+    this.onAccent = false,
     super.key,
   }) : _type = _ButtonType.secondary;
 
@@ -37,14 +40,16 @@ class ImpaktfullButton extends StatefulWidget {
     this.onTap,
     this.onAsyncTap,
     super.key,
-  }) : _type = _ButtonType.accent;
+  })  : _type = _ButtonType.accent,
+        onAccent = false;
 
   const ImpaktfullButton.danger({
     required this.label,
     this.onTap,
     this.onAsyncTap,
     super.key,
-  }) : _type = _ButtonType.danger;
+  })  : _type = _ButtonType.danger,
+        onAccent = false;
 
   @override
   State<ImpaktfullButton> createState() => _ImpaktfullButtonState();
@@ -116,6 +121,7 @@ class _ImpaktfullButtonState extends State<ImpaktfullButton> {
   }
 
   ImpaktfullTextStyleTheme _getTextStyle(ImpaktfullTheme theme) {
+    if (widget.onAccent) return theme.textStyles.onAccent1;
     switch (widget._type) {
       case _ButtonType.primary:
         return theme.textStyles.onPrimary;
