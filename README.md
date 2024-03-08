@@ -2,24 +2,28 @@
 
 A UI library of Impaktfull.
 
-# Purpose
+## Disclaimer 
+
+**impaktfull_ui is still in unstable & untested. everything under <1.0.0 should not be used unless you want to test it**
+
+## Purpose
 
 This UI library was built to have a simple way to build UIs for Impaktfull. This will limit the maintenance cost of open-source projects and make it easier to build applications. That way we can focus on building new tools & features instead of bugfixing and maintaining UI changes from Flutter.
 
 - Open-source example projects
 - Impaktfull applications
 
-# Usage
+## Usage
 
 [![pub package](https://img.shields.io/pub/v/impaktfull_ui.svg)](https://pub.dartlang.org/packages/impaktfull_ui)
 
-## Setup
+### Setup
 
 - Setup your theme (colors, textStyles, shadows, dimens, assets)
 - Use ImapktfullApp
 - Use the components provided in the UI library
 
-## Component List
+### Component List
 
 Components are always prefixed with `Impaktfull` to avoid conflicts with other libraries.
 
@@ -60,15 +64,15 @@ Components are always prefixed with `Impaktfull` to avoid conflicts with other l
 
 Many more to come in the future, always with the focus on minimizing maintenance and maximizing a recognizable UI/brand for Impaktfull
 
-## Assets
+### Assets
 
-### Lottie Animations
+#### Lottie Animations
 
 These icons should be added to your assets folder to use the default lottie animations. (in your own project)
 
 - assets/lottie/loading.json
 
-### Default Icons
+#### Default Icons
 
 These icons should be added to your assets folder to use the default icons. (in your own project)
 
