@@ -63,7 +63,7 @@ class ImpaktfullNavBar extends StatelessWidget {
                             if (subtitle != null) ...[
                               const SizedBox(height: 2),
                               Opacity(
-                                opacity: 0.5,
+                                opacity: 0.8,
                                 child: Text(
                                   subtitle!,
                                   style: theme.textStyles.onPrimary.smallBody,

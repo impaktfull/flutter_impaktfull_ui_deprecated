@@ -1,3 +1,9 @@
+# 0.0.34
+
+## Fix
+
+- Separated column uses correct border radius again
+
 # 0.0.33
 
 ## Update

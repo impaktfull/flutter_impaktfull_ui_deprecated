@@ -28,25 +28,25 @@ class ImpaktfullSeparatedColumn extends StatelessWidget {
               title: title!,
             ),
           ],
-          Container(
-            decoration: BoxDecoration(
-              borderRadius:
-                  BorderRadius.circular(theme.dimens.generalBorderRadius),
+          ClipRRect(
+            borderRadius:
+                BorderRadius.circular(theme.dimens.generalBorderRadius),
+            child: ColoredBox(
               color: type == ImpaktfullSeparatorType.canvas
                   ? Colors.transparent
                   : theme.colors.card,
-            ),
-            child: ImpaktfullAutoLayout.vertical(
-              children: children.isEmpty
-                  ? []
-                  : [
-                      for (int i = 0; i < children.length; i++) ...[
-                        if (i > 0 || showFirstSeparator)
-                          ImpaktfullSeparator(type: type),
-                        children[i],
+              child: ImpaktfullAutoLayout.vertical(
+                children: children.isEmpty
+                    ? []
+                    : [
+                        for (int i = 0; i < children.length; i++) ...[
+                          if (i > 0 || showFirstSeparator)
+                            ImpaktfullSeparator(type: type),
+                          children[i],
+                        ],
+                        if (showLastSeparator) ImpaktfullSeparator(type: type),
                       ],
-                      if (showLastSeparator) ImpaktfullSeparator(type: type),
-                    ],
+              ),
             ),
           ),
         ],
