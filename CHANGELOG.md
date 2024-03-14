@@ -1,3 +1,9 @@
+# 0.2.0
+
+## Feat
+
+- Added universal_io as a dependency to support web & desktop & exported it by default
+
 # 0.1.0
 
 ## Feat
