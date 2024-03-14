@@ -21,6 +21,7 @@ class ImpaktfullApp extends StatelessWidget {
   final String? initialRoute;
   final RouteFactory? onGenerateRoute;
   final Widget Function(BuildContext context, Widget app)? builder;
+  final TargetPlatform? targetPlatform;
   final bool showDebugFlag;
 
   const ImpaktfullApp({
@@ -39,6 +40,7 @@ class ImpaktfullApp extends StatelessWidget {
     this.onGenerateRoute,
     this.navigatorObservers = const <NavigatorObserver>[],
     this.builder,
+    this.targetPlatform,
     this.showDebugFlag = kDebugMode,
     super.key,
   });
@@ -105,8 +107,10 @@ class ImpaktfullApp extends StatelessWidget {
             home: home,
             debugShowCheckedModeBanner: showDebugFlag,
             locale: locale,
-            theme: materialLightTheme,
-            darkTheme: materialDarkTheme,
+            theme: (materialLightTheme ?? Theme.of(context))
+                .copyWith(platform: targetPlatform),
+            darkTheme: (materialLightTheme ?? Theme.of(context))
+                .copyWith(platform: targetPlatform),
             supportedLocales: supportedLocales,
             localizationsDelegates: localizationsDelegates,
             navigatorKey: navigatorKey,

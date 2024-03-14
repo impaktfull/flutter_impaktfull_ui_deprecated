@@ -1,3 +1,9 @@
+# 0.1.0
+
+## Feat
+
+- Added support for setting target platform
+
 # 0.0.34
 
 ## Fix
