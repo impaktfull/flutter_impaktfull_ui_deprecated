@@ -150,6 +150,7 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
                   Text(
                     widget.noDataLabel!,
                     style: theme.textStyles.onCanvasPrimary.title,
+                    textAlign: TextAlign.center,
                   ),
                   if (widget.refreshBtnLabel != null &&
                       widget.onRefresh != null) ...[

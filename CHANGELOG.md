@@ -1,3 +1,9 @@
+# 0.2.1
+
+## Fix
+
+- ListView empty state correctly aligned (center)
+
 # 0.2.0
 
 ## Feat
