@@ -1,4 +1,8 @@
-import 'package:impaktfull_ui/impaktfull_ui.dart';
+import 'package:flutter/material.dart';
+import 'package:impaktfull_ui/src/components/badge/impaktfull_badge.dart';
+import 'package:impaktfull_ui/src/components/icon/impaktfull_svg_icon.dart';
+import 'package:impaktfull_ui/src/components/touch_feedback/impaktfull_touch_feedback.dart';
+import 'package:impaktfull_ui/src/theme/impaktfull_theme_localizer.dart';
 
 class ImpaktfullBottomNavigationItem extends StatelessWidget {
   final String label;
@@ -6,6 +10,8 @@ class ImpaktfullBottomNavigationItem extends StatelessWidget {
   final String? svgIconSelected;
   final bool isSelected;
   final VoidCallback onTap;
+  final bool showBadge;
+  final String? badgeText;
 
   const ImpaktfullBottomNavigationItem({
     required this.label,
@@ -13,6 +19,8 @@ class ImpaktfullBottomNavigationItem extends StatelessWidget {
     required this.isSelected,
     required this.onTap,
     this.svgIconSelected,
+    this.showBadge = false,
+    this.badgeText,
     super.key,
   });
 
@@ -22,15 +30,20 @@ class ImpaktfullBottomNavigationItem extends StatelessWidget {
       child: ImpaktfullThemeLocalizer(
         builder: (context, theme) => ImpaktfullTouchFeedback(
           onTap: onTap,
-          child: Container(
+          child: ColoredBox(
             color: Colors.transparent,
             child: Column(
               children: [
                 const SizedBox(height: 8),
-                ImpaktfullSvgIcon(
-                  asset: isSelected ? svgIconSelected ?? svgIcon : svgIcon,
-                  color:
-                      isSelected ? theme.colors.accent1 : theme.colors.primary,
+                ImpaktfullBadge(
+                  showBadge: showBadge,
+                  badgeText: badgeText,
+                  child: ImpaktfullSvgIcon(
+                    asset: isSelected ? svgIconSelected ?? svgIcon : svgIcon,
+                    color: isSelected
+                        ? theme.colors.accent1
+                        : theme.colors.primary,
+                  ),
                 ),
                 Text(
                   label,

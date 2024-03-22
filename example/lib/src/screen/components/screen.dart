@@ -65,6 +65,7 @@ class _ImpaktfullExampleScreenState extends State<ImpaktfullExampleScreen> {
         hasCloseButton: true,
         child: ImpaktfullSeparatedColumn(
           type: ImpaktfullSeparatorType.card,
+          clip: false,
           children: [
             ImpaktfullListItem(
               title: 'Some item',

@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:impaktfull_ui/src/components/bottom_navigation/impaktfull_bottom_navigation_item.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_theme_localizer.dart';
 
 class ImpaktfullBottomNavigation extends StatelessWidget {
-  final List<ImpaktfullBottomNavigationItem> items;
+  final List<Widget> items;
 
   const ImpaktfullBottomNavigation({
     required this.items,

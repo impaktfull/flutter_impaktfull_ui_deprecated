@@ -69,6 +69,58 @@ class _BottomNavigationScreenState extends State<BottomNavigationScreen> {
                 ),
               ],
             ),
+            ImpaktfullBottomNavigation(
+              items: [
+                ImpaktfullBottomNavigationItem(
+                  label: 'Home',
+                  svgIcon: ExampleAssets.home,
+                  svgIconSelected: ExampleAssets.homeSelected,
+                  isSelected: _selectedIndex == 0,
+                  onTap: () => setState(() => _selectedIndex = 0),
+                ),
+                ImpaktfullBottomNavigationItem(
+                  label: 'Search',
+                  svgIcon: ExampleAssets.search,
+                  svgIconSelected: ExampleAssets.searchSelected,
+                  isSelected: _selectedIndex == 1,
+                  onTap: () => setState(() => _selectedIndex = 1),
+                ),
+                ImpaktfullBottomNavigationItem(
+                  label: 'Settings',
+                  svgIcon: ExampleAssets.settings,
+                  svgIconSelected: ExampleAssets.settingsSelected,
+                  isSelected: _selectedIndex == 2,
+                  onTap: () => setState(() => _selectedIndex = 2),
+                  showBadge: true,
+                ),
+              ],
+            ),
+            ImpaktfullBottomNavigation(
+              items: [
+                ImpaktfullBottomNavigationItem(
+                  label: 'Home',
+                  svgIcon: ExampleAssets.home,
+                  svgIconSelected: ExampleAssets.homeSelected,
+                  isSelected: _selectedIndex == 0,
+                  onTap: () => setState(() => _selectedIndex = 0),
+                ),
+                ImpaktfullBottomNavigationItem(
+                  label: 'Search',
+                  svgIcon: ExampleAssets.search,
+                  svgIconSelected: ExampleAssets.searchSelected,
+                  isSelected: _selectedIndex == 1,
+                  onTap: () => setState(() => _selectedIndex = 1),
+                ),
+                ImpaktfullBottomNavigationItem(
+                  label: 'Settings',
+                  svgIcon: ExampleAssets.settings,
+                  svgIconSelected: ExampleAssets.settingsSelected,
+                  isSelected: _selectedIndex == 2,
+                  onTap: () => setState(() => _selectedIndex = 2),
+                  badgeText: '12',
+                ),
+              ],
+            ),
           ],
         ),
       ),

@@ -1,4 +1,5 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
+import 'package:impaktfull_ui_example/src/screen/components/badge_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/bottom_navigation_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/buttons_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/card_screen.dart';
@@ -38,6 +39,11 @@ class ComponentsScreen extends StatelessWidget {
         child: ImpaktfullListView(
           spacing: 8,
           children: [
+            ImpaktfullButton.accent(
+              label: 'Badge',
+              onTap: () => Navigator.of(context).push(
+                  MaterialPageRoute(builder: (context) => const BadgeScreen())),
+            ),
             ImpaktfullButton.accent(
               label: 'BottomNavigation',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(

@@ -27,6 +27,10 @@ class ButtonsScreen extends StatelessWidget {
               label: 'Accent Button',
               onTap: () => SnackyUtil.show('On Accent tapped'),
             ),
+            ImpaktfullButton.accent(
+              label: 'Loading button on tap',
+              onAsyncTap: () => Future.delayed(const Duration(seconds: 2)),
+            ),
           ],
         ),
       ),

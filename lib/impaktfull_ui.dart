@@ -1,4 +1,5 @@
 export 'src/components/auto_layout/impaktfull_auto_layout.dart';
+export 'src/components/badge/impaktfull_badge.dart';
 export 'src/components/button/impaktfull_button.dart';
 export 'src/components/bottom_navigation/impaktfull_bottom_navigation.dart';
 export 'src/components/bottom_navigation/impaktfull_bottom_navigation_item.dart';

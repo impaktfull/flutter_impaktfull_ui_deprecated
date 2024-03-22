@@ -26,7 +26,7 @@ class ImpaktfullCheckBox extends StatelessWidget {
           onTap: () => onChanged(!value),
           borderRadius:
               BorderRadius.circular(theme.dimens.switchThumbBorderRadius),
-          color: backgroundColor ?? theme.colors.card,
+          color: _getBackgroundColor(theme),
           child: SizedBox(
             width: 24,
             height: 24,
@@ -54,7 +54,6 @@ class ImpaktfullCheckBox extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(
                             theme.dimens.switchThumbBorderRadius),
-                        color: activeColor ?? theme.colors.accent1,
                         border: Border.all(
                           color: activeColor ?? theme.colors.accent1,
                           width: theme.dimens.borderWidth,
@@ -83,5 +82,10 @@ class ImpaktfullCheckBox extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  Color _getBackgroundColor(ImpaktfullTheme theme) {
+    if (value) return activeColor ?? theme.colors.accent1;
+    return backgroundColor ?? theme.colors.card;
   }
 }

@@ -40,7 +40,7 @@ class ImpaktfullScreen extends StatelessWidget {
         onBackTapped != null ||
         bottomNavBarChild != null;
     return ImpaktfullStatusBar.custom(
-      isDark: theme.useDarkStatusBar,
+      isDark: theme.useDarkStatusBar(context),
       child: PopScope(
         onPopInvoked: (didPop) => onPopInvoked?.call(),
         child: Scaffold(

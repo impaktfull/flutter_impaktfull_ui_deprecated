@@ -11,8 +11,10 @@ class ImpaktfullThemeConfig {
 }
 
 class ImpaktfullTheme {
-  bool get useDarkStatusBar =>
-      (theme.colors.primary.computeLuminance() > 0.179) ? true : false;
+  bool useDarkStatusBar(BuildContext context) =>
+      (ImpaktfullTheme.of(context).colors.primary.computeLuminance() > 0.179)
+          ? true
+          : false;
 
   static ImpaktfullTheme impaktfullBranding({
     ImpaktfullShadowTheme? shadows,
@@ -107,8 +109,14 @@ class ImpaktfullTheme {
   }) =>
       ImpaktfullTheme(
         colors: colors,
-        shadows: shadows ?? ImpaktfullShadowTheme.getDefaults(),
-        borders: borders ?? ImpaktfullBorderTheme.getDefaults(),
+        shadows: shadows ??
+            ImpaktfullShadowTheme.getDefaults(
+              accent1: colors.accent1,
+            ),
+        borders: borders ??
+            ImpaktfullBorderTheme.getDefaults(
+              accent1: colors.accent1,
+            ),
         textStyles: textStyles ?? ImpaktfullTextStylesTheme.getDefaults(),
         assets: assets ?? ImpaktfullAssets.getDefaults(),
         dimens: dimens ?? ImpaktfullDimens.getDefaults(),
@@ -195,7 +203,7 @@ class ImpaktfullShadowTheme {
   });
 
   static ImpaktfullShadowTheme getDefaults({
-    Color? accent1,
+    required Color accent1,
     Color? selectedColor,
   }) =>
       ImpaktfullShadowTheme(
@@ -206,9 +214,7 @@ class ImpaktfullShadowTheme {
           spreadRadius: 4,
         ),
         selectedCard: BoxShadow(
-          color: selectedColor ??
-              accent1?.withOpacity(0.4) ??
-              ImpaktfullBranding.accent1.withOpacity(0.4),
+          color: selectedColor ?? accent1.withOpacity(0.4),
           blurRadius: 20,
           offset: const Offset(0, 1),
           spreadRadius: 4,
@@ -251,8 +257,11 @@ class ImpaktfullBorderTheme {
         ),
       );
 
-  static ImpaktfullBorderTheme getDefaults() => fromColors(
-        accent1: ImpaktfullBranding.accent1,
+  static ImpaktfullBorderTheme getDefaults({
+    required Color accent1,
+  }) =>
+      fromColors(
+        accent1: accent1,
       );
 }
 

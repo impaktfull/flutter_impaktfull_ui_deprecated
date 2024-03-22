@@ -6,6 +6,7 @@ class ImpaktfullSeparatedColumn extends StatelessWidget {
   final ImpaktfullSeparatorType type;
   final bool showFirstSeparator;
   final bool showLastSeparator;
+  final bool clip;
 
   const ImpaktfullSeparatedColumn({
     required this.children,
@@ -13,6 +14,7 @@ class ImpaktfullSeparatedColumn extends StatelessWidget {
     this.type = ImpaktfullSeparatorType.canvas,
     this.showFirstSeparator = false,
     this.showLastSeparator = false,
+    this.clip = true,
     super.key,
   });
 
@@ -29,8 +31,9 @@ class ImpaktfullSeparatedColumn extends StatelessWidget {
             ),
           ],
           ClipRRect(
-            borderRadius:
-                BorderRadius.circular(theme.dimens.generalBorderRadius),
+            borderRadius: clip
+                ? BorderRadius.circular(theme.dimens.generalBorderRadius)
+                : BorderRadius.zero,
             child: ColoredBox(
               color: type == ImpaktfullSeparatorType.canvas
                   ? Colors.transparent

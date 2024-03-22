@@ -2,8 +2,9 @@ import 'package:impaktfull_ui/impaktfull_ui.dart';
 import 'package:impaktfull_ui_example/src/screen/home_screen.dart';
 
 void main() => runApp(
-      const ImpaktfullApp(
+      ImpaktfullApp(
         title: 'Impaktfull UI Example',
-        home: HomeScreen(),
+        impaktfullTheme: ImpaktfullTheme.impaktfullBranding(),
+        home: const HomeScreen(),
       ),
     );
