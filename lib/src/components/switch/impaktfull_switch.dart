@@ -62,6 +62,20 @@ class ImpaktfullSwitch extends StatelessWidget {
                       theme.dimens.switchThumbBorderRadius,
                     ),
                   ),
+                  child: AnimatedOpacity(
+                    opacity:
+                        MediaQuery.of(context).accessibleNavigation && value
+                            ? 1
+                            : 0,
+                    duration: theme.durations.short,
+                    curve: Curves.easeInOut,
+                    child: Transform.scale(
+                      scale: 0.75,
+                      child: ImpaktfullSvgIcon(
+                        asset: theme.assets.icons.check,
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ),

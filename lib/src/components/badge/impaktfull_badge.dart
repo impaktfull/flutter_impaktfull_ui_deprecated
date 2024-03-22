@@ -47,7 +47,7 @@ class ImpaktfullBadge extends StatelessWidget {
                 opacity: showBadge ? 1 : 0,
                 duration: theme.durations.short,
                 child: Transform.scale(
-                  scale: 0.66,
+                  scale: 0.75,
                   child: Container(
                     constraints: const BoxConstraints(
                       minWidth: 16,

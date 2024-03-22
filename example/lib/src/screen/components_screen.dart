@@ -1,6 +1,7 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
 import 'package:impaktfull_ui_example/src/screen/components/badge_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/bottom_navigation_screen.dart';
+import 'package:impaktfull_ui_example/src/screen/components/bottom_sheet_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/buttons_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/card_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/checkbox_screen.dart';
@@ -48,6 +49,11 @@ class ComponentsScreen extends StatelessWidget {
               label: 'BottomNavigation',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const BottomNavigationScreen())),
+            ),
+            ImpaktfullButton.accent(
+              label: 'BottomSheet',
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const BottomSheetScreen())),
             ),
             ImpaktfullButton.accent(
               label: 'Buttons',

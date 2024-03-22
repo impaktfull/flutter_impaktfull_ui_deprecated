@@ -21,12 +21,38 @@ class _RadioButtonScreenState extends State<RadioButtonScreen> {
         child: ImpaktfullListView(
           spacing: 8,
           children: [
-            ImpaktfullRadioButton(
-              value: 1,
-              groupValue: _value,
-              onSelected: (value) {
-                setState(() => _value = value);
-              },
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                ImpaktfullRadioButton(
+                  value: 1,
+                  groupValue: _value,
+                  onSelected: (value) {
+                    setState(() => _value = value);
+                  },
+                ),
+                ImpaktfullRadioButton(
+                  value: 2,
+                  groupValue: _value,
+                  onSelected: (value) {
+                    setState(() => _value = value);
+                  },
+                ),
+                ImpaktfullRadioButton(
+                  value: 3,
+                  groupValue: _value,
+                  onSelected: (value) {
+                    setState(() => _value = value);
+                  },
+                ),
+                ImpaktfullRadioButton(
+                  value: 4,
+                  groupValue: _value,
+                  onSelected: (value) {
+                    setState(() => _value = value);
+                  },
+                ),
+              ],
             ),
           ],
         ),
