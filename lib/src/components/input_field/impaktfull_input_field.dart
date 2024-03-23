@@ -51,13 +51,17 @@ class _ImpaktfullInputFieldState extends State<ImpaktfullInputField> {
               borderRadius:
                   BorderRadius.circular(theme.dimens.generalBorderRadius),
             ),
-            padding: const EdgeInsets.symmetric(horizontal: 16),
+            padding: const EdgeInsets.symmetric(
+              horizontal: 16,
+              vertical: 12,
+            ),
             child: TextField(
               controller: _textEditingController,
               cursorColor: theme.colors.accent1,
               obscureText: widget.obscureText,
               keyboardType: widget.textInputType,
               decoration: InputDecoration(
+                contentPadding: const EdgeInsets.only(bottom: 4),
                 border: InputBorder.none,
                 errorBorder: InputBorder.none,
                 enabledBorder: InputBorder.none,
@@ -65,6 +69,7 @@ class _ImpaktfullInputFieldState extends State<ImpaktfullInputField> {
                 disabledBorder: InputBorder.none,
                 focusedErrorBorder: InputBorder.none,
                 hintText: widget.hintText,
+                isDense: true,
                 hintStyle: theme.textStyles.onCardSecondary.bodyInput,
               ),
               onChanged: widget.onChanged,

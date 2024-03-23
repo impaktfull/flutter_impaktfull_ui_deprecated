@@ -23,6 +23,8 @@ export 'src/components/list_item/impaktfull_selectable_list_item.dart';
 export 'src/components/list_item/impaktfull_simple_list_item.dart';
 export 'src/components/list_item/impaktfull_switch_list_item.dart';
 export 'src/components/loading/impaktfull_loading.dart';
+export 'src/components/logo/impaktfull_logo.dart';
+export 'src/components/nav/impaktfull_top_navbar.dart';
 export 'src/components/pagination/impaktfull_pagination.dart';
 export 'src/components/radio_button/impaktfull_radio_button.dart';
 export 'src/components/refresh_indicator/impaktfull_refresh_indicator.dart';

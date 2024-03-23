@@ -25,6 +25,7 @@ import 'package:impaktfull_ui_example/src/screen/components/switch_list_item_scr
 import 'package:impaktfull_ui_example/src/screen/components/tab_bar_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/switch_screen.dart';
 import 'package:impaktfull_ui_example/src/screen/components/time_picker_screen.dart';
+import 'package:impaktfull_ui_example/src/screen/components/top_navbar_screen.dart';
 
 class ComponentsScreen extends StatelessWidget {
   const ComponentsScreen({
@@ -169,6 +170,11 @@ class ComponentsScreen extends StatelessWidget {
               label: 'Time Picker',
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
                   builder: (context) => const TimePickerScreen())),
+            ),
+            ImpaktfullButton.accent(
+              label: 'TopNavBar',
+              onTap: () => Navigator.of(context).push(MaterialPageRoute(
+                  builder: (context) => const TopNavBarScreen())),
             ),
           ],
         ),
