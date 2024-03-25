@@ -1,3 +1,9 @@
+# 0.4.0
+
+## Feat
+
+- Override color of ImpaktfullBadge
+
 # 0.3.0
 
 ## Feat

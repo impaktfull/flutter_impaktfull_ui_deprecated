@@ -14,11 +14,13 @@ enum ImpaktfullBadgeLocation {
 class ImpaktfullBadge extends StatelessWidget {
   final Widget child;
   final bool showBadge;
+  final Color? color;
   final String? badgeText;
   final ImpaktfullBadgeLocation location;
 
   const ImpaktfullBadge({
     required this.child,
+    this.color,
     this.showBadge = false,
     this.badgeText,
     this.location = ImpaktfullBadgeLocation.topRight,
@@ -29,6 +31,7 @@ class ImpaktfullBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     final showBadge = this.showBadge || badgeText != null;
     return ImpaktfullThemeLocalizer(builder: (context, theme) {
+      final color = this.color ?? theme.colors.accent1;
       final textStyle = theme.textStyles.onPrimary.smallBody;
       final textSize = _textWidth(badgeText ?? '', textStyle);
       final textWidth = textSize.width + 12;
@@ -54,7 +57,7 @@ class ImpaktfullBadge extends StatelessWidget {
                       minHeight: 16,
                     ),
                     decoration: BoxDecoration(
-                      color: theme.colors.accent1,
+                      color: color,
                       borderRadius: BorderRadius.circular(
                         theme.dimens.generalBorderRadius,
                       ),
@@ -72,9 +75,10 @@ class ImpaktfullBadge extends StatelessWidget {
                             width: 4,
                             height: 4,
                             decoration: BoxDecoration(
-                              color: theme.colors.accent1,
+                              color: color,
                               borderRadius: BorderRadius.circular(
-                                  theme.dimens.generalBorderRadius),
+                                theme.dimens.generalBorderRadius,
+                              ),
                             ),
                           );
                         }
@@ -99,46 +103,35 @@ class ImpaktfullBadge extends StatelessWidget {
   }
 
   Size _textWidth(String text, TextStyle style) {
-    final TextPainter textPainter = TextPainter(
-        text: TextSpan(text: text, style: style),
-        maxLines: 1,
-        textDirection: TextDirection.ltr)
+    final TextPainter textPainter = TextPainter(text: TextSpan(text: text, style: style), maxLines: 1, textDirection: TextDirection.ltr)
       ..layout(minWidth: 0, maxWidth: double.infinity);
     return textPainter.size;
   }
 
   double? _getTop(double textWidth, double textHeight) {
     final alignment = location.alignment;
-    if (alignment == Alignment.bottomCenter ||
-        alignment == Alignment.bottomLeft ||
-        alignment == Alignment.bottomRight) return null;
+    if (alignment == Alignment.bottomCenter || alignment == Alignment.bottomLeft || alignment == Alignment.bottomRight) return null;
     if (badgeText == null) return -4;
     return -(textHeight / 2);
   }
 
   double? _getBottom(double textWidth, double textHeight) {
     final alignment = location.alignment;
-    if (alignment == Alignment.topCenter ||
-        alignment == Alignment.topLeft ||
-        alignment == Alignment.topRight) return null;
+    if (alignment == Alignment.topCenter || alignment == Alignment.topLeft || alignment == Alignment.topRight) return null;
     if (badgeText == null) return -4;
     return -(textHeight / 2);
   }
 
   double? _getRight(double textWidth, double textHeight) {
     final alignment = location.alignment;
-    if (alignment == Alignment.centerLeft ||
-        alignment == Alignment.topLeft ||
-        alignment == Alignment.bottomLeft) return null;
+    if (alignment == Alignment.centerLeft || alignment == Alignment.topLeft || alignment == Alignment.bottomLeft) return null;
     if (badgeText == null) return -4;
     return -(textWidth / 2);
   }
 
   double? _getLeft(double textWidth, double textHeight) {
     final alignment = location.alignment;
-    if (alignment == Alignment.centerRight ||
-        alignment == Alignment.topRight ||
-        alignment == Alignment.bottomRight) return null;
+    if (alignment == Alignment.centerRight || alignment == Alignment.topRight || alignment == Alignment.bottomRight) return null;
     return -(textWidth / 2);
   }
 }
