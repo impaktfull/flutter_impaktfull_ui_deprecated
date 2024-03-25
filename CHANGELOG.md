@@ -1,3 +1,24 @@
+# 0.3.0
+
+## Feat
+
+- Added ImpaktfullBottomSheetItem
+- Added ImpaktfullSeparatedColumn clip option to check if items should be clipped with the global border radius (mostly used with bottom sheet items)
+- Added ImpaktfullBadge to show a badge with a number or other text
+- Added ImpaktfullTopNavBar as a basic component (alpha)
+- ImpaktfullBottomNavigationItem supports adding a badge
+
+## Fix
+
+- ImpaktfullSwitch accessibility
+- ImpaktfullCheckBox hover state
+- ImpaktfullBottomNavigation no supports different kind of "items" not only ImpaktfullBottomNavigationItem
+- ImpaktfullInputField cleanup on the spacing of the field itself
+
+## Example
+
+- Bottonm sheet example improvements
+
 # 0.2.1
 
 ## Fix
