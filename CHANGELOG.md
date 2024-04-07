@@ -1,3 +1,9 @@
+# 0.5.3
+
+## Fix
+
+- ImpaktfullScreen unfocus when tapped outside
+
 # 0.5.2
 
 ## Fix

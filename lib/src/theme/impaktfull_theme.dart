@@ -11,10 +11,16 @@ class ImpaktfullThemeConfig {
 }
 
 class ImpaktfullTheme {
-  bool useDarkStatusBar(BuildContext context) =>
-      (ImpaktfullTheme.of(context).colors.primary.computeLuminance() > 0.179)
-          ? true
-          : false;
+  bool useDarkStatusBar(
+    BuildContext context, {
+    bool onPrimary = true,
+  }) {
+    final themeColors = ImpaktfullTheme.of(context).colors;
+    if (onPrimary) {
+      return (themeColors.primary.computeLuminance() > 0.179) ? true : false;
+    }
+    return (themeColors.canvas.computeLuminance() > 0.179) ? true : false;
+  }
 
   static ImpaktfullTheme impaktfullBranding({
     ImpaktfullShadowTheme? shadows,
