@@ -3,10 +3,12 @@ import 'package:impaktfull_ui/impaktfull_ui.dart';
 class ImpaktfullNavbarAction extends StatelessWidget {
   final String svgIcon;
   final VoidCallback? onTap;
+  final bool useThemeColor;
 
   const ImpaktfullNavbarAction({
     required this.svgIcon,
     required this.onTap,
+    this.useThemeColor = true,
     super.key,
   });
 
@@ -21,7 +23,7 @@ class ImpaktfullNavbarAction extends StatelessWidget {
           padding: const EdgeInsets.all(12),
           child: ImpaktfullSvgIcon(
             asset: svgIcon,
-            color: theme.colors.onPrimary,
+            color: useThemeColor ? theme.colors.onPrimary : null,
           ),
         ),
       ),

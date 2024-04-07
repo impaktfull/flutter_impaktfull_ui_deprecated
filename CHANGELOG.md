@@ -1,8 +1,14 @@
+# 0.5.2
+
+## Fix
+
+- ImpaktfullNavBarAction can now use the default color of the svg
+
 # 0.5.1
 
 ## Fix 
 
-ImpaktfullBottomSheet with listview instead of vertical autolayout
+- ImpaktfullBottomSheet with listview instead of vertical autolayout
 
 
 # 0.5.0
