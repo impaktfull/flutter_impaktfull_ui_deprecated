@@ -44,5 +44,6 @@ export 'src/theme/impaktfull_theme.dart';
 export 'src/util/extensions/text_style_extensions.dart';
 export 'src/impaktfull_app.dart';
 export 'package:flutter/material.dart';
+export 'package:lottie/lottie.dart';
 export 'package:universal_io/io.dart';
 export 'package:snacky/snacky.dart';

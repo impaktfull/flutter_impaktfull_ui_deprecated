@@ -68,17 +68,24 @@ Many more to come in the future, always with the focus on minimizing maintenance
 
 #### Lottie Animations
 
-These icons should be added to your assets folder to use the default lottie animations. (in your own project)
+These icons can be overriden be added to your assets folder to use the default lottie animations. The only thing you need to do extra is override `package`  (in your own project)
 
 - assets/lottie/loading.json
 
 #### Default Icons
 
-These icons should be added to your assets folder to use the default icons. (in your own project)
+These icons can be overriden be added to your assets folder to use the default icons. The only thing you need to do extra is override `package` (in your own project)
 
+- assets/icons/add.svg
 - assets/icons/arrow_left.svg
 - assets/icons/check.svg
 - assets/icons/chevron_right.svg
+- assets/icons/close.svg
+- assets/icons/delete.svg
+- assets/icons/edit.svg
+- assets/icons/menu.svg
+- assets/icons/search.svg
+- assets/icons/settings.svg
 
 ## License
 

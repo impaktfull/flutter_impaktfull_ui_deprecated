@@ -11,11 +11,11 @@ class ImpaktfullListView<T> extends StatefulWidget {
   final Widget? child;
   final List<Widget>? children;
   final List<T>? items;
-  final Widget Function(BuildContext, T)? itemBuilder;
+  final Widget Function(BuildContext context, T item, int index)? itemBuilder;
   final EdgeInsetsGeometry extraPadding;
   final double spacing;
   final bool separated;
-  final bool? skipPadding;
+  final bool ignoreThemePadding;
   final String? noDataLabel;
   final String? refreshBtnLabel;
   final bool isLoading;
@@ -28,12 +28,12 @@ class ImpaktfullListView<T> extends StatefulWidget {
     this.spacing = 0,
     this.onRefresh,
     this.extraPadding = EdgeInsets.zero,
+    this.ignoreThemePadding = false,
     super.key,
   })  : itemBuilder = null,
         child = null,
         items = null,
         separated = false,
-        skipPadding = true,
         noDataLabel = null,
         separatorType = null,
         refreshBtnLabel = null;
@@ -47,11 +47,11 @@ class ImpaktfullListView<T> extends StatefulWidget {
     this.refreshBtnLabel,
     this.onRefresh,
     this.extraPadding = EdgeInsets.zero,
+    this.ignoreThemePadding = false,
     super.key,
   })  : separated = false,
         child = null,
         children = null,
-        skipPadding = null,
         separatorType = null;
 
   const ImpaktfullListView.separated({
@@ -63,13 +63,13 @@ class ImpaktfullListView<T> extends StatefulWidget {
     this.refreshBtnLabel,
     this.onRefresh,
     this.extraPadding = EdgeInsets.zero,
+    this.ignoreThemePadding = false,
     super.key,
     required,
   })  : spacing = 0,
         child = null,
         children = null,
-        separated = true,
-        skipPadding = null;
+        separated = true;
 
   const ImpaktfullListView.child({
     required this.child,
@@ -77,6 +77,7 @@ class ImpaktfullListView<T> extends StatefulWidget {
     this.refreshBtnLabel,
     this.onRefresh,
     this.extraPadding = EdgeInsets.zero,
+    this.ignoreThemePadding = false,
     super.key,
     required,
   })  : spacing = 0,
@@ -85,8 +86,7 @@ class ImpaktfullListView<T> extends StatefulWidget {
         itemBuilder = null,
         separatorType = null,
         children = null,
-        separated = true,
-        skipPadding = null;
+        separated = true;
 
   @override
   State<ImpaktfullListView<T>> createState() => _ImpaktfullListViewState<T>();
@@ -101,10 +101,15 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
       return const Center(child: ImpaktfullLoadingIndicator());
     }
     final theme = ImpaktfullTheme.of(context);
-    final padding = EdgeInsets.symmetric(
-      horizontal: theme.dimens.listViewHorizontalPadding,
-      vertical: theme.dimens.listViewVerticalPadding,
-    ).add(MediaQuery.of(context).padding).add(widget.extraPadding);
+    final themePadding = widget.ignoreThemePadding
+        ? EdgeInsets.zero
+        : EdgeInsets.symmetric(
+            horizontal: theme.dimens.listViewHorizontalPadding,
+            vertical: theme.dimens.listViewVerticalPadding,
+          );
+    final padding = themePadding
+        .add(MediaQuery.of(context).padding)
+        .add(widget.extraPadding);
     if (widget.children != null) {
       return ImpaktfullRefreshIndicator(
         onRefresh: widget.onRefresh,
@@ -176,8 +181,11 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
         onRefresh: widget.onRefresh,
         child: ListView.separated(
           padding: padding,
-          itemBuilder: (context, index) =>
-              widget.itemBuilder!(context, widget.items![index]),
+          itemBuilder: (context, index) => widget.itemBuilder!(
+            context,
+            widget.items![index],
+            index,
+          ),
           separatorBuilder: (context, index) =>
               ImpaktfullSeparator(type: widget.separatorType!),
           itemCount: widget.items!.length,
@@ -188,8 +196,11 @@ class _ImpaktfullListViewState<T> extends State<ImpaktfullListView<T>> {
       onRefresh: widget.onRefresh,
       child: ListView.separated(
         padding: padding,
-        itemBuilder: (context, index) =>
-            widget.itemBuilder!(context, widget.items![index]),
+        itemBuilder: (context, index) => widget.itemBuilder!(
+          context,
+          widget.items![index],
+          index,
+        ),
         separatorBuilder: (context, index) => SizedBox(height: widget.spacing),
         itemCount: widget.items!.length,
       ),

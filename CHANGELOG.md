@@ -1,8 +1,47 @@
+# 0.5.0
+
+# Breaking
+
+- ImpaktfullListView all builders now have an `index` parameter
+
+# Feat
+
+- Added add icon
+- Added menu icon
+- Added delete icon
+- Added search icon
+- Added settings icon
+- Added the possibility to use a specific package for the icons
+- Added the possibility to use a specific package for the lottie animations
+- Icons are baked in impaktfull_ui so no need to override, you will always have the icons
+- Lottie animations are baked in impaktfull_ui so no need to override, you will always have the Lottie animations
+- Export lottie dependency
+- Export lottie dependency
+- ImpaktfullBadge borderradius is exposed
+- ImpaktfullInputField added textInputAction (default  is `TextInputAction.done`)
+- ImpaktfullInputField added controller
+- ImpaktfullInputField added onSubmit
+- ImpaktfullSimpleListItem added textStyle
+- ImpaktfullSimpleListItem added subtitleTextStyle
+- ImpaktfullSimpleListItem added backgroundColor
+- ImpaktfullListView added ignoreThemePadding so you can use your own padding
+
+# Updated
+
+- TopNavBar example to show a list that is searchable
+- ImpaktfullTopNavBar cleanup 
+
+# Fix
+
+- allowEnterRouteSnapping on an ZoomPageTransitionsBuilder: snapping is now disabled by default on Android
+- ImpaktfullButton only show shaddow if `type` not `secondary`
+
 # 0.4.0
 
 ## Feat
 
 - Override color of ImpaktfullBadge
+- ImpaktfullSimpleListItem expose (backgroundColor, titleStyle, subTitleStyle)
 
 # 0.3.0
 

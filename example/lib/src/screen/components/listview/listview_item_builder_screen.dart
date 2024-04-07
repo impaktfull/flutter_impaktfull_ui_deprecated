@@ -13,7 +13,7 @@ class ListViewItemBuilderScreen extends StatelessWidget {
       child: ImpaktfullListView.builder(
         onRefresh: () async => Future.delayed(const Duration(seconds: 2)),
         items: List.generate(100, (index) => 'Child ${index + 1}'),
-        itemBuilder: (context, item) => Text(item),
+        itemBuilder: (context, item, index) => Text(item),
         noDataLabel: 'No Data found',
       ),
     );

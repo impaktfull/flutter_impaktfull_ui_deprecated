@@ -8,17 +8,22 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
   final Widget? leadingWidget;
   final Widget? centerWidget;
   final String title;
+  final TextStyle? titleStyle;
   final String? subTitle;
+  final TextStyle? subTitleStyle;
   final Widget? trailingWidget;
   final VoidCallback? onTap;
   final bool danger;
   final EdgeInsetsGeometry padding;
   final double spacing;
+  final Color? backgroundColor;
 
   const ImpaktfullSimpleListItem({
     required this.title,
+    this.titleStyle,
     this.onTap,
     this.subTitle,
+    this.subTitleStyle,
     this.leadingWidget,
     this.trailingWidget,
     this.danger = false,
@@ -27,6 +32,7 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
       vertical: 12,
     ),
     this.spacing = 8,
+    this.backgroundColor,
     super.key,
   }) : centerWidget = null;
 
@@ -40,17 +46,20 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
       vertical: 12,
     ),
     this.spacing = 8,
+    this.backgroundColor,
     super.key,
   })  : title = '',
         subTitle = null,
-        danger = false;
+        danger = false,
+        titleStyle = null,
+        subTitleStyle = null;
 
   @override
   Widget build(BuildContext context) {
     return ImpaktfullThemeLocalizer(
       builder: (context, theme) => ImpaktfullTouchFeedback(
         onTap: onTap,
-        color: theme.colors.card,
+        color: backgroundColor ?? theme.colors.card,
         child: Padding(
           padding: padding,
           child: ImpaktfullAutoLayout.horizontal(
@@ -67,12 +76,13 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
                     children: [
                       Text(
                         title,
-                        style: _getTitleStyle(theme),
+                        style: titleStyle ?? _getTitleStyle(theme),
                       ),
                       if (subTitle != null) ...[
                         Text(
                           subTitle!,
-                          style: theme.textStyles.onCardSecondary.body,
+                          style: subTitleStyle ??
+                              theme.textStyles.onCardSecondary.body,
                         ),
                       ],
                     ],

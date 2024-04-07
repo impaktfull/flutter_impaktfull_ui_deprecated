@@ -13,7 +13,7 @@ class ListViewEmptyScreen extends StatelessWidget {
       child: ImpaktfullListView.builder(
         onRefresh: () async => Future.delayed(const Duration(seconds: 2)),
         items: const [],
-        itemBuilder: (context, item) => Container(),
+        itemBuilder: (context, item, index) => Container(),
         noDataLabel: 'No data',
         refreshBtnLabel: 'Probeer opnieuw',
       ),

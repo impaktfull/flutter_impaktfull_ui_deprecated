@@ -3,17 +3,17 @@ import 'package:impaktfull_ui/src/components/nav/impaktfull_wrapper_container.da
 import 'package:impaktfull_ui/src/util/extensions/context_extensions.dart';
 
 class ImpaktfullTopNavbar extends StatefulWidget {
+  final Widget content;
   final Widget? leadingWidget;
   final Widget? centerWidget;
   final Widget? trailingWidget;
   final Alignment inputFieldAlignment;
   final String? inputFieldHintText;
   final ValueChanged<String>? inputFieldOnChanged;
-  final Widget content;
 
   const ImpaktfullTopNavbar({
-    required this.centerWidget,
     required this.content,
+    this.centerWidget,
     this.leadingWidget,
     this.trailingWidget,
     this.inputFieldAlignment = Alignment.center,
@@ -28,6 +28,14 @@ class ImpaktfullTopNavbar extends StatefulWidget {
 
 class _ImpaktfullTopNavbarState extends State<ImpaktfullTopNavbar> {
   var _isMobileMenuOpen = false;
+  final _textController = TextEditingController();
+
+  @override
+  void dispose() {
+    _textController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ImpaktfullThemeLocalizer(
@@ -35,17 +43,20 @@ class _ImpaktfullTopNavbarState extends State<ImpaktfullTopNavbar> {
         if (!context.isMobile && _isMobileMenuOpen) {
           _isMobileMenuOpen = false;
         }
-        final inputField = Align(
-          alignment: widget.inputFieldAlignment,
-          child: ConstrainedBox(
-            constraints: BoxConstraints(
-                maxWidth: context.isMobile ? double.infinity : 500),
-            child: ImpaktfullInputField(
-              onChanged: widget.inputFieldOnChanged!,
-              hintText: widget.inputFieldHintText,
-            ),
-          ),
-        );
+        final inputField = widget.inputFieldOnChanged == null
+            ? null
+            : Align(
+                alignment: widget.inputFieldAlignment,
+                child: ConstrainedBox(
+                  constraints: BoxConstraints(
+                      maxWidth: context.isMobile ? double.infinity : 500),
+                  child: ImpaktfullInputField(
+                    controller: _textController,
+                    onChanged: widget.inputFieldOnChanged!,
+                    hintText: widget.inputFieldHintText,
+                  ),
+                ),
+              );
         return ColoredBox(
           color: _isMobileMenuOpen ? theme.colors.primary : Colors.transparent,
           child: ImpaktfullAutoLayout.vertical(
@@ -75,13 +86,13 @@ class _ImpaktfullTopNavbarState extends State<ImpaktfullTopNavbar> {
                         ImpaktfullNavbarAction(
                           svgIcon: _isMobileMenuOpen
                               ? theme.assets.icons.close
-                              : theme.assets.icons.check,
+                              : theme.assets.icons.menu,
                           onTap: _onOpenMenuTapped,
                         ),
                       ] else ...[
                         if (widget.inputFieldOnChanged != null) ...[
                           Expanded(
-                            child: inputField,
+                            child: inputField!,
                           ),
                         ],
                         if (widget.trailingWidget != null) ...[
@@ -104,7 +115,7 @@ class _ImpaktfullTopNavbarState extends State<ImpaktfullTopNavbar> {
                             Padding(
                               padding:
                                   const EdgeInsets.symmetric(horizontal: 16),
-                              child: inputField,
+                              child: inputField!,
                             ),
                           ],
                           if (widget.centerWidget != null) ...[

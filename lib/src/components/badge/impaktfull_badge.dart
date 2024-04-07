@@ -15,6 +15,7 @@ class ImpaktfullBadge extends StatelessWidget {
   final Widget child;
   final bool showBadge;
   final Color? color;
+  final BorderRadius? borderRadius;
   final String? badgeText;
   final ImpaktfullBadgeLocation location;
 
@@ -23,6 +24,7 @@ class ImpaktfullBadge extends StatelessWidget {
     this.color,
     this.showBadge = false,
     this.badgeText,
+    this.borderRadius,
     this.location = ImpaktfullBadgeLocation.topRight,
     super.key,
   });
@@ -58,9 +60,10 @@ class ImpaktfullBadge extends StatelessWidget {
                     ),
                     decoration: BoxDecoration(
                       color: color,
-                      borderRadius: BorderRadius.circular(
-                        theme.dimens.generalBorderRadius,
-                      ),
+                      borderRadius: borderRadius ??
+                          BorderRadius.circular(
+                            theme.dimens.generalBorderRadius,
+                          ),
                       border: Border.all(
                         color: theme.colors.canvas,
                         width: 2,
@@ -76,9 +79,10 @@ class ImpaktfullBadge extends StatelessWidget {
                             height: 4,
                             decoration: BoxDecoration(
                               color: color,
-                              borderRadius: BorderRadius.circular(
-                                theme.dimens.generalBorderRadius,
-                              ),
+                              borderRadius: borderRadius ??
+                                  BorderRadius.circular(
+                                    theme.dimens.generalBorderRadius,
+                                  ),
                             ),
                           );
                         }

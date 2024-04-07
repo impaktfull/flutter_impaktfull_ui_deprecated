@@ -397,32 +397,56 @@ class ImpaktfullAssets {
     required this.lottie,
   });
 
-  static ImpaktfullAssets getDefaults() => ImpaktfullAssets(
-        icons: ImpaktfullAssetIcons.getDefaults(),
-        lottie: ImpaktfullAssetLotties.getDefaults(),
+  static ImpaktfullAssets getDefaults({String? package = 'impaktfull_ui'}) =>
+      ImpaktfullAssets(
+        icons: ImpaktfullAssetIcons.getDefaults(
+          package: package,
+        ),
+        lottie: ImpaktfullAssetLotties.getDefaults(
+          package: package,
+        ),
       );
 }
 
 class ImpaktfullAssetIcons {
   static const _prefix = 'assets/icons';
 
+  final String add;
   final String arrowLeft;
   final String check;
   final String chevronRight;
   final String close;
+  final String delete;
+  final String menu;
+  final String search;
+  final String settings;
 
   const ImpaktfullAssetIcons({
+    required this.add,
     required this.arrowLeft,
     required this.check,
     required this.chevronRight,
     required this.close,
+    required this.delete,
+    required this.menu,
+    required this.search,
+    required this.settings,
   });
 
-  static ImpaktfullAssetIcons getDefaults() => const ImpaktfullAssetIcons(
-        arrowLeft: '$_prefix/arrow_left.svg',
-        check: '$_prefix/check.svg',
-        chevronRight: '$_prefix/chevron_right.svg',
-        close: '$_prefix/close.svg',
+  static ImpaktfullAssetIcons getDefaults({
+    String? package = 'impaktfull_ui',
+  }) =>
+      ImpaktfullAssetIcons(
+        add: _getAssetForPackage(package, _prefix, 'add.svg'),
+        arrowLeft: _getAssetForPackage(package, _prefix, 'arrow_left.svg'),
+        check: _getAssetForPackage(package, _prefix, 'check.svg'),
+        chevronRight:
+            _getAssetForPackage(package, _prefix, 'chevron_right.svg'),
+        close: _getAssetForPackage(package, _prefix, 'close.svg'),
+        delete: _getAssetForPackage(package, _prefix, 'delete.svg'),
+        menu: _getAssetForPackage(package, _prefix, 'menu.svg'),
+        search: _getAssetForPackage(package, _prefix, 'search.svg'),
+        settings: _getAssetForPackage(package, _prefix, 'settings.svg'),
       );
 }
 
@@ -435,8 +459,11 @@ class ImpaktfullAssetLotties {
     required this.loading,
   });
 
-  static ImpaktfullAssetLotties getDefaults() => const ImpaktfullAssetLotties(
-        loading: '$_prefix/loading.json',
+  static ImpaktfullAssetLotties getDefaults({
+    String? package = 'impaktfull_ui',
+  }) =>
+      ImpaktfullAssetLotties(
+        loading: _getAssetForPackage(package, _prefix, 'loading.json'),
       );
 }
 
@@ -547,4 +574,12 @@ class ImpaktfullLocalizationsValues {
         generalLabelAccept: 'Accepteren',
         generalLabelCancel: 'Annuleren',
       );
+}
+
+String _getAssetForPackage(String? package, String prefix, String assetPath) {
+  final fullAssetPath = '$prefix/$assetPath';
+  if (package == null) {
+    return fullAssetPath;
+  }
+  return 'packages/$package/$fullAssetPath';
 }

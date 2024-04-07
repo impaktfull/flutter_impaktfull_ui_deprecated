@@ -108,9 +108,13 @@ class ImpaktfullApp extends StatelessWidget {
             debugShowCheckedModeBanner: showDebugFlag,
             locale: locale,
             theme: (materialLightTheme ?? Theme.of(context))
-                .copyWith(platform: targetPlatform),
+                .removeUnwantedBehavior(
+              targetPlatform: targetPlatform,
+            ),
             darkTheme: (materialLightTheme ?? Theme.of(context))
-                .copyWith(platform: targetPlatform),
+                .removeUnwantedBehavior(
+              targetPlatform: targetPlatform,
+            ),
             supportedLocales: supportedLocales,
             localizationsDelegates: localizationsDelegates,
             navigatorKey: navigatorKey,
@@ -129,4 +133,21 @@ class ImpaktfullApp extends StatelessWidget {
       ),
     );
   }
+}
+
+extension ThemeDataExtension on ThemeData {
+  ThemeData removeUnwantedBehavior({
+    required TargetPlatform? targetPlatform,
+  }) =>
+      copyWith(
+        platform: targetPlatform,
+        pageTransitionsTheme: const PageTransitionsTheme(
+          builders: <TargetPlatform, PageTransitionsBuilder>{
+            TargetPlatform.android: ZoomPageTransitionsBuilder(
+              allowEnterRouteSnapshotting: false,
+            ),
+            TargetPlatform.iOS: CupertinoPageTransitionsBuilder(),
+          },
+        ),
+      );
 }

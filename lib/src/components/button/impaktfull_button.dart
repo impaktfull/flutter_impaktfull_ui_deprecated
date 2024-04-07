@@ -75,7 +75,9 @@ class _ImpaktfullButtonState extends State<ImpaktfullButton> {
                   onTap: hasOnTap ? _onTap : null,
                   color: _getBackground(theme),
                   shadow: [
-                    if (theme.shadows.button != null) theme.shadows.button!,
+                    if (theme.shadows.button != null &&
+                        widget._type != _ButtonType.secondary)
+                      theme.shadows.button!,
                   ],
                   borderRadius:
                       BorderRadius.circular(theme.dimens.generalBorderRadius),

@@ -2,19 +2,25 @@ import 'package:impaktfull_ui/impaktfull_ui.dart';
 
 class ImpaktfullInputField extends StatefulWidget {
   final ValueChanged<String> onChanged;
+  final TextEditingController? controller;
   final String? title;
   final String? hintText;
   final String value;
   final bool obscureText;
   final TextInputType textInputType;
+  final TextInputAction textInputAction;
+  final VoidCallback? onSubmit;
 
   const ImpaktfullInputField({
     required this.onChanged,
     this.value = '',
+    this.controller,
     this.hintText,
     this.title,
     this.obscureText = false,
     this.textInputType = TextInputType.text,
+    this.textInputAction = TextInputAction.done,
+    this.onSubmit,
     super.key,
   });
 
@@ -23,16 +29,22 @@ class ImpaktfullInputField extends StatefulWidget {
 }
 
 class _ImpaktfullInputFieldState extends State<ImpaktfullInputField> {
-  late TextEditingController _textEditingController;
+  TextEditingController? _internalTextEditingController;
+
+  TextEditingController get _textEditingController =>
+      _internalTextEditingController ?? widget.controller!;
   @override
   void initState() {
     super.initState();
-    _textEditingController = TextEditingController(text: widget.value);
+    if (widget.controller == null) {
+      _internalTextEditingController =
+          TextEditingController(text: widget.value);
+    }
   }
 
   @override
   void dispose() {
-    _textEditingController.dispose();
+    _internalTextEditingController?.dispose();
     super.dispose();
   }
 
@@ -60,6 +72,9 @@ class _ImpaktfullInputFieldState extends State<ImpaktfullInputField> {
               cursorColor: theme.colors.accent1,
               obscureText: widget.obscureText,
               keyboardType: widget.textInputType,
+              textInputAction: widget.textInputAction,
+              onSubmitted: (value) => widget.onSubmit?.call(),
+              style: theme.textStyles.onCardPrimary.bodyInput,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.only(bottom: 4),
                 border: InputBorder.none,
