@@ -1,3 +1,12 @@
+# 0.6.0
+
+## Feat
+
+- ImpaktfullBottomNavigationItem added `badgeColor` & `badgeBorderRadius`
+
+## Fix
+- ImpaktfullBottomNavigationItem use correct collor when item is selected
+
 # 0.5.3
 
 ## Fix

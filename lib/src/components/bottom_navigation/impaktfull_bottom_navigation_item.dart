@@ -12,6 +12,8 @@ class ImpaktfullBottomNavigationItem extends StatelessWidget {
   final VoidCallback onTap;
   final bool showBadge;
   final String? badgeText;
+  final Color? badgeColor;
+  final BorderRadius? badgeBorderRadius;
 
   const ImpaktfullBottomNavigationItem({
     required this.label,
@@ -21,6 +23,8 @@ class ImpaktfullBottomNavigationItem extends StatelessWidget {
     this.svgIconSelected,
     this.showBadge = false,
     this.badgeText,
+    this.badgeColor,
+    this.badgeBorderRadius,
     super.key,
   });
 
@@ -38,6 +42,11 @@ class ImpaktfullBottomNavigationItem extends StatelessWidget {
                 ImpaktfullBadge(
                   showBadge: showBadge,
                   badgeText: badgeText,
+                  color: badgeColor ??
+                      (isSelected
+                          ? theme.colors.primary
+                          : theme.colors.accent1),
+                  borderRadius: badgeBorderRadius,
                   child: ImpaktfullSvgIcon(
                     asset: isSelected ? svgIconSelected ?? svgIcon : svgIcon,
                     color: isSelected
