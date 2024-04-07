@@ -1,10 +1,17 @@
+# 0.5.1
+
+## Fix 
+
+ImpaktfullBottomSheet with listview instead of vertical autolayout
+
+
 # 0.5.0
 
-# Breaking
+## Breaking
 
 - ImpaktfullListView all builders now have an `index` parameter
 
-# Feat
+## Feat
 
 - Added add icon
 - Added menu icon
@@ -26,12 +33,12 @@
 - ImpaktfullSimpleListItem added backgroundColor
 - ImpaktfullListView added ignoreThemePadding so you can use your own padding
 
-# Updated
+#3 Updated
 
-- TopNavBar example to show a list that is searchable
+- ImpaktfullTopNavBar example to show a list that is searchable
 - ImpaktfullTopNavBar cleanup 
 
-# Fix
+## Fix
 
 - allowEnterRouteSnapping on an ZoomPageTransitionsBuilder: snapping is now disabled by default on Android
 - ImpaktfullButton only show shaddow if `type` not `secondary`

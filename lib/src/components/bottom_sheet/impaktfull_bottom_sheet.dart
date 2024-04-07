@@ -26,56 +26,62 @@ class ImpaktfullBottomSheet extends StatelessWidget {
             top: Radius.circular(theme.dimens.generalBorderRadius),
           ),
         ),
-        child: SafeArea(
-          top: false,
-          child: ImpaktfullAutoLayout.vertical(
-            spacing: 8,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              ImpaktfullAutoLayout.horizontal(
-                children: [
-                  if (hasCloseButton) ...[
-                    const SizedBox(width: 48),
-                  ],
-                  Expanded(
-                    child: ImpaktfullAutoLayout.vertical(
-                      children: [
-                        const SizedBox(height: 8),
-                        Center(
-                          child: Container(
-                            width: 48,
-                            height: 2,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                  theme.dimens.generalBorderRadius),
-                              color:
-                                  theme.textStyles.onCardSecondary.body.color,
-                            ),
+        child: ImpaktfullAutoLayout.vertical(
+          spacing: 8,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            ImpaktfullAutoLayout.horizontal(
+              children: [
+                if (hasCloseButton) ...[
+                  const SizedBox(width: 48),
+                ],
+                Expanded(
+                  child: ImpaktfullAutoLayout.vertical(
+                    children: [
+                      const SizedBox(height: 8),
+                      Center(
+                        child: Container(
+                          width: 48,
+                          height: 2,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(
+                                theme.dimens.generalBorderRadius),
+                            color: theme.textStyles.onCardSecondary.body.color,
                           ),
                         ),
-                        if (title != null) ...[
-                          SizedBox(
-                            width: double.infinity,
-                            child: ImpaktfullListItemTitle(
-                              title: title!,
-                              textAlign: TextAlign.center,
-                            ),
+                      ),
+                      if (title != null) ...[
+                        SizedBox(
+                          width: double.infinity,
+                          child: ImpaktfullListItemTitle(
+                            title: title!,
+                            textAlign: TextAlign.center,
                           ),
-                        ],
+                        ),
                       ],
-                    ),
+                    ],
                   ),
-                  if (hasCloseButton) ...[
-                    ImpaktfullIconButton(
-                      svgIcon: theme.assets.icons.close,
-                      onTap: () => Navigator.of(context).pop(),
-                    ),
-                  ]
+                ),
+                if (hasCloseButton) ...[
+                  ImpaktfullIconButton(
+                    svgIcon: theme.assets.icons.close,
+                    onTap: () => Navigator.of(context).pop(),
+                  ),
+                ]
+              ],
+            ),
+            Flexible(
+              fit: FlexFit.loose,
+              child: ListView(
+                shrinkWrap: true,
+                padding: EdgeInsets.only(
+                    bottom: MediaQuery.of(context).padding.bottom),
+                children: [
+                  child,
                 ],
               ),
-              child,
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );
