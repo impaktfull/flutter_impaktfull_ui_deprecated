@@ -4,6 +4,7 @@ class ImpaktfullInputField extends StatefulWidget {
   final ValueChanged<String> onChanged;
   final TextEditingController? controller;
   final String? title;
+  final Color? cursorColor;
   final String? hintText;
   final String value;
   final bool obscureText;
@@ -17,6 +18,7 @@ class ImpaktfullInputField extends StatefulWidget {
     this.controller,
     this.hintText,
     this.title,
+    this.cursorColor,
     this.obscureText = false,
     this.textInputType = TextInputType.text,
     this.textInputAction = TextInputAction.done,
@@ -69,7 +71,7 @@ class _ImpaktfullInputFieldState extends State<ImpaktfullInputField> {
             ),
             child: TextField(
               controller: _textEditingController,
-              cursorColor: theme.colors.accent1,
+              cursorColor: widget.cursorColor ?? theme.colors.accent1,
               obscureText: widget.obscureText,
               keyboardType: widget.textInputType,
               textInputAction: widget.textInputAction,

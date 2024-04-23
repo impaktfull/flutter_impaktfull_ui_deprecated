@@ -1,3 +1,10 @@
+# 0.7.0
+
+## Feat
+
+- ImpaktfullInputField cursor color
+- ImpaktfullSimpleListItem crossAxisAlignment
+
 # 0.6.0
 
 ## Feat

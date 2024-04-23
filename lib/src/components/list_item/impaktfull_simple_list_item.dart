@@ -5,6 +5,7 @@ import 'package:impaktfull_ui/src/theme/impaktfull_theme.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_theme_localizer.dart';
 
 class ImpaktfullSimpleListItem extends StatelessWidget {
+  final CrossAxisAlignment crossAxisAlignment;
   final Widget? leadingWidget;
   final Widget? centerWidget;
   final String title;
@@ -34,7 +35,8 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
     this.spacing = 8,
     this.backgroundColor,
     super.key,
-  }) : centerWidget = null;
+  })  : centerWidget = null,
+        crossAxisAlignment = CrossAxisAlignment.center;
 
   const ImpaktfullSimpleListItem.centerWidget({
     required this.centerWidget,
@@ -47,6 +49,7 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
     ),
     this.spacing = 8,
     this.backgroundColor,
+    this.crossAxisAlignment = CrossAxisAlignment.center,
     super.key,
   })  : title = '',
         subTitle = null,
@@ -63,7 +66,7 @@ class ImpaktfullSimpleListItem extends StatelessWidget {
         child: Padding(
           padding: padding,
           child: ImpaktfullAutoLayout.horizontal(
-            crossAxisAlignment: CrossAxisAlignment.center,
+            crossAxisAlignment: crossAxisAlignment,
             spacing: spacing,
             children: [
               if (leadingWidget != null) ...[
