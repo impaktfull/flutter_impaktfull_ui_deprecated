@@ -1,3 +1,13 @@
+# 0.8.0
+
+## Breaking
+
+- ImpaktfullCheckBox custom theme
+
+## Feat
+- ImpaktfullTheme added components & checkbox theme
+- ImpaktfullCheckboxListItem
+
 # 0.7.0
 
 ## Feat

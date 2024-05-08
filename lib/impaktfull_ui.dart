@@ -16,6 +16,7 @@ export 'src/components/fab/impaktfull_fab.dart';
 export 'src/components/icon/impaktfull_icon_button.dart';
 export 'src/components/icon/impaktfull_svg_icon.dart';
 export 'src/components/listview/impaktfull_listview.dart';
+export 'src/components/list_item/impaktfull_checkbox_list_item.dart';
 export 'src/components/list_item/impaktfull_list_item_title.dart';
 export 'src/components/list_item/impaktfull_list_item.dart';
 export 'src/components/list_item/impaktfull_radio_button_list_item.dart';

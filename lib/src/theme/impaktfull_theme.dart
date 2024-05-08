@@ -28,6 +28,7 @@ class ImpaktfullTheme {
     ImpaktfullAssets? assets,
     ImpaktfullDimens? dimens,
     ImpaktfullDurations? durations,
+    ImpaktfullComponentsTheme? components,
     ImpaktfullLocalizations? localizations,
     InteractiveInkFeatureFactory? splashFactory,
   }) =>
@@ -56,6 +57,7 @@ class ImpaktfullTheme {
         assets: assets ?? ImpaktfullAssets.getDefaults(),
         dimens: dimens ?? ImpaktfullDimens.getDefaults(),
         durations: durations ?? ImpaktfullDurations.getDefaults(),
+        components: components,
         localizations: localizations ?? ImpaktfullLocalizations.getDefaults(),
         splashFactory:
             splashFactory ?? ImpaktfullThemeConfig.defaultSplashFactory,
@@ -110,6 +112,7 @@ class ImpaktfullTheme {
     ImpaktfullAssets? assets,
     ImpaktfullDimens? dimens,
     ImpaktfullDurations? durations,
+    ImpaktfullComponentsTheme? components,
     ImpaktfullLocalizations? localizations,
     InteractiveInkFeatureFactory? splashFactory,
   }) =>
@@ -126,6 +129,7 @@ class ImpaktfullTheme {
         textStyles: textStyles ?? ImpaktfullTextStylesTheme.getDefaults(),
         assets: assets ?? ImpaktfullAssets.getDefaults(),
         dimens: dimens ?? ImpaktfullDimens.getDefaults(),
+        components: components ?? ImpaktfullComponentsTheme.getDefaults(),
         durations: durations ?? ImpaktfullDurations.getDefaults(),
         localizations: localizations ?? ImpaktfullLocalizations.getDefaults(),
         splashFactory:
@@ -139,6 +143,7 @@ class ImpaktfullTheme {
   final ImpaktfullAssets assets;
   final ImpaktfullDimens dimens;
   final ImpaktfullDurations durations;
+  final ImpaktfullComponentsTheme components;
   final ImpaktfullLocalizations localizations;
   final InteractiveInkFeatureFactory splashFactory;
 
@@ -149,6 +154,7 @@ class ImpaktfullTheme {
     required this.textStyles,
     required this.assets,
     required this.dimens,
+    required this.components,
     required this.durations,
     required this.localizations,
     this.splashFactory = InkSparkle.constantTurbulenceSeedSplashFactory,
@@ -558,6 +564,19 @@ class ImpaktfullLocalizations {
         return en;
     }
   }
+}
+
+class ImpaktfullComponentsTheme {
+  final ImpaktfullCheckBoxTheme? checkBox;
+
+  const ImpaktfullComponentsTheme({
+    this.checkBox,
+  });
+
+  static ImpaktfullComponentsTheme getDefaults() =>
+      const ImpaktfullComponentsTheme(
+        checkBox: null,
+      );
 }
 
 class ImpaktfullLocalizationsValues {

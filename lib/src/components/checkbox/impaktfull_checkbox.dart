@@ -1,20 +1,28 @@
 import 'package:impaktfull_ui/impaktfull_ui.dart';
 
-class ImpaktfullCheckBox extends StatelessWidget {
-  final bool value;
-  final ValueChanged<bool> onChanged;
+class ImpaktfullCheckBoxTheme {
   final Color? activeColor;
   final Color? inactiveColor;
   final Color? checkMarkColor;
   final Color? backgroundColor;
 
-  const ImpaktfullCheckBox({
-    required this.value,
-    required this.onChanged,
+  const ImpaktfullCheckBoxTheme({
     this.activeColor,
     this.inactiveColor,
     this.checkMarkColor,
     this.backgroundColor,
+  });
+}
+
+class ImpaktfullCheckBox extends StatelessWidget {
+  final bool value;
+  final ValueChanged<bool> onChanged;
+  final ImpaktfullCheckBoxTheme? theme;
+
+  const ImpaktfullCheckBox({
+    required this.value,
+    required this.onChanged,
+    this.theme,
     super.key,
   });
 
@@ -38,8 +46,7 @@ class ImpaktfullCheckBox extends StatelessWidget {
                       borderRadius: BorderRadius.circular(
                           theme.dimens.switchThumbBorderRadius),
                       border: Border.all(
-                        color:
-                            inactiveColor ?? theme.colors.accent1TurnedOffState,
+                        color: _getInactiveColor(theme),
                         width: theme.dimens.borderWidth,
                       ),
                     ),
@@ -55,7 +62,7 @@ class ImpaktfullCheckBox extends StatelessWidget {
                         borderRadius: BorderRadius.circular(
                             theme.dimens.switchThumbBorderRadius),
                         border: Border.all(
-                          color: activeColor ?? theme.colors.accent1,
+                          color: _getActiveColor(theme),
                           width: theme.dimens.borderWidth,
                         ),
                       ),
@@ -70,7 +77,7 @@ class ImpaktfullCheckBox extends StatelessWidget {
                     child: Center(
                       child: ImpaktfullSvgIcon(
                         asset: theme.assets.icons.check,
-                        color: checkMarkColor ?? theme.colors.onAccent1,
+                        color: _getCheckMarkColor(theme),
                         size: 20,
                       ),
                     ),
@@ -84,8 +91,21 @@ class ImpaktfullCheckBox extends StatelessWidget {
     );
   }
 
+  ImpaktfullCheckBoxTheme? _getComponentTheme(ImpaktfullTheme theme) =>
+      this.theme ?? theme.components.checkBox;
+
+  Color _getInactiveColor(ImpaktfullTheme theme) =>
+      _getComponentTheme(theme)?.inactiveColor ??
+      theme.colors.accent1TurnedOffState;
+
+  Color _getActiveColor(ImpaktfullTheme theme) =>
+      _getComponentTheme(theme)?.activeColor ?? theme.colors.accent1;
+
+  Color _getCheckMarkColor(ImpaktfullTheme theme) =>
+      _getComponentTheme(theme)?.checkMarkColor ?? theme.colors.onAccent1;
+
   Color _getBackgroundColor(ImpaktfullTheme theme) {
-    if (value) return activeColor ?? theme.colors.accent1;
-    return backgroundColor ?? theme.colors.card;
+    if (value) return _getActiveColor(theme);
+    return _getComponentTheme(theme)?.backgroundColor ?? theme.colors.card;
   }
 }
