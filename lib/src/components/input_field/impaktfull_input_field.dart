@@ -1,3 +1,4 @@
+import 'package:flutter/services.dart';
 import 'package:impaktfull_ui/impaktfull_ui.dart';
 
 class ImpaktfullInputField extends StatefulWidget {
@@ -11,6 +12,7 @@ class ImpaktfullInputField extends StatefulWidget {
   final TextInputType textInputType;
   final TextInputAction textInputAction;
   final VoidCallback? onSubmit;
+  final List<TextInputFormatter> inputFormatters;
 
   const ImpaktfullInputField({
     required this.onChanged,
@@ -23,6 +25,7 @@ class ImpaktfullInputField extends StatefulWidget {
     this.textInputType = TextInputType.text,
     this.textInputAction = TextInputAction.done,
     this.onSubmit,
+    this.inputFormatters = const [],
     super.key,
   });
 
@@ -33,14 +36,22 @@ class ImpaktfullInputField extends StatefulWidget {
 class _ImpaktfullInputFieldState extends State<ImpaktfullInputField> {
   TextEditingController? _internalTextEditingController;
 
-  TextEditingController get _textEditingController =>
-      _internalTextEditingController ?? widget.controller!;
+  TextEditingController get _textEditingController => _internalTextEditingController ?? widget.controller!;
+
   @override
   void initState() {
     super.initState();
     if (widget.controller == null) {
-      _internalTextEditingController =
-          TextEditingController(text: widget.value);
+      _internalTextEditingController = TextEditingController(text: widget.value);
+    }
+  }
+
+  @override
+  void didUpdateWidget(covariant ImpaktfullInputField oldWidget) {
+    super.didUpdateWidget(oldWidget);
+    if (widget.value != oldWidget.value && widget.value != _textEditingController.text) {
+      _textEditingController.text = widget.value;
+      setState(() {});
     }
   }
 
@@ -62,8 +73,7 @@ class _ImpaktfullInputFieldState extends State<ImpaktfullInputField> {
           Container(
             decoration: BoxDecoration(
               color: theme.colors.card,
-              borderRadius:
-                  BorderRadius.circular(theme.dimens.generalBorderRadius),
+              borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
             ),
             padding: const EdgeInsets.symmetric(
               horizontal: 16,
@@ -77,6 +87,7 @@ class _ImpaktfullInputFieldState extends State<ImpaktfullInputField> {
               textInputAction: widget.textInputAction,
               onSubmitted: (value) => widget.onSubmit?.call(),
               style: theme.textStyles.onCardPrimary.bodyInput,
+              inputFormatters: widget.inputFormatters,
               decoration: InputDecoration(
                 contentPadding: const EdgeInsets.only(bottom: 4),
                 border: InputBorder.none,
