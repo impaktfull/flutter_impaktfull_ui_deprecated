@@ -1,3 +1,10 @@
+# 0.10.0
+
+## Feat
+
+- ImpaktfullDialog now has loading states for the actions
+- ImpaktfullLoadingIndicator now has a `color` parameter
+
 # 0.9.0
 
 ## Breaking

@@ -62,50 +62,50 @@ class _ImpaktfullButtonState extends State<ImpaktfullButton> {
   Widget build(BuildContext context) {
     final hasOnTap = widget.onTap != null || widget.onAsyncTap != null;
     return ImpaktfullThemeLocalizer(
-      builder: (context, theme) => Opacity(
-        opacity: hasOnTap ? 1 : 0.3,
-        child: IgnorePointer(
-          ignoring: !hasOnTap,
-          child: Stack(
-            alignment: Alignment.center,
-            children: [
-              Visibility.maintain(
-                visible: !_isLoading,
-                child: ImpaktfullTouchFeedback(
-                  onTap: hasOnTap ? _onTap : null,
-                  color: _getBackground(theme),
-                  shadow: [
-                    if (theme.shadows.button != null &&
-                        widget._type != _ButtonType.secondary)
-                      theme.shadows.button!,
-                  ],
-                  borderRadius:
-                      BorderRadius.circular(theme.dimens.generalBorderRadius),
-                  child: Container(
-                    constraints: const BoxConstraints(
-                      minWidth: 48,
-                      minHeight: 48,
-                    ),
-                    alignment: Alignment.center,
-                    padding: const EdgeInsets.symmetric(
-                      horizontal: 12,
-                      vertical: 16,
-                    ),
-                    child: Text(
-                      widget.label,
-                      style: _getTextStyle(theme).title,
-                      textAlign: TextAlign.center,
+      builder: (context, theme) {
+        final background = _getBackground(theme);
+        return Opacity(
+          opacity: hasOnTap ? 1 : 0.3,
+          child: IgnorePointer(
+            ignoring: !hasOnTap,
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Visibility.maintain(
+                  visible: !_isLoading,
+                  child: ImpaktfullTouchFeedback(
+                    onTap: hasOnTap ? _onTap : null,
+                    color: background,
+                    shadow: [
+                      if (theme.shadows.button != null && widget._type != _ButtonType.secondary) theme.shadows.button!,
+                    ],
+                    borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
+                    child: Container(
+                      constraints: const BoxConstraints(
+                        minWidth: 48,
+                        minHeight: 48,
+                      ),
+                      alignment: Alignment.center,
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: 12,
+                        vertical: 16,
+                      ),
+                      child: Text(
+                        widget.label,
+                        style: _getTextStyle(theme).title,
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              if (_isLoading) ...[
-                const ImpaktfullLoadingIndicator(),
+                if (_isLoading) ...[
+                  ImpaktfullLoadingIndicator(color: background),
+                ],
               ],
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 
