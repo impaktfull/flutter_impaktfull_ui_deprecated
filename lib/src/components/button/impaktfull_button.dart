@@ -77,9 +77,12 @@ class _ImpaktfullButtonState extends State<ImpaktfullButton> {
                     onTap: hasOnTap ? _onTap : null,
                     color: background,
                     shadow: [
-                      if (theme.shadows.button != null && widget._type != _ButtonType.secondary) theme.shadows.button!,
+                      if (theme.shadows.button != null &&
+                          widget._type != _ButtonType.secondary)
+                        theme.shadows.button!,
                     ],
-                    borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
+                    borderRadius:
+                        BorderRadius.circular(theme.dimens.generalBorderRadius),
                     child: Container(
                       constraints: const BoxConstraints(
                         minWidth: 48,

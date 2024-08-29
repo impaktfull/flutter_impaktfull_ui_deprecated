@@ -40,7 +40,8 @@ class ImpaktfullDialog extends StatelessWidget {
             padding: padding,
             decoration: BoxDecoration(
               color: theme.colors.card,
-              borderRadius: BorderRadius.circular(theme.dimens.generalBorderRadius),
+              borderRadius:
+                  BorderRadius.circular(theme.dimens.generalBorderRadius),
             ),
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -67,35 +68,61 @@ class ImpaktfullDialog extends StatelessWidget {
                       if (onSecondaryTapped != null) ...[
                         Expanded(
                           child: ImpaktfullButton.secondary(
-                            label: secondaryLabel ?? theme.localizations.current.generalLabelCancel,
-                            onTap: onSecondaryTapped is AsyncCallback ? null : onSecondaryTapped as VoidCallback,
-                            onAsyncTap: onSecondaryTapped is AsyncCallback ? onSecondaryTapped as AsyncCallback : null,
+                            label: secondaryLabel ??
+                                theme.localizations.current.generalLabelCancel,
+                            onTap: onSecondaryTapped is AsyncCallback
+                                ? null
+                                : onSecondaryTapped as VoidCallback,
+                            onAsyncTap: onSecondaryTapped is AsyncCallback
+                                ? onSecondaryTapped as AsyncCallback
+                                : null,
                           ),
                         ),
                       ],
                       if (onPrimaryTapped != null) ...[
-                        if (primaryButtonType == ImpaktfullDialogPrimaryButtonType.primary) ...[
+                        if (primaryButtonType ==
+                            ImpaktfullDialogPrimaryButtonType.primary) ...[
                           Expanded(
                             child: ImpaktfullButton.primary(
-                              label: primaryLabel ?? theme.localizations.current.generalLabelAccept,
-                              onTap: onPrimaryTapped is AsyncCallback ? null : onPrimaryTapped as VoidCallback,
-                              onAsyncTap: onPrimaryTapped is AsyncCallback ? onPrimaryTapped as AsyncCallback : null,
+                              label: primaryLabel ??
+                                  theme
+                                      .localizations.current.generalLabelAccept,
+                              onTap: onPrimaryTapped is AsyncCallback
+                                  ? null
+                                  : onPrimaryTapped as VoidCallback,
+                              onAsyncTap: onPrimaryTapped is AsyncCallback
+                                  ? onPrimaryTapped as AsyncCallback
+                                  : null,
                             ),
                           ),
-                        ] else if (primaryButtonType == ImpaktfullDialogPrimaryButtonType.accent) ...[
+                        ] else if (primaryButtonType ==
+                            ImpaktfullDialogPrimaryButtonType.accent) ...[
                           Expanded(
                             child: ImpaktfullButton.accent(
-                              label: primaryLabel ?? theme.localizations.current.generalLabelAccept,
-                              onTap: onPrimaryTapped is AsyncCallback ? null : onPrimaryTapped as VoidCallback,
-                              onAsyncTap: onPrimaryTapped is AsyncCallback ? onPrimaryTapped as AsyncCallback : null,
+                              label: primaryLabel ??
+                                  theme
+                                      .localizations.current.generalLabelAccept,
+                              onTap: onPrimaryTapped is AsyncCallback
+                                  ? null
+                                  : onPrimaryTapped as VoidCallback,
+                              onAsyncTap: onPrimaryTapped is AsyncCallback
+                                  ? onPrimaryTapped as AsyncCallback
+                                  : null,
                             ),
                           ),
-                        ] else if (primaryButtonType == ImpaktfullDialogPrimaryButtonType.danger) ...[
+                        ] else if (primaryButtonType ==
+                            ImpaktfullDialogPrimaryButtonType.danger) ...[
                           Expanded(
                             child: ImpaktfullButton.danger(
-                              label: primaryLabel ?? theme.localizations.current.generalLabelAccept,
-                              onTap: onPrimaryTapped is AsyncCallback ? null : onPrimaryTapped as VoidCallback,
-                              onAsyncTap: onPrimaryTapped is AsyncCallback ? onPrimaryTapped as AsyncCallback : null,
+                              label: primaryLabel ??
+                                  theme
+                                      .localizations.current.generalLabelAccept,
+                              onTap: onPrimaryTapped is AsyncCallback
+                                  ? null
+                                  : onPrimaryTapped as VoidCallback,
+                              onAsyncTap: onPrimaryTapped is AsyncCallback
+                                  ? onPrimaryTapped as AsyncCallback
+                                  : null,
                             ),
                           ),
                         ],

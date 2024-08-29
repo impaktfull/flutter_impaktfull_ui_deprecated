@@ -34,7 +34,11 @@ class ImpaktfullScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = ImpaktfullTheme.of(context);
-    final hasNavBar = title != null || subtitle != null || actions.isNotEmpty || onBackTapped != null || bottomNavBarChild != null;
+    final hasNavBar = title != null ||
+        subtitle != null ||
+        actions.isNotEmpty ||
+        onBackTapped != null ||
+        bottomNavBarChild != null;
     return ImpaktfullStatusBar.custom(
       isDark: theme.useDarkStatusBar(
         context,
