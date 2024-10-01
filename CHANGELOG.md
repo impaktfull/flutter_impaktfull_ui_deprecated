@@ -1,14 +1,14 @@
-# 0.12.0
-
-## Breaking
-
-- Changed ThemeConfiguratorWidget to ImpaktfullThemeConfiguratorWidget
-
-# 0.11.0
+# 0.11.1
 
 ## Fix
 
-- Use a theme_configurator_widget instead of the theme_configurator.dart file
+- Fixed changelog
+
+# 0.11.0
+
+## Feat
+
+- Added a ThemeConfiguratorWidget so you don't always need to use the ImpaktfullApp
 
 # 0.10.2
 
