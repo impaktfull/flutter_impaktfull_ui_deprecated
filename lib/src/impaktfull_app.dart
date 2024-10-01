@@ -60,7 +60,7 @@ class ImpaktfullApp extends StatelessWidget {
             SimpleSnackyBuilder(
               borderRadius:
                   BorderRadius.circular(theme.dimens.generalBorderRadius),
-              colorBuilder: (snacky) {
+              backgroundColorBuilder: (snacky) {
                 switch (snacky.type) {
                   case SnackyType.error:
                     return Color.lerp(theme.colors.error, Colors.white, 0.8) ??

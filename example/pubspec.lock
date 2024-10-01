@@ -147,7 +147,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.10.0"
+    version: "0.11.0"
   integration_test:
     dependency: "direct dev"
     description: flutter
@@ -290,10 +290,10 @@ packages:
     dependency: transitive
     description:
       name: snacky
-      sha256: ac19525e7e4260483a4ce25a2309bf28bf9653acf75a742fd99b97a7fe0dd774
+      sha256: "10c693b64c503575555c136cb315f99b9bc67f6875edbba5e3fea9e6b80c35af"
       url: "https://pub.dev"
     source: hosted
-    version: "0.2.5"
+    version: "0.3.0"
   source_span:
     dependency: transitive
     description:

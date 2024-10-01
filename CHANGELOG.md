@@ -1,3 +1,9 @@
+# 0.11.2
+
+## Fix
+
+- Fixed changelog
+
 # 0.11.1
 
 ## Fix
