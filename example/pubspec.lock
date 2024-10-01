@@ -147,7 +147,7 @@ packages:
       path: ".."
       relative: true
     source: path
-    version: "0.9.0"
+    version: "0.10.0"
   integration_test:
     dependency: "direct dev"
     description: flutter
@@ -205,10 +205,10 @@ packages:
     dependency: transitive
     description:
       name: lottie
-      sha256: "1f0ce68112072d66ea271a9841994fa8d16442e23d8cf8996c9fa74174e58b4e"
+      sha256: "6a24ade5d3d918c306bb1c21a6b9a04aab0489d51a2582522eea820b4093b62b"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.0"
+    version: "3.1.2"
   matcher:
     dependency: transitive
     description:
@@ -290,10 +290,10 @@ packages:
     dependency: transitive
     description:
       name: snacky
-      sha256: e471d12d891975bf96ae93d1c8c80ce0272fa9cf4e3952f8f04b0aefa82b69b2
+      sha256: ac19525e7e4260483a4ce25a2309bf28bf9653acf75a742fd99b97a7fe0dd774
       url: "https://pub.dev"
     source: hosted
-    version: "0.0.14"
+    version: "0.2.5"
   source_span:
     dependency: transitive
     description:

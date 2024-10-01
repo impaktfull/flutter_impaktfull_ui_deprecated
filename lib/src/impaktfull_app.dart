@@ -72,6 +72,9 @@ class ImpaktfullApp extends StatelessWidget {
                 case SnackyType.warning:
                   return Color.lerp(theme.colors.warning, Colors.white, 0.8) ??
                       theme.colors.warning;
+                case SnackyType.branded:
+                  return Color.lerp(theme.colors.accent1, Colors.white, 0.8) ??
+                      theme.colors.accent1;
               }
             },
             borderBuilder: (snacky) {
@@ -95,6 +98,11 @@ class ImpaktfullApp extends StatelessWidget {
                 case SnackyType.warning:
                   return Border.all(
                     color: theme.colors.warning,
+                    width: width,
+                  );
+                case SnackyType.branded:
+                  return Border.all(
+                    color: theme.colors.accent1,
                     width: width,
                   );
               }

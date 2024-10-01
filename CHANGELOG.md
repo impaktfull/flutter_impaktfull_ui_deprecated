@@ -1,3 +1,9 @@
+# 0.10.1
+
+## Fix
+
+- version bump dependencies
+
 # 0.10.0
 
 ## Feat
