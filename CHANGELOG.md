@@ -1,3 +1,9 @@
+# 0.11.0
+
+## Fix
+
+- Use a theme_configurator_widget instead of the theme_configurator.dart file
+
 # 0.10.2
 
 ## Fix
@@ -31,6 +37,7 @@
 - ImpaktfullCheckBox custom theme
 
 ## Feat
+
 - ImpaktfullTheme added components & checkbox theme
 - ImpaktfullCheckboxListItem
 
@@ -48,6 +55,7 @@
 - ImpaktfullBottomNavigationItem added `badgeColor` & `badgeBorderRadius`
 
 ## Fix
+
 - ImpaktfullBottomNavigationItem use correct collor when item is selected
 
 # 0.5.3
@@ -64,10 +72,9 @@
 
 # 0.5.1
 
-## Fix 
+## Fix
 
 - ImpaktfullBottomSheet with listview instead of vertical autolayout
-
 
 # 0.5.0
 
@@ -89,7 +96,7 @@
 - Export lottie dependency
 - Export lottie dependency
 - ImpaktfullBadge borderradius is exposed
-- ImpaktfullInputField added textInputAction (default  is `TextInputAction.done`)
+- ImpaktfullInputField added textInputAction (default is `TextInputAction.done`)
 - ImpaktfullInputField added controller
 - ImpaktfullInputField added onSubmit
 - ImpaktfullSimpleListItem added textStyle
@@ -100,7 +107,7 @@
 #3 Updated
 
 - ImpaktfullTopNavBar example to show a list that is searchable
-- ImpaktfullTopNavBar cleanup 
+- ImpaktfullTopNavBar cleanup
 
 ## Fix
 
@@ -201,7 +208,7 @@
 - Added ImpaktfullSimpleListItem
 - Added ImpaktfullIconButton
 - ImpaktfullInputField has a title
-- Theme: Added close icon 
+- Theme: Added close icon
 - Theme: Added danger color
 - ImpaktfullScreen: tap outside to unfocus
 - ImpaktfullSwitch made onChanged optional to make it a read-only switch
@@ -303,6 +310,7 @@
 - ImpaktfullTheme now has border options (`card`, `selectedCard`)
 
 ## Fix
+
 - ImpaktfullDatePicker now uses the borderRadius from the theme
 - Small disposed errors in ImpaktfullListItem
 
@@ -429,7 +437,7 @@
     assets/icons/chevron_right.svg
 ```
 
-- Added support for custom durations 
+- Added support for custom durations
 
 ## Refactor
 
