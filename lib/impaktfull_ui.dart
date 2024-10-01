@@ -42,6 +42,7 @@ export 'src/components/time_picker/impaktfull_time_picker.dart';
 export 'src/components/touch_feedback/impaktfull_touch_feedback.dart';
 export 'src/theme/impaktfull_theme_localizer.dart';
 export 'src/theme/impaktfull_theme.dart';
+export 'src/theme/theme_configurator.dart';
 export 'src/util/extensions/text_style_extensions.dart';
 export 'src/impaktfull_app.dart';
 export 'package:flutter/material.dart';

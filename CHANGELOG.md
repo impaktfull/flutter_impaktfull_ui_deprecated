@@ -1,3 +1,9 @@
+# 0.10.2
+
+## Fix
+
+- export the theme_configurator.dart file
+
 # 0.10.1
 
 ## Fix

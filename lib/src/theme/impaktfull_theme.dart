@@ -1,4 +1,5 @@
-import 'package:impaktfull_ui/impaktfull_ui.dart';
+import 'package:flutter/material.dart';
+import 'package:impaktfull_ui/src/components/checkbox/impaktfull_checkbox.dart';
 import 'package:impaktfull_ui/src/theme/impaktfull_branding.dart';
 import 'package:impaktfull_ui/src/theme/theme_configurator.dart';
 import 'package:impaktfull_ui/src/util/test_util.dart';
