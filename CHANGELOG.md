@@ -1,3 +1,9 @@
+# 0.12.0
+
+## Breaking
+
+- Changed ThemeConfiguratorWidget to ImpaktfullThemeConfiguratorWidget
+
 # 0.11.0
 
 ## Fix
