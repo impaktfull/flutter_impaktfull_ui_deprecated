@@ -1,3 +1,10 @@
+# 0.11.3
+
+## Fix
+
+- License
+- Version bump snacky
+
 # 0.11.2
 
 ## Fix
